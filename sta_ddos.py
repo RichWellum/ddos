@@ -160,15 +160,20 @@ class StaDdos:
         """
         spike_alert = False
 
-        print_banner(
+        banner = (
             f"DDOS ATTACK VECTOR\nHost: {self.host}\nTenant: {self.tenant}\n"
             f"Flow time queried: {self.dos_flow_time}s\nRepeat every: {self.dos_flow_repeat_time}s\n"
             f"Percentage Warning Threshold: {self.dos_threshold}%\n"
             f"Alert Threshold: {self.dos_spike} warnings\nProtocol IDs: {self.protocol}\nApplication IDs: {self.applications}\n"
-            f"Log file: {self.log_file}",
-            "white",
-            ["bold"],
+            f"Log file: {self.log_file}"
         )
+
+        print_banner(
+            banner, "white", ["bold"],
+        )
+
+        with open(self.log_file, "a") as file:
+            file.write(banner)
 
         # Setup Pandas Series
         data_totals = pd.DataFrame(columns=["id"])
