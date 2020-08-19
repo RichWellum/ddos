@@ -4,24 +4,86 @@
 to warn on potential DDOS attacks. It is yaml driven and easy for the end user
 to make changes and apply.
 
+## Basic concept
+
+This tool will constantly query an SMC, for flows for a particular protocol and
+application profile.
+
+A typical payload looks like:
+
+```bash
+SMC Query Payload: {
+  "startDateTime": "2020-08-19T13:24:50Z",
+  "endDateTime": "2020-08-19T13:30:50Z",
+  "subject": {
+    "orientation": "Either"
+  },
+  "flow": {
+    "flowDirection": "BIDIRECTIONAL",
+    "applications": {
+      "includes": [
+        37,
+        44,
+        48,
+        27
+      ],
+      "excludes": []
+    },
+    "protocol": [],
+    "includeInterfaceData": "true"
+  }
+}
+```
+
+The tool is fairly configurable, using the yaml configuration file the user can
+change:
+
+```bash
+verbose: false # Set me to true to see lots of output
+enabled: true
+dos_flow_time: 360 # Look at 5m sliding window (enough time to gather from FCs)
+dos_flow_repeat_time: 5 # Query each 60s
+dos_threshold: 5 # % spike causes a table entry and warning
+dos_spike: 2 # int consecutive dos_thresholds is an alert
+protocol: [] # Change protocols here (1 = ICMP) etc
+applications: { includes: [37, 44, 48, 27], excludes: [] }
+```
+
+The concept is simple:
+
+The user selects a window of time `dos_flow_time` to look at any
+combination of protocols `protocols` and applications `applications`. At a
+configurable repeat time `dos_flow_repeat_time` the same query is repeated. The
+data returned is reduced to byte counts per configured protocol and application
+and most importantly `non-active` flows are removed. We only care about live
+and active flows. This is not a historical flow inspection.
+
+Now that we have only active byte counts for the protocols and applications we
+care about, the percentage change between the current data and the last data is
+calculated. If this percentage change is higher than `dos_threshold` then a
+warning is triggered. And if more than `dos_spike` warnings are seen in the
+last five queries, an alert is triggered.
+
+The alerts are saved in an output log file.
+
 ## Setup
 
 ### Create a python3 virtual environment
 
 ```bash
-    virtualenv ddos_python
+virtualenv ddos_python
 ```
 
 ### Activate virtual env
 
 ```bash
-    source ddos_python/bin/activate
+source ddos_python/bin/activate
 ```
 
 ### Install requirements
 
 ```bash
-    pip3 install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 ### Edit config.yaml - add your SMC details and also edit your ddos settings
@@ -47,7 +109,7 @@ dos_attack:
     dos_flow_time: 360 # Look at 5m sliding window (enough time to gather from FCs)
     dos_flow_repeat_time: 5 # Query each 60s
     dos_threshold: 15 # % spike causes a table entry and warning
-    dos_spike: 5 # int consequtive dos_thresholds is an alert
+    dos_spike: 5 # int consecutive dos_thresholds is an alert
     protocol: [] # Change protocols here (1 = ICMP) etc
     applications: { includes: [37, 44, 48, 27], excludes: [] }
 ```
@@ -57,11 +119,11 @@ Note that is aggregating the total bytes of all these applications.
 ### Run tool
 
 ```bash
-    ./sta_ddos.py config.yaml
+./sta_ddos.py config.yaml
 ```
 
 ### Run tool in verbose mode for more info
 
 ```bash
-    ./sta_ddos.py config.yaml -v
+./sta_ddos.py config.yaml -v
 ```

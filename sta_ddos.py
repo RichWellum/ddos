@@ -25,7 +25,7 @@ dos_attack:
     dos_flow_time: 360 # Look at 5m sliding window (enough time to gather from FCs)
     dos_flow_repeat_time: 60 # Query each 60s
     dos_threshold: 5 # % spike causes a table entry and warning
-    dos_spike: 3 # int consequtive dos_thresholds is an alert
+    dos_spike: 3 # int consecutive dos_thresholds is an alert
     protocol: [1, 88, 4] # Change protocols here (1 = ICMP) etc
     applications: { includes: [58, 44], excludes: [127, 125, 147, 45] }
 End here
@@ -33,18 +33,18 @@ End here
 import argparse
 import datetime
 import json
-
+import os
+import pathlib
 import sys
 import time
 from argparse import RawDescriptionHelpFormatter
 
 import pandas as pd
+import requests
 import terminal_banner
+import urllib3
 import yaml
 from termcolor import cprint
-import requests
-import urllib3
-import os
 
 urllib3.disable_warnings()
 
@@ -86,6 +86,11 @@ class StaDdos:
         self.password = ""
         self.config = args.config
         self.verbose = args.verbose
+
+        # Create a log file
+        log_dt = datetime.datetime.utcnow()
+        log_dt = log_dt.strftime("%Y-%m-%d-%H-%M-%S")
+        self.log_file = f"{pathlib.Path().absolute()}/ddos_log.{log_dt}"
 
         # Clear the terminal
         _ = os.system("clear")
@@ -156,9 +161,11 @@ class StaDdos:
         spike_alert = False
 
         print_banner(
-            f"DDOS ATTACK VECTOR\nFlow time queried: {self.dos_flow_time}s\nRepeat every: {self.dos_flow_repeat_time}s\n"
+            f"DDOS ATTACK VECTOR\nHost: {self.host}\nTenant: {self.tenant}\n"
+            f"Flow time queried: {self.dos_flow_time}s\nRepeat every: {self.dos_flow_repeat_time}s\n"
             f"Percentage Warning Threshold: {self.dos_threshold}%\n"
-            f"Alert Threshold: {self.dos_spike} warnings\nProtocol IDs: {self.protocol}\nApplication IDs: {self.applications}",
+            f"Alert Threshold: {self.dos_spike} warnings\nProtocol IDs: {self.protocol}\nApplication IDs: {self.applications}\n"
+            f"Log file: {self.log_file}",
             "white",
             ["bold"],
         )
@@ -336,6 +343,11 @@ class StaDdos:
                         "cyan",
                         attrs=["bold", "blink"],
                     )
+                    with open(self.log_file, "a") as file:
+                        file.write(
+                            f"\n{datetime.datetime.utcnow()} - Warning: Percentage Change: {new_byte_perc}% >= {self.dos_threshold}% threshold"
+                        )
+                        file.close()
                 else:
                     cprint(
                         f"  Info: Percentage Change: {new_byte_perc}% < {self.dos_threshold}% threshold, Waiting: {self.dos_flow_repeat_time}s...",
@@ -363,10 +375,15 @@ class StaDdos:
                 if spike_alert:
                     cprint(perc_change_df, "red")
                     cprint(
-                        f"Severe Warning: Byte count percentage spiked >= {self.dos_spike} times over {self.dos_threshold}%",
+                        f"Alert!: Byte count percentage spiked >= {self.dos_spike} times over {self.dos_threshold}%",
                         "red",
                         attrs=["bold", "blink"],
                     )
+                    with open(self.log_file, "a") as file:
+                        file.write(
+                            f"\n{datetime.datetime.utcnow()} - Alert: Byte count percentage spiked >= {self.dos_spike} times over {self.dos_threshold}%"
+                        )
+                        file.close()
                 else:
                     if self.verbose:
                         cprint(perc_change_df, "green")
