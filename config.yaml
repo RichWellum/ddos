@@ -7,8 +7,8 @@ Product:
 SMC:
     username: <add username>
     password: <add password>
-    host:     <Add SMC ip address>
-    tenant:   <Add tennant id>
+    host: <Add SMC ip address>
+    tenant: <Add tennant id>
 #
 # DDOS attack vector
 #
@@ -17,7 +17,7 @@ dos_attack:
     enabled: true
     dos_flow_time: 360 # Look at 5m sliding window (enough time to gather from FCs)
     dos_flow_repeat_time: 5 # Query each 60s
-    dos_threshhold: 15 # % spike causes a table entry and warning
-    dos_spike: 5 # int consequtive dos_threshholds is an alert
+    dos_threshold: 15 # % spike causes a table entry and warning
+    dos_spike: 5 # int consequtive dos_thresholds is an alert
     protocol: [1, 88, 4] # Change protocols here (1 = ICMP) etc
     applications: { includes: [58, 44], excludes: [127, 125, 147, 45] } # Change Apps here

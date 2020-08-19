@@ -24,8 +24,8 @@ dos_attack:
     enabled: true
     dos_flow_time: 360 # Look at 5m sliding window (enough time to gather from FCs)
     dos_flow_repeat_time: 60 # Query each 60s
-    dos_threshhold: 5 # % spike causes a table entry and warning
-    dos_spike: 3 # int consequtive dos_threshholds is an alert
+    dos_threshold: 5 # % spike causes a table entry and warning
+    dos_spike: 3 # int consequtive dos_thresholds is an alert
     protocol: [1, 88, 4] # Change protocols here (1 = ICMP) etc
     applications: { includes: [58, 44], excludes: [127, 125, 147, 45] }
 End here
@@ -133,7 +133,7 @@ class StaDdos:
         # Set DDOS values
         self.dos_flow_time = self.config["dos_attack"]["dos_flow_time"]
         self.dos_flow_repeat_time = self.config["dos_attack"]["dos_flow_repeat_time"]
-        self.dos_threshhold = self.config["dos_attack"]["dos_threshhold"]
+        self.dos_threshold = self.config["dos_attack"]["dos_threshold"]
         self.dos_spike = self.config["dos_attack"]["dos_spike"]
         self.protocol = self.config["dos_attack"]["protocol"]
         self.applications = self.config["dos_attack"]["applications"]
@@ -157,7 +157,7 @@ class StaDdos:
 
         print_banner(
             f"DDOS ATTACK VECTOR\nFlow time queried: {self.dos_flow_time}s\nRepeat every: {self.dos_flow_repeat_time}s\n"
-            f"Percentage Warning Threshold: {self.dos_threshhold}%\n"
+            f"Percentage Warning Threshold: {self.dos_threshold}%\n"
             f"Alert Threshold: {self.dos_spike} warnings\nProtocol IDs: {self.protocol}\nApplication IDs: {self.applications}",
             "white",
             ["bold"],
@@ -255,8 +255,9 @@ class StaDdos:
                 # While search status is not complete, check the status every second
                 while search["percentComplete"] != 100.0:
                     res = api_session.request("GET", url, verify=False)
-                    search = json.loads(res.content)["data"]["query"]
-                    time.sleep(1)
+                    if res.status_code == 200:
+                        search = json.loads(res.content)["data"]["query"]
+                        time.sleep(1)
 
                 # Set the URL to check the search results and get them
                 url = f"https://{self.host}/sw-reporting/v2/tenants/{self.tenant}/flows/queries/{search['id']}/results"
@@ -329,15 +330,15 @@ class StaDdos:
                 new_byte_perc = new_byte_perc.iloc[0]
 
                 # Check to see if we breach our threshold
-                if new_byte_perc >= self.dos_threshhold:
+                if new_byte_perc >= self.dos_threshold:
                     cprint(
-                        f"  Warning: Percentage Change: {new_byte_perc}% >= {self.dos_threshhold}% threshhold, Waiting: {self.dos_flow_repeat_time}s...",
+                        f"  Warning: Percentage Change: {new_byte_perc}% >= {self.dos_threshold}% threshold, Waiting: {self.dos_flow_repeat_time}s...",
                         "cyan",
                         attrs=["bold", "blink"],
                     )
                 else:
                     cprint(
-                        f"  Info: Percentage Change: {new_byte_perc}% < {self.dos_threshhold}% threshhold, Waiting: {self.dos_flow_repeat_time}s...",
+                        f"  Info: Percentage Change: {new_byte_perc}% < {self.dos_threshold}% threshold, Waiting: {self.dos_flow_repeat_time}s...",
                         "green",
                         attrs=["bold"],
                     )
@@ -350,7 +351,7 @@ class StaDdos:
 
                 # Count number of times percentage spiked
                 for _, row in perc_change_df.iterrows():
-                    if row["Byte_change"] > self.dos_threshhold:
+                    if row["Byte_change"] > self.dos_threshold:
                         byte_spike += 1
                     else:
                         # If in alert status stay unless the percentage change
@@ -362,7 +363,7 @@ class StaDdos:
                 if spike_alert:
                     cprint(perc_change_df, "red")
                     cprint(
-                        f"Severe Warning: Byte count percentage spiked >= {self.dos_spike} times over {self.dos_threshhold}%",
+                        f"Severe Warning: Byte count percentage spiked >= {self.dos_spike} times over {self.dos_threshold}%",
                         "red",
                         attrs=["bold", "blink"],
                     )
