@@ -1,34 +1,9 @@
 #!/usr/bin/env python3
 """SecureX Traffic Analytics tool to dynamically measure the rate of change of
-a protocol and warn or alert as needed.
+protocols and application and warn or alert as needed, based on user
+configuration.
 
-Requires a yaml configuration file, for example:
-
-Begin here
----
-Product:
-    product: SecureX Threat Analytics
-    version: "0.1"
-    releaseDate: "tbd"
-    demo: false
-SMC:
-    username: admin
-    password: cisco123
-    host: 10.208.113.150
-    tenant: 102
-#
-# DDOS attack vector
-#
-dos_attack:
-    verbose: true # Set me to true to see lots of output
-    enabled: true
-    dos_flow_time: 360 # Look at 5m sliding window (enough time to gather from FCs)
-    dos_flow_repeat_time: 60 # Query each 60s
-    dos_threshold: 5 # % spike causes a table entry and warning
-    dos_spike: 3 # int consecutive dos_thresholds is an alert
-    protocol: [1, 88, 4] # Change protocols here (1 = ICMP) etc
-    applications: { includes: [58, 44], excludes: [127, 125, 147, 45] }
-End here
+Requires a yaml configuration file, see README and example config.yaml
 """
 import argparse
 import datetime
@@ -60,7 +35,7 @@ def parse_args():
     parser = argparse.ArgumentParser(
         formatter_class=RawDescriptionHelpFormatter,
         description="SecureX Threat Analytics - DDOS warning system",
-        epilog="E.g.: ./sta_ddos.py config.yaml",
+        epilog="E.g.: ./sta_ddos.py config.yaml -v",
     )
     parser.add_argument(
         "config", help="YAML Config file see config.yaml for example",
