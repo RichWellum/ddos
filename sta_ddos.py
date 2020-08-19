@@ -255,7 +255,7 @@ class StaDdos:
                 # While search status is not complete, check the status every second
                 while search["percentComplete"] != 100.0:
                     res = api_session.request("GET", url, verify=False)
-                    if res.status_code == 200:
+                    if json.loads(res.content)["data"]["query"]:
                         search = json.loads(res.content)["data"]["query"]
                         time.sleep(1)
 
