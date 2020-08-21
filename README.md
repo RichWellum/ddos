@@ -4,6 +4,22 @@
 to warn on potential DDOS attacks. It is yaml driven and easy for the end user
 to make changes and apply.
 
+Key objectives:
+
+1. Ability to detect DOS and DDOS attacks, on any application or applications that Stealthwatch recognizes.
+2. Human readable and editable configuration (yaml) - no programming skills needed to make application behavior changes.
+3. Ability to set thresholds and alert and warn. Eventually alerts and warns sent to SIEM or SecureX.
+4. Queries SMCs using APIs, so not intrusive on FCs and also has access to all FCs - hence better at detecting DDOS attacks across entire infra-structure.
+5. Uses Active flows so reduces noise or data that occurred in the past.
+
+## Typical DDOS Attack Vector Header
+
+![alt text](images/ddos_headers.png "DDOS Header")
+
+## Sample output from running investigation
+
+![alt text](images/ddos_output.png "DDOS Output")
+
 ## Basic concept
 
 This tool will constantly query an SMC, for flows for a particular protocol and
@@ -45,8 +61,8 @@ dos_flow_time: 360 # Look at 5m sliding window (enough time to gather from FCs)
 dos_flow_repeat_time: 5 # Query each 60s
 dos_threshold: 5 # % spike causes a table entry and warning
 dos_spike: 2 # int consecutive dos_thresholds is an alert
-protocol: [] # Change protocols here (1 = ICMP) etc
-applications: { includes: [37, 44, 48, 27], excludes: [] }
+protocol: [] # Change protocols here (1 = ICMP) etc.
+applications: { includes: [37, 44, 48, 27], excludes: [] } # Change applications here (44 = SSH) etc.
 ```
 
 The concept is simple:
@@ -58,13 +74,13 @@ data returned is reduced to byte counts per configured protocol and application
 and most importantly `non-active` flows are removed. We only care about live
 and active flows. This is not a historical flow inspection.
 
-Now that we have only active byte counts for the protocols and applications we
+Now that we have only **active byte** counts for the protocols and applications we
 care about, the percentage change between the current data and the last data is
 calculated. If this percentage change is higher than `dos_threshold` then a
 warning is triggered. And if more than `dos_spike` warnings are seen in the
 last five queries, an alert is triggered.
 
-The alerts are saved in an output log file.
+The alerts and warnings are saved in an output log files.
 
 ## Setup
 

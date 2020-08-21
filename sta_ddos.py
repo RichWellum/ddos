@@ -150,12 +150,12 @@ class StaDdos:
         )
 
         with open(self.warn_log_file, "a") as file:
+            file.write("**-DDOS WARNINGS-**\n")
             file.write(f"{banner}\n")
-            file.write("DDOS WARNINGS\n")
 
         with open(self.alert_log_file, "a") as file:
+            file.write("**-DDOS ALERTS-**\n")
             file.write(f"{banner}\n")
-            file.write("DDOS ALERTS\n")
 
         # Setup Pandas Series
         data_totals = pd.DataFrame(columns=["id"])
