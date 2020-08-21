@@ -65,7 +65,8 @@ class StaDdos:
         # Create a log file
         log_dt = datetime.datetime.utcnow()
         log_dt = log_dt.strftime("%Y-%m-%d-%H-%M-%S")
-        self.log_file = f"{pathlib.Path().absolute()}/ddos_log.{log_dt}"
+        self.warn_log_file = f"{pathlib.Path().absolute()}/ddos_warns.{log_dt}.log"
+        self.alert_log_file = f"{pathlib.Path().absolute()}/ddos_alerts.{log_dt}.log"
 
         # Clear the terminal
         _ = os.system("clear")
@@ -140,15 +141,21 @@ class StaDdos:
             f"Flow time queried: {self.dos_flow_time}s\nRepeat every: {self.dos_flow_repeat_time}s\n"
             f"Percentage Warning Threshold: {self.dos_threshold}%\n"
             f"Alert Threshold: {self.dos_spike} warnings\nProtocol IDs: {self.protocol}\nApplication IDs: {self.applications}\n"
-            f"Log file: {self.log_file}"
+            f"Warn  Log file: {self.warn_log_file}\n"
+            f"Alert Log file: {self.alert_log_file}"
         )
 
         print_banner(
             banner, "white", ["bold"],
         )
 
-        with open(self.log_file, "a") as file:
-            file.write(banner)
+        with open(self.warn_log_file, "a") as file:
+            file.write(f"{banner}\n")
+            file.write("DDOS WARNINGS\n")
+
+        with open(self.alert_log_file, "a") as file:
+            file.write(f"{banner}\n")
+            file.write("DDOS ALERTS\n")
 
         # Setup Pandas Series
         data_totals = pd.DataFrame(columns=["id"])
@@ -242,7 +249,7 @@ class StaDdos:
                 # While search status is not complete, check the status every second
                 while search["percentComplete"] != 100.0:
                     res = api_session.request("GET", url, verify=False)
-                    if json.loads(res.content)["data"]["query"]:
+                    if res.content and json.loads(res.content)["data"]["query"]:
                         search = json.loads(res.content)["data"]["query"]
                         time.sleep(1)
 
@@ -323,7 +330,7 @@ class StaDdos:
                         "cyan",
                         attrs=["bold", "blink"],
                     )
-                    with open(self.log_file, "a") as file:
+                    with open(self.warn_log_file, "a") as file:
                         file.write(
                             f"\n{datetime.datetime.utcnow()} - Warning: Percentage Change: {new_byte_perc}% >= {self.dos_threshold}% threshold"
                         )
@@ -359,7 +366,7 @@ class StaDdos:
                         "red",
                         attrs=["bold", "blink"],
                     )
-                    with open(self.log_file, "a") as file:
+                    with open(self.alert_log_file, "a") as file:
                         file.write(
                             f"\n{datetime.datetime.utcnow()} - Alert: Byte count percentage spiked >= {self.dos_spike} times over {self.dos_threshold}%"
                         )
