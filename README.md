@@ -84,6 +84,8 @@ The alerts and warnings are saved in an output log files.
 
 ## Setup
 
+Assumption is that the user has Python3 installed.
+
 ### Upgrade pip3
 
 ```bash
