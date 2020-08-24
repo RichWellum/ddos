@@ -84,6 +84,12 @@ The alerts and warnings are saved in an output log files.
 
 ## Setup
 
+### Install Virtual Env (OS dependent, example below is for OSX)
+
+```bash
+brew install pyenv-virtualenv
+```
+
 ### Create a python3 virtual environment
 
 ```bash
