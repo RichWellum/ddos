@@ -84,16 +84,22 @@ The alerts and warnings are saved in an output log files.
 
 ## Setup
 
-### Install Virtual Env (OS dependent, example below is for OSX)
+### Upgrade pip3
 
 ```bash
-brew install pyenv-virtualenv
+python3 -m pip install --upgrade pip
+```
+
+### Install Virtual Env
+
+```bash
+pip3 install virtualenv
 ```
 
 ### Create a python3 virtual environment
 
 ```bash
-virtualenv ddos_python
+virtualenv -p python3 ddos_python
 ```
 
 ### Activate virtual env
@@ -105,6 +111,7 @@ source ddos_python/bin/activate
 ### Install requirements
 
 ```bash
+cd ~/ddos
 pip3 install -r requirements.txt
 ```
 
