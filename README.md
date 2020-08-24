@@ -142,7 +142,7 @@ dos_attack:
     dos_threshold: 15 # % spike causes a table entry and warning
     dos_spike: 5 # int consecutive dos_thresholds is an alert
     protocol: [] # Change protocols here (1 = ICMP) etc
-    applications: { includes: [37, 44, 48, 27], excludes: [] }
+    applications: { includes: [37, 44, 48, 27], excludes: [] } # Change Apps here
 ```
 
 Note that is aggregating the total bytes of all these applications.
