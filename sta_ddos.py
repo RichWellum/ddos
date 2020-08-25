@@ -41,6 +41,9 @@ def parse_args():
         "config", help="YAML Config file see config.yaml for example",
     )
     parser.add_argument(
+        "-l", "--log_output", type=str, default="Local", help="Optional log location, like '/tmp'",
+    )
+    parser.add_argument(
         "-v", "--verbose", action="store_true", help="over-ride verbosity",
     )
     return parser.parse_args()
@@ -63,10 +66,15 @@ class StaDdos:
         self.verbose = args.verbose
 
         # Create a log file
+        if args.log_output == "Local":
+            path = pathlib.Path().absolute()
+        else:
+            path = args.log_output
+
         log_dt = datetime.datetime.utcnow()
         log_dt = log_dt.strftime("%Y-%m-%d-%H-%M-%S")
-        self.warn_log_file = f"{pathlib.Path().absolute()}/ddos_warns.{log_dt}.log"
-        self.alert_log_file = f"{pathlib.Path().absolute()}/ddos_alerts.{log_dt}.log"
+        self.warn_log_file = f"{path}/ddos_warns.{log_dt}.log"
+        self.alert_log_file = f"{path}/ddos_alerts.{log_dt}.log"
 
         # Clear the terminal
         _ = os.system("clear")
@@ -246,12 +254,22 @@ class StaDdos:
                 # Set the URL to check the search status
                 url = f"https://{self.host}/sw-reporting/v2/tenants/{self.tenant}/flows/queries/{search['id']}"
 
-                # While search status is not complete, check the status every second
+                # While search status is not complete, check the status every
+                # 5s
+                failures = 0
                 while search["percentComplete"] != 100.0:
-                    res = api_session.request("GET", url, verify=False)
-                    if res.content and json.loads(res.content)["data"]["query"]:
-                        search = json.loads(res.content)["data"]["query"]
-                        time.sleep(1)
+                    time.sleep(5)
+                    try:
+                        res = api_session.request("GET", url, verify=False)
+                        search = res.json()["data"]["query"]
+                        failures = 0
+                    except (json.decoder.JSONDecodeError, requests.RequestException):
+                        failures += 1
+                    if failures >= 9:
+                        if self.verbose:
+                            res.raise_for_status()
+                        else:
+                            sys.exit("Query failed to complete - exiting")
 
                 # Set the URL to check the search results and get them
                 url = f"https://{self.host}/sw-reporting/v2/tenants/{self.tenant}/flows/queries/{search['id']}/results"
@@ -277,28 +295,12 @@ class StaDdos:
                     ]
                 ]
 
-                # Check if the lastActiveTime represents an active flow
-                # Remove dead flows before adding to global
-                cur_time = datetime.datetime.utcnow() - datetime.timedelta(minutes=5)
-                cur_time = cur_time.strftime("%Y-%m-%dT%H:%M:%S.000.0000")
-
-                new_data_active = new_data_active[
-                    new_data_active["statistics.lastActiveTime"] >= cur_time
-                ]
-
-                if new_data_active.empty:
-                    cprint("No live ICMP data", "magenta")
-                    continue
-
-                # Aggregate data by flow_id
-                # Possibly unnecessary as flow ids will be unique as from SMC
-                new_data_active = new_data_active.groupby(["id"], as_index=False).agg(
-                    {
-                        "peer.bytes": "sum",
-                        "subject.bytes": "sum",
-                        "statistics.lastActiveTime": "last",
-                    }
-                )
+                #
+                # I believe there is no need to remove non active flows because
+                # by definition the API only returns active flows in a time
+                # period. Also no need to aggregate per flow id - as the SMC
+                # has done this already.
+                #
 
                 # Create new dataframe with total sum of all bytes
                 data_totals["id"] = new_data_active["id"]
@@ -320,13 +322,14 @@ class StaDdos:
                     "Byte_change",
                 ]
                 perc_change_df = perc_change_df.round(2)
+                perc_change_df["Byte_change"] = perc_change_df["Byte_change"].fillna(0)
                 new_byte_perc = perc_change_df.tail(1)["Byte_change"]
                 new_byte_perc = new_byte_perc.iloc[0]
 
                 # Check to see if we breach our threshold
                 if new_byte_perc >= self.dos_threshold:
                     cprint(
-                        f"  Warning: Percentage Change: {new_byte_perc}% >= {self.dos_threshold}% threshold, Waiting: {self.dos_flow_repeat_time}s...",
+                        f"  Warning: Percentage Change: {new_byte_perc}% >= {self.dos_threshold}% threshold, Gather {self.dos_flow_repeat_time}s more data...",
                         "cyan",
                         attrs=["bold", "blink"],
                     )
@@ -337,10 +340,12 @@ class StaDdos:
                         file.close()
                 else:
                     cprint(
-                        f"  Info: Percentage Change: {new_byte_perc}% < {self.dos_threshold}% threshold, Waiting: {self.dos_flow_repeat_time}s...",
+                        f"  Info: Percentage Change: {new_byte_perc}% < {self.dos_threshold}% threshold, Gather {self.dos_flow_repeat_time}s more data...",
                         "green",
                         attrs=["bold"],
                     )
+                    if self.verbose:
+                        cprint("No Warning", "green")
 
                 # Check to see if we need to alert
                 # Only look at the last X attempts
