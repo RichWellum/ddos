@@ -269,7 +269,7 @@ class StaDdos:
                         if self.verbose:
                             res.raise_for_status()
                         else:
-                            sys.exit("Query failed to complete - exiting")
+                            sys.exit(f"Query failed to complete after #{failures} retries - exiting")
 
                 # Set the URL to check the search results and get them
                 url = f"https://{self.host}/sw-reporting/v2/tenants/{self.tenant}/flows/queries/{search['id']}/results"
