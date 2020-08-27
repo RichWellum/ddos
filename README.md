@@ -158,3 +158,7 @@ Note that is aggregating the total bytes of all these applications.
 ```bash
 ./sta_ddos.py config.yaml -v
 ```
+
+## New Algorithm
+
+![alt text](images/new_algortihm.png "New Algorithm")
