@@ -38,7 +38,6 @@ import argparse
 import datetime
 import json
 import os
-import pathlib
 import sys
 import time
 from argparse import RawDescriptionHelpFormatter
@@ -69,9 +68,9 @@ def parse_args():
     parser.add_argument(
         "config", help="YAML Config file see config.yaml for example",
     )
-    parser.add_argument(
-        "-l", "--log_output", type=str, default="Local", help="Optional log location, like '/tmp'",
-    )
+    # parser.add_argument(
+    #     "-l", "--log_output", type=str, default="Local", help="Optional log location, like '/tmp'",
+    # )
     parser.add_argument(
         "-v", "--verbose", action="store_true", help="over-ride verbosity",
     )
@@ -102,16 +101,8 @@ class StaDdos:
         self.threshold_baseline_bytes = 0
         self.alert_number = 4
 
-        # Create a log file
-        if args.log_output == "Local":
-            path = pathlib.Path().absolute()
-        else:
-            path = args.log_output
-
         log_dt = datetime.datetime.utcnow()
         log_dt = log_dt.strftime("%Y-%m-%d-%H-%M-%S")
-        self.warn_log_file = f"{path}/ddos_warns.{log_dt}.log"
-        self.alert_log_file = f"{path}/ddos_alerts.{log_dt}.log"
 
         # Clear the terminal
         _ = os.system("clear")
@@ -160,7 +151,6 @@ class StaDdos:
         self.dos_flow_time = self.config["dos_attack"]["dos_flow_time"]
         self.dos_flow_repeat_time = self.config["dos_attack"]["dos_flow_repeat_time"]
         self.dos_threshold = self.config["dos_attack"]["dos_threshold"]
-        # self.dos_spike = self.config["dos_attack"]["dos_spike"]
         self.protocol = self.config["dos_attack"]["protocol"]
         self.applications = self.config["dos_attack"]["applications"]
 
@@ -171,15 +161,7 @@ class StaDdos:
         self.tenant = self.config["SMC"]["tenant"]
 
     def dos_attack_vector(self):
-        """Sequence a dDOS attack vector.
-
-        Query 5 minutes of Active protocol traffic.
-
-        Check against various Thresholds and Alerts and inform the user.
-
-        Requires a config.yaml file - see example.
-        """
-        # spike_alert = False
+        """Sequence a dDOS attack vector."""
 
         banner = (
             f"DDOS ATTACK VECTOR\n"
@@ -189,35 +171,11 @@ class StaDdos:
             f"Repeat every: {self.dos_flow_repeat_time}s\n"
             f"Percentage Warning Threshold: {self.dos_threshold}%\n"
             f"Alert Threshold: Protocol IDs: {self.protocol}\n"
-            f"Application IDs: {self.applications}"
-            # f"Warn  Log file: {self.warn_log_file}\n"
-            # f"Alert Log file: {self.alert_log_file}"
-        )
-
-        # with open(self.warn_log_file, "a") as file:
-        #     file.write(
-        #         f"\n{datetime.datetime.utcnow()} - Warning: Percentage Change: "
-        #         f"{new_byte_perc}% >= {self.dos_threshold}% threshold"
-        #     )
-        #     file.close()
-
-        #     with open(self.alert_log_file, "a") as file:
-        #         file.write(
-        #             f"\n{datetime.datetime.utcnow()} - Alert: Byte count percentage spiked >= {self.dos_spike} times over {self.dos_threshold}%"
-        #         )
-        #         file.close()
+            f"Application IDs: {self.applications}")
 
         print_banner(
             banner, "white", ["bold"],
         )
-
-        with open(self.warn_log_file, "a") as file:
-            file.write("**-DDOS WARNINGS-**\n")
-            file.write(f"{banner}\n")
-
-        with open(self.alert_log_file, "a") as file:
-            file.write("**-DDOS ALERTS-**\n")
-            file.write(f"{banner}\n")
 
         # Setup Pandas Series
         data_totals = pd.DataFrame(columns=["id"])
@@ -360,7 +318,7 @@ class StaDdos:
 
                 # Another new data frame to just contain all bytes summed up
                 # into one row
-                last_total_sum = int([data_totals["TotalBytes"].sum()])
+                last_total_sum, = [data_totals["TotalBytes"].sum()]
                 data_totals_t.loc[len(data_totals_t)] = last_total_sum
 
                 if self.verbose:
@@ -413,7 +371,7 @@ class StaDdos:
                             f"Threshold Warning over, last total byte count: {last_total_sum}, threshold baseline bytes reset",
                             self.alert_level,
                         )
-                    elif self.alert_number == 9:
+                    elif self.alert_number >= 9:
                         self.alert_level = "red"
                         print_banner(
                             "Status Red: 5 consecutive increases beyond warning level, moving to red...",
@@ -421,8 +379,8 @@ class StaDdos:
                         )
                     else:
                         cprint(
-                            f"Status unchanged: Last total {last_total_sum}, "
-                            f"threshold baseline bytes {self.threshold_baseline_bytes}, "
+                            f"Status unchanged: Last total byte count: {last_total_sum}, "
+                            f"threshold baseline bytes: {self.threshold_baseline_bytes}, "
                             f"Warning level: {self.alert_number}",
                             self.alert_level,
                         )
