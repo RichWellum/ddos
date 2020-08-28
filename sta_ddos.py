@@ -214,7 +214,7 @@ class StaDdos:
             f"Repeat every: {self.dos_flow_repeat_time}s\n"
             f"Percentage Warning Threshold: {self.dos_threshold}%\n"
             f"Configured baseline threshold: {self.dos_baseline}\n"
-            f"Alert Threshold: Protocol IDs: {self.protocol}\n"
+            f"Protocol IDs: {self.protocol}\n"
             f"Application IDs: {self.applications}"
         )
 
@@ -381,9 +381,10 @@ class StaDdos:
                     inspect_loop_num += 1
                     if self.verbose:
                         print(data_totals_t)
-                    print(
+                    cprint(
                         f"Request {inspect_loop_num}: New Total Bytes: {last_total_sum}, "
-                        f"Average Byte Count: {data_totals_t['AllBytes'].mean().astype(int)}"
+                        f"Average Byte Count: {data_totals_t['AllBytes'].mean().astype(int)}",
+                        "magenta",
                     )
                     time.sleep(self.dos_flow_repeat_time)
                     continue
@@ -435,10 +436,11 @@ class StaDdos:
                             self.alert_color,
                         )
                     else:
-                        self.alert_level -= 1
-                        self.alert_level = min(self.alert_level, 0)
+                        if self.alert_level > 0:
+                            self.alert_level -= 1
+
                         cprint(
-                            f"All good: new total: {last_total_sum}, baseline: {self.dos_baseline}, "
+                            f"{status_change(last_total_sum, self.threshold_baseline_bytes)}: new total: {last_total_sum}, "
                             f"Protocol Byte percentage change: {new_byte_perc}% < Byte percentage threshold "
                             f"{self.dos_threshold}%\n"
                             f"Alert level: '{self.alert_level}'",
