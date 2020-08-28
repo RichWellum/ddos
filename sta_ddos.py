@@ -97,9 +97,9 @@ class StaDdos:
         # green = all good
         # yellow = warning mode, threshold was met
         # red - alert mode, warning mode was active for a long time
-        self.alert_level = "green"
+        self.alert_color = "green"
         self.threshold_baseline_bytes = 0
-        self.alert_number = 4
+        self.alert_level = 4
 
         log_dt = datetime.datetime.utcnow()
         log_dt = log_dt.strftime("%Y-%m-%d-%H-%M-%S")
@@ -171,7 +171,8 @@ class StaDdos:
             f"Repeat every: {self.dos_flow_repeat_time}s\n"
             f"Percentage Warning Threshold: {self.dos_threshold}%\n"
             f"Alert Threshold: Protocol IDs: {self.protocol}\n"
-            f"Application IDs: {self.applications}")
+            f"Application IDs: {self.applications}"
+        )
 
         print_banner(
             banner, "white", ["bold"],
@@ -225,7 +226,7 @@ class StaDdos:
             cprint(
                 f"\n{self.dos_flow_time}s probe -- protocol({self.protocol}), "
                 f"applications({self.applications}) flow request to: {self.host}",
-                self.alert_level,
+                self.alert_color,
             )
             if self.verbose:
                 cprint(
@@ -318,15 +319,15 @@ class StaDdos:
 
                 # Another new data frame to just contain all bytes summed up
                 # into one row
-                last_total_sum, = [data_totals["TotalBytes"].sum()]
+                (last_total_sum,) = [data_totals["TotalBytes"].sum()]
                 data_totals_t.loc[len(data_totals_t)] = last_total_sum
 
                 if self.verbose:
-                    cprint(f"Total Protocol Bytes\n{data_totals_t}", self.alert_level)
+                    cprint(f"Total Protocol Bytes\n{data_totals_t}", self.alert_color)
                     print()
 
                 # Check to see if we breach our threshold
-                if self.alert_level == "green":
+                if self.alert_color == "green":
                     # Calculate the percentage change between the latest and the
                     # last entry
                     perc_change_df = data_totals_t.pct_change() * 100
@@ -339,74 +340,79 @@ class StaDdos:
                     new_byte_perc = new_byte_perc.iloc[0]
 
                     if new_byte_perc >= self.dos_threshold:
-                        self.alert_level = "yellow"
+                        self.alert_color = "yellow"
                         self.threshold_baseline_bytes = last_total_sum
-                        self.alert_number = 4
+                        self.alert_level = 4
                         print_banner(
                             f"Status Yellow: Protocol Byte percentage change: {new_byte_perc}% >= "
                             f"Protocol Byte percentage threshold: {self.dos_threshold}%\n"
                             f"Threshold baseline bytes: {last_total_sum}\n"
-                            f"Warning level set to: {self.alert_level}",
-                            self.alert_level,
+                            f"Alert level: '{self.alert_level}'",
+                            self.alert_color,
                         )
                     else:
                         cprint(
-                            f"Status Green: Protocol Byte percentage change: {new_byte_perc}% < Byte percentage threshold "
-                            f"{self.dos_threshold}%",
-                            self.alert_level,
+                            f"All good: Protocol Byte percentage change: {new_byte_perc}% < Byte percentage threshold "
+                            f"{self.dos_threshold}%\n"
+                            f"Alert level: '{self.alert_level}'",
+                            self.alert_color,
                         )
 
-                elif self.alert_level == "yellow":
+                elif self.alert_color == "yellow":
                     # ignore percentage change - look for 5 repeats below the
                     # threshold_baseline_bytes
                     if last_total_sum < self.threshold_baseline_bytes:
-                        self.alert_number -= 1
+                        self.alert_level -= 1
                     elif last_total_sum > self.threshold_baseline_bytes:
-                        self.alert_number += 1
-                    if self.alert_number == 0:
+                        self.alert_level += 1
+                    if self.alert_level == 0:
                         # todo: make this a dict
-                        self.alert_level = "green"
-                        self.alert_number = 4
+                        self.alert_color = "green"
+                        self.alert_level = 4
                         print_banner(
-                            f"Threshold Warning over, last total byte count: {last_total_sum}, threshold baseline bytes reset",
-                            self.alert_level,
+                            f"Threshold Warning over, last total byte count: {last_total_sum}, "
+                            f"threshold baseline bytes reset, Alert level: '{self.alert_level}'",
+                            self.alert_color,
                         )
-                    elif self.alert_number >= 9:
-                        self.alert_level = "red"
+                    elif self.alert_level >= 9:
+                        self.alert_color = "red"
                         print_banner(
-                            "Status Red: 5 consecutive increases beyond warning level, moving to red...",
-                            self.alert_level,
+                            f"Status Red: 5 consecutive increases beyond warning level, "
+                            f"Alert level: '{self.alert_level}'",
+                            self.alert_color,
                         )
                     else:
                         cprint(
                             f"Status unchanged: Last total byte count: {last_total_sum}, "
                             f"threshold baseline bytes: {self.threshold_baseline_bytes}, "
-                            f"Warning level: {self.alert_number}",
-                            self.alert_level,
+                            f"Alert level: '{self.alert_level}'",
+                            self.alert_color,
                         )
 
-                elif self.alert_level == "red":
+                elif self.alert_color == "red":
                     # We're in highest category of alert - can we move to yellow?
                     if last_total_sum < self.threshold_baseline_bytes:
-                        self.alert_number -= 1
+                        self.alert_level -= 1
                     elif last_total_sum >= self.threshold_baseline_bytes:
-                        self.alert_number += 1
-                        self.alert_number = min(self.alert_number, 10)
+                        self.alert_level += 1
+                        self.alert_level = min(self.alert_level, 10)
 
-                    if self.alert_number >= 4:
+                    if self.alert_level <= 4:
                         # Red alert over - reset to yellow (todo: make this a
                         # dict)
-                        self.alert_level = "yellow"
+                        self.alert_color = "yellow"
                         print_banner(
                             f"Threshold Alert over, Last total {last_total_sum}, "
-                            f"threshold baseline bytes {self.threshold_baseline_bytes}, moving to yellow...",
-                            self.alert_level,
+                            f"Threshold baseline bytes {self.threshold_baseline_bytes}, "
+                            f"Alert level: '{self.alert_level}'",
+                            self.alert_color,
                         )
                     else:
                         cprint(
                             f"Status unchanged: Last total {last_total_sum}, "
-                            f"threshold baseline bytes {self.threshold_baseline_bytes}, Alert number {self.alert_number}",
-                            self.alert_level,
+                            f"threshold baseline bytes {self.threshold_baseline_bytes}, "
+                            f"Alert level: '{self.alert_level}'",
+                            self.alert_color,
                         )
 
                 time.sleep(self.dos_flow_repeat_time)
