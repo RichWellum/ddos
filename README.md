@@ -12,6 +12,51 @@ Key objectives:
 4. Queries SMCs using APIs, so not intrusive on FCs and also has access to all FCs - hence better at detecting DDOS attacks across entire infra-structure.
 5. Uses Active flows so reduces noise or data that occurred in the past.
 
+## Basic premise:
+
+This is a two step tool.
+
+### Step1. Run the tool with a --inspect switch.
+
+In this mode the tool will continuously query for the total byte count of a
+particular protocol profile, and creating a mean value seen. This mean value is
+then used in Step 2 to determine potential maliscious rates of change. The user
+can run this as long as needed, the longer the better is the assumption.
+
+### Step 2. Run the tool without --inspect mode
+
+This tool will continually query an SMC for flows of a particular protocol and
+application profile configured by the user, over the time period now - five
+minutes.
+
+The baseline is set by the config param ``dos_baseline``. Populate this with
+the results of running this profile in ``--inspect`` mode. If set to ``0`` - then
+sta_ddos will attempt to form a dynamic baseline from the previous 5 queries.
+This may result in less accurate alerts..
+
+The flows are aggregated by byte count and stored in a Pandas Series. Each new
+total is compared to the one below. If a percentage change above the configured
+threshold value is detected, then the tool enters the alerting protocol.
+
+### The alerting protocol:
+
+There are three levels of alerting:
+
+1. Green - all is good, nothing to report
+2. Yellow - a threshold breach has been detected
+3. Red - an Alert warning has been breached.
+
+When the threshold is first breached, then we enter the Yellow Warning level.
+The Baseline Threshold Value is stored.
+
+To get out of this level, we will have to detect 5 successive lower total byte
+counts than the baseline Threshold value. If that occurs we go back to Green
+level and the Baseline Threshold will start again.
+
+However if in Yellow Warning level we get 5 successive higher than the baseline
+readings then we enter: Red Alert status. There will be stay until we get 5
+readings below the baseline threshold level.
+
 ## Typical DDOS Attack Vector Header
 
 ![alt text](images/ddos_headers.png "DDOS Header")
@@ -60,7 +105,7 @@ enabled: true
 dos_flow_time: 360 # Look at 5m sliding window (enough time to gather from FCs)
 dos_flow_repeat_time: 5 # Query each 60s
 dos_threshold: 5 # % spike causes a table entry and warning
-dos_spike: 2 # int consecutive dos_thresholds is an alert
+dos_baseline: 25511156 # Baseline byte value - set to 0 if -i not run
 protocol: [] # Change protocols here (1 = ICMP) etc.
 applications: { includes: [37, 44, 48, 27], excludes: [] } # Change applications here (44 = SSH) etc.
 ```

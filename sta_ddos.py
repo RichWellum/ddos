@@ -22,6 +22,11 @@ This tool will continually query an SMC for flows of a particular protocol and
 application profile configured by the user, over the time period now - five
 minutes.
 
+The baseline is set by the config param ``dos_baseline``. Populate this with
+the results of running this profile in '--inspect' mode. If set to '0' - then
+sta_ddos will attempt to form a dynamic baseline from the previous 5 queries.
+This may result in less accurate alerts..
+
 The flows are aggregated by byte count and stored in a Pandas Series. Each new
 total is compared to the one below. If a percentage change above the configured
 threshold value is detected, then the tool enters the alerting protocol.
@@ -206,17 +211,28 @@ class StaDdos:
     def dos_attack_vector(self):
         """Sequence a dDOS attack vector."""
 
-        banner = (
-            f"DDOS ATTACK VECTOR\n"
-            f"Host: {self.host}\n"
-            f"Tenant: {self.tenant}\n"
-            f"Flow time queried: {self.dos_flow_time}s\n"
-            f"Repeat every: {self.dos_flow_repeat_time}s\n"
-            f"Percentage Warning Threshold: {self.dos_threshold}%\n"
-            f"Configured baseline threshold: {self.dos_baseline}\n"
-            f"Protocol IDs: {self.protocol}\n"
-            f"Application IDs: {self.applications}"
-        )
+        if not self.inspect:
+            banner = (
+                f"DDOS ATTACK VECTOR\n"
+                f"Host: {self.host}\n"
+                f"Tenant: {self.tenant}\n"
+                f"Flow time queried: {self.dos_flow_time}s\n"
+                f"Repeat every: {self.dos_flow_repeat_time}s\n"
+                f"Percentage Warning Threshold: {self.dos_threshold}%\n"
+                f"Configured baseline threshold: {self.dos_baseline}\n"
+                f"Protocol IDs: {self.protocol}\n"
+                f"Application IDs: {self.applications}"
+            )
+        else:
+            banner = (
+                f"DDOS INSPECTION\n"
+                f"Host: {self.host}\n"
+                f"Tenant: {self.tenant}\n"
+                f"Flow time queried: {self.dos_flow_time}s\n"
+                f"Repeat every: {self.dos_flow_repeat_time}s\n"
+                f"Protocol IDs: {self.protocol}\n"
+                f"Application IDs: {self.applications}"
+            )
 
         print_banner(
             banner, "white", ["bold"],
@@ -464,7 +480,7 @@ class StaDdos:
                             f"threshold baseline bytes reset, Alert level: '{self.alert_level}'",
                             self.alert_color,
                         )
-                    elif self.alert_level > 9:
+                    elif self.alert_level == 9:
                         self.alert_color = "red"
                         print_banner(
                             f"Status Red:\n5 consecutive increases beyond warning level\n"
