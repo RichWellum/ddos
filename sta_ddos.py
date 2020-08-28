@@ -7,6 +7,17 @@ Requires a yaml configuration file, see README and example config.yaml
 
 Basic premise:
 
+This is a two step tool.
+
+Step1. Run the tool with a --inspect switch.
+
+In this mode the tool will continuously query for the total byte count of a
+particular protocol profile, and creating a mean value seen. This mean value is
+then used in Step 2 to determine potential maliscious rates of change. The user
+can run this as long as needed, the longer the better is the assumption.
+
+Step 2. Run the tool without --inspect mode
+
 This tool will continually query an SMC for flows of a particular protocol and
 application profile configured by the user, over the time period now - five
 minutes.
@@ -33,6 +44,11 @@ level and the Baseline Threshold will start again.
 However if in Yellow Warning level we get 5 successive higher than the baseline
 readings then we enter: Red Alert status. There will be stay until we get 5
 readings below the baseline threshold level.
+
+todo:
+
+1. Change alert levels to start at 0
+2. Add inspect mode that figures out a baseline for a protocol profile
 """
 import argparse
 import datetime
@@ -72,9 +88,34 @@ def parse_args():
     #     "-l", "--log_output", type=str, default="Local", help="Optional log location, like '/tmp'",
     # )
     parser.add_argument(
+        "-i",
+        "--inspect",
+        action="store_true",
+        help="inspect mode will watch a protocol profile and help form a baseline value",
+    )
+    parser.add_argument(
         "-v", "--verbose", action="store_true", help="over-ride verbosity",
     )
     return parser.parse_args()
+
+
+def status_change(new, baseline):
+    if new > baseline:
+        status = "Byte count higher than baseline"
+    elif new < baseline:
+        status = "Byte count lower than baseline"
+    else:
+        status = "Byte count unchanged"
+    return status
+
+
+def get_percent_change(current, baseline):
+    if current == baseline:
+        return 0
+    try:
+        return ((current - baseline) / baseline) * 100.0
+    except ZeroDivisionError:
+        return float("inf")
 
 
 class StaDdos:
@@ -92,14 +133,15 @@ class StaDdos:
         self.password = ""
         self.config = args.config
         self.verbose = args.verbose
+        self.inspect = args.inspect
 
         # Alert level indicators
-        # green = all good
-        # yellow = warning mode, threshold was met
-        # red - alert mode, warning mode was active for a long time
+        # green = all good (0-4)
+        # yellow = warning mode, threshold was met (5-9)
+        # red - alert mode, warning mode was active for a long time (10)
         self.alert_color = "green"
         self.threshold_baseline_bytes = 0
-        self.alert_level = 4
+        self.alert_level = 0
 
         log_dt = datetime.datetime.utcnow()
         log_dt = log_dt.strftime("%Y-%m-%d-%H-%M-%S")
@@ -151,6 +193,7 @@ class StaDdos:
         self.dos_flow_time = self.config["dos_attack"]["dos_flow_time"]
         self.dos_flow_repeat_time = self.config["dos_attack"]["dos_flow_repeat_time"]
         self.dos_threshold = self.config["dos_attack"]["dos_threshold"]
+        self.dos_baseline = self.config["dos_attack"]["dos_baseline"]
         self.protocol = self.config["dos_attack"]["protocol"]
         self.applications = self.config["dos_attack"]["applications"]
 
@@ -170,6 +213,7 @@ class StaDdos:
             f"Flow time queried: {self.dos_flow_time}s\n"
             f"Repeat every: {self.dos_flow_repeat_time}s\n"
             f"Percentage Warning Threshold: {self.dos_threshold}%\n"
+            f"Configured baseline threshold: {self.dos_baseline}\n"
             f"Alert Threshold: Protocol IDs: {self.protocol}\n"
             f"Application IDs: {self.applications}"
         )
@@ -182,6 +226,8 @@ class StaDdos:
         data_totals = pd.DataFrame(columns=["id"])
         data_totals_t = pd.DataFrame(columns=["AllBytes"])
         perc_change_df = pd.DataFrame(columns=["Byte_change"])
+
+        inspect_loop_num = 0
 
         while True:
             # Login and create a session
@@ -224,7 +270,7 @@ class StaDdos:
                 },
             }
             cprint(
-                f"\n{self.dos_flow_time}s probe -- protocol({self.protocol}), "
+                f"\n{self.dos_flow_time}s/{self.dos_flow_repeat_time}s probe -- protocol({self.protocol}), "
                 f"applications({self.applications}) flow request to: {self.host}",
                 self.alert_color,
             )
@@ -268,8 +314,7 @@ class StaDdos:
                 # Set the URL to check the search status
                 url = f"https://{self.host}/sw-reporting/v2/tenants/{self.tenant}/flows/queries/{search['id']}"
 
-                # While search status is not complete, check the status every
-                # 5s
+                # While search status incomplete, check the status every 5s
                 failures = 0
                 while search["percentComplete"] != 100.0:
                     time.sleep(5)
@@ -292,14 +337,17 @@ class StaDdos:
                 res = api_session.request("GET", url, verify=False)
                 results = json.loads(res.content)["data"]
 
+                # Normalize the data - remove flows layer
                 new_data_active = pd.json_normalize(results, record_path="flows")
+
+                # Empty results, unlikely - but just wait and try again
                 if new_data_active.empty:
                     cprint("No new data", "magenta")
                     time.sleep(self.dos_flow_repeat_time)
                     print()
                     continue
 
-                # Filter out some fields
+                # Keep only these values
                 new_data_active = new_data_active[
                     [
                         "id",
@@ -326,70 +374,110 @@ class StaDdos:
                     cprint(f"Total Protocol Bytes\n{data_totals_t}", self.alert_color)
                     print()
 
-                # Check to see if we breach our threshold
-                if self.alert_color == "green":
-                    # Calculate the percentage change between the latest and the
-                    # last entry
-                    perc_change_df = data_totals_t.pct_change() * 100
-                    perc_change_df.columns = [
-                        "Byte_change",
-                    ]
-                    perc_change_df = perc_change_df.round(2)
-                    perc_change_df["Byte_change"] = perc_change_df["Byte_change"].fillna(0)
-                    new_byte_perc = perc_change_df.tail(1)["Byte_change"]
-                    new_byte_perc = new_byte_perc.iloc[0]
+                #
+                # Inspection mode
+                #
+                if self.inspect:
+                    inspect_loop_num += 1
+                    if self.verbose:
+                        print(data_totals_t)
+                    print(
+                        f"Request {inspect_loop_num}: New Total Bytes: {last_total_sum}, "
+                        f"Average Byte Count: {data_totals_t['AllBytes'].mean().astype(int)}"
+                    )
+                    time.sleep(self.dos_flow_repeat_time)
+                    continue
+
+                #
+                # Alerting mode
+                #
+                # Check to see if we breach our thresholds
+                if self.alert_level <= 4:
+                    self.alert_color = "green"
+                    # If self.dos_baseline is set, use that as the baseline byte
+                    # amount, of it is not set calculate it continuously from
+                    # requests in the alert request loop.
+                    if self.dos_baseline != 0:
+                        # Percentage change between the last recorded total and
+                        # the configured baseline
+                        new_byte_perc = round(get_percent_change(last_total_sum, self.dos_baseline))
+                        if self.verbose:
+                            print(
+                                f"DEBUG configured baseline: {last_total_sum}, {self.dos_baseline}, {new_byte_perc}"
+                            )
+                    else:
+                        # Calculate the percentage change between the latest and the
+                        # last entry. This is way more subject to spurious changes.
+                        perc_change_df = data_totals_t.pct_change() * 100
+                        perc_change_df.columns = [
+                            "Byte_change",
+                        ]
+                        perc_change_df = perc_change_df.round(2)
+                        perc_change_df["Byte_change"] = perc_change_df["Byte_change"].fillna(0)
+                        new_byte_perc = perc_change_df.tail(1)["Byte_change"]
+                        new_byte_perc = new_byte_perc.iloc[0]
+                        print(f"DEBUG calculated dynamic baseline: {new_byte_perc}")
 
                     if new_byte_perc >= self.dos_threshold:
                         self.alert_color = "yellow"
-                        self.threshold_baseline_bytes = last_total_sum
-                        self.alert_level = 4
+                        if self.dos_baseline == 0:
+                            self.threshold_baseline_bytes = last_total_sum
+                        else:
+                            self.threshold_baseline_bytes = self.dos_baseline
+
+                        # Threshold warning - set to yellow/5
+                        self.alert_level = 5
                         print_banner(
-                            f"Status Yellow: Protocol Byte percentage change: {new_byte_perc}% >= "
+                            f"Status Yellow:\nProtocol Byte percentage change: {new_byte_perc}% >= "
                             f"Protocol Byte percentage threshold: {self.dos_threshold}%\n"
-                            f"Threshold baseline bytes: {last_total_sum}\n"
+                            f"Threshold baseline bytes: {self.threshold_baseline_bytes}\n"
                             f"Alert level: '{self.alert_level}'",
                             self.alert_color,
                         )
                     else:
+                        self.alert_level -= 1
+                        self.alert_level = min(self.alert_level, 0)
                         cprint(
-                            f"All good: Protocol Byte percentage change: {new_byte_perc}% < Byte percentage threshold "
+                            f"All good: new total: {last_total_sum}, baseline: {self.dos_baseline}, "
+                            f"Protocol Byte percentage change: {new_byte_perc}% < Byte percentage threshold "
                             f"{self.dos_threshold}%\n"
                             f"Alert level: '{self.alert_level}'",
                             self.alert_color,
                         )
 
-                elif self.alert_color == "yellow":
+                elif self.alert_level > 4 and self.alert_level < 10:
+                    # Yellow alert - starts at 5
                     # ignore percentage change - look for 5 repeats below the
                     # threshold_baseline_bytes
                     if last_total_sum < self.threshold_baseline_bytes:
                         self.alert_level -= 1
                     elif last_total_sum > self.threshold_baseline_bytes:
                         self.alert_level += 1
-                    if self.alert_level == 0:
+                    if self.alert_level <= 4:
                         # todo: make this a dict
+                        # self.alert_level = 0
                         self.alert_color = "green"
-                        self.alert_level = 4
                         print_banner(
                             f"Threshold Warning over, last total byte count: {last_total_sum}, "
                             f"threshold baseline bytes reset, Alert level: '{self.alert_level}'",
                             self.alert_color,
                         )
-                    elif self.alert_level >= 9:
+                    elif self.alert_level > 9:
                         self.alert_color = "red"
                         print_banner(
-                            f"Status Red: 5 consecutive increases beyond warning level, "
+                            f"Status Red:\n5 consecutive increases beyond warning level\n"
                             f"Alert level: '{self.alert_level}'",
                             self.alert_color,
                         )
                     else:
                         cprint(
-                            f"Status unchanged: Last total byte count: {last_total_sum}, "
+                            f"{status_change(last_total_sum, self.threshold_baseline_bytes)}: Last total byte count: {last_total_sum}, "
                             f"threshold baseline bytes: {self.threshold_baseline_bytes}, "
                             f"Alert level: '{self.alert_level}'",
                             self.alert_color,
                         )
 
-                elif self.alert_color == "red":
+                elif self.alert_level > 9:
                     # We're in highest category of alert - can we move to yellow?
                     if last_total_sum < self.threshold_baseline_bytes:
                         self.alert_level -= 1
@@ -409,7 +497,7 @@ class StaDdos:
                         )
                     else:
                         cprint(
-                            f"Status unchanged: Last total {last_total_sum}, "
+                            f"{status_change(last_total_sum, self.threshold_baseline_bytes)}: Last total {last_total_sum}, "
                             f"threshold baseline bytes {self.threshold_baseline_bytes}, "
                             f"Alert level: '{self.alert_level}'",
                             self.alert_color,
