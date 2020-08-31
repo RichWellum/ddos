@@ -144,12 +144,13 @@ class StaDdos:
         self.inspect = args.inspect
 
         # Alert level indicators
-        # green = all good (0-4)
+        # green = all good (0)
         # yellow = warning mode, threshold was met (5-9)
         # red - alert mode, warning mode was active for a long time (10)
         self.alert_color = "green"
         self.alert_level = 0
         self.inspect_ave_bc = 0
+        self.dos_baseline = 0
 
         log_dt = datetime.datetime.utcnow()
         log_dt = log_dt.strftime("%Y-%m-%d-%H-%M-%S")
@@ -424,7 +425,7 @@ class StaDdos:
                 #
 
                 #
-                # GREEN 0-4
+                # GREEN '0'
                 #
                 if self.alert_color == "green":
                     # If self.dos_baseline is set, use that as the baseline byte
@@ -459,18 +460,17 @@ class StaDdos:
                         # Percentage change was greater than the configured
                         # threshold baseline
                         self.alert_color = "yellow"
-                        self.alert_level = 5
+                        self.alert_level = 5  # Highest level of Yellow
 
                         print_banner(
                             f"Status Yellow:\nProtocol Byte percentage change: {new_byte_perc}% >= "
                             f"Byte percentage threshold: {self.dos_threshold}%\n"
+                            f"New bytes: {last_total_sum}\n"
                             f"Threshold baseline bytes: {self.dos_baseline}\n"
                             f"Alert level: '{self.alert_level}'",
                             self.alert_color,
                         )
                     else:
-                        if self.alert_level > 0:
-                            self.alert_level -= 1
                         cprint(
                             f"{status_change(last_total_sum, self.dos_baseline)}, "
                             f"Byte percentage change: {new_byte_perc}% < Byte percentage threshold "
@@ -480,7 +480,7 @@ class StaDdos:
                         )
 
                 #
-                # YELLOW 4-9
+                # YELLOW 1-5
                 #
                 elif self.alert_color == "yellow":
                     # Look for 5 repeats below the dos_baseline
@@ -490,8 +490,9 @@ class StaDdos:
                         self.alert_level += 1
 
                     # Check if status should change to green or red
-                    if self.alert_level == 4:
-                        # self.alert_level = 0
+                    if self.alert_level < 1:
+                        # Back to Green status
+                        self.alert_level = 0  # Probably not needed
                         self.alert_color = "green"
                         print_banner(
                             f"Threshold Warning over, last total byte count: {last_total_sum}, "
@@ -499,6 +500,7 @@ class StaDdos:
                             self.alert_color,
                         )
                     elif self.alert_level == 10:
+                        # Up to Red status
                         self.alert_color = "red"
                         print_banner(
                             f"Status Red:\n5 consecutive increases beyond warning level\n"
@@ -506,25 +508,26 @@ class StaDdos:
                             self.alert_color,
                         )
                     else:
+                        # Within the Yellow range and staying Yellow - just report
                         cprint(
-                            f"{status_change(last_total_sum, self.dos_baseline)}: Last total byte count: {last_total_sum}, "
-                            f"threshold baseline bytes: {self.dos_baseline}, "
+                            f"{status_change(last_total_sum, self.dos_baseline)}\n"
                             f"Alert level: '{self.alert_level}'",
                             self.alert_color,
                         )
 
                 #
-                # RED 10-14
+                # RED 10
                 #
                 elif self.alert_color == "red":
-                    # We're in highest category of alert - can we move to yellow?
+                    # We're in highest category of alert - can we move to
+                    # yellow by dropping below 5
                     if last_total_sum < self.dos_baseline:
                         self.alert_level -= 1
                     elif last_total_sum >= self.dos_baseline:
                         self.alert_level += 1
-                        self.alert_level = min(self.alert_level, 14)
+                        self.alert_level = min(self.alert_level, 10)
 
-                    if self.alert_level == 9:
+                    if self.alert_level < 10:
                         # Red alert over - reset to yellow
                         self.alert_color = "yellow"
                         print_banner(
@@ -534,8 +537,9 @@ class StaDdos:
                             self.alert_color,
                         )
                     else:
+                        # Within the Red range and staying Red - just report
                         cprint(
-                            f"{status_change(last_total_sum, self.dos_baseline)} "
+                            f"{status_change(last_total_sum, self.dos_baseline)}\n"
                             f"Alert level: '{self.alert_level}'",
                             self.alert_color,
                         )
