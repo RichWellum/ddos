@@ -503,7 +503,7 @@ class StaDdos:
                         # Up to Red status
                         self.alert_color = "red"
                         print_banner(
-                            f"Status Red:\n5 consecutive increases beyond warning level\n"
+                            f"Status Red:\n"
                             f"Alert level: '{self.alert_level}'",
                             self.alert_color,
                         )
