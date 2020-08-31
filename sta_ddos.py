@@ -467,6 +467,7 @@ class StaDdos:
                             f"Byte percentage threshold: {self.dos_threshold}%\n"
                             f"New bytes: {last_total_sum}\n"
                             f"Threshold baseline bytes: {self.dos_baseline}\n"
+                            f"Current mean bytes: {self.inspect_ave_bc}\n"
                             f"Alert level: '{self.alert_level}'",
                             self.alert_color,
                         )
@@ -475,6 +476,7 @@ class StaDdos:
                             f"{status_change(last_total_sum, self.dos_baseline)}\n"
                             f"Byte percentage change: {new_byte_perc}% < Byte percentage threshold "
                             f"{self.dos_threshold}%\n"
+                            f"Current mean bytes: {self.inspect_ave_bc}\n"
                             f"Alert level: '{self.alert_level}'",
                             self.alert_color,
                         )
@@ -504,6 +506,7 @@ class StaDdos:
                         self.alert_color = "red"
                         print_banner(
                             f"Status Red:\n"
+                            f"Current mean bytes: {self.inspect_ave_bc}\n"
                             f"Alert level: '{self.alert_level}'",
                             self.alert_color,
                         )
@@ -511,6 +514,7 @@ class StaDdos:
                         # Within the Yellow range and staying Yellow - just report
                         cprint(
                             f"{status_change(last_total_sum, self.dos_baseline)}\n"
+                            f"Current mean bytes: {self.inspect_ave_bc}\n"
                             f"Alert level: '{self.alert_level}'",
                             self.alert_color,
                         )
@@ -533,6 +537,7 @@ class StaDdos:
                         print_banner(
                             f"Threshold Alert over, Last total {last_total_sum}, "
                             f"Threshold baseline bytes {self.dos_baseline}, "
+                            f"Current mean bytes: {self.inspect_ave_bc}\n"
                             f"Alert level: '{self.alert_level}'",
                             self.alert_color,
                         )
@@ -540,6 +545,7 @@ class StaDdos:
                         # Within the Red range and staying Red - just report
                         cprint(
                             f"{status_change(last_total_sum, self.dos_baseline)}\n"
+                            f"Current mean bytes: {self.inspect_ave_bc}\n"
                             f"Alert level: '{self.alert_level}'",
                             self.alert_color,
                         )

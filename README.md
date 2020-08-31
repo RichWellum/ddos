@@ -38,13 +38,16 @@ The flows are aggregated by byte count and stored in a Pandas Series. Each new
 total is compared to the one below. If a percentage change above the configured
 threshold value is detected, then the tool enters the alerting protocol.
 
+If the tool is stopped, then the average byte count for that protocol is also
+displayed. This can be used as an alternative to running in inspect mode.
+
 ### The alerting protocol
 
 There are three levels of alerting:
 
 1. Green - all is good, nothing to report
-2. Yellow - a threshold breach has been detected
-3. Red - an Alert warning has been breached.
+2. Yellow - a protocol byte increase above the threshold has been detected
+3. Red - protocol byte count has stayed above the threshold
 
 When the threshold is first breached, then we enter the Yellow Warning level.
 The Baseline Threshold Value is stored.
