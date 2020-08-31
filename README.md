@@ -12,11 +12,11 @@ Key objectives:
 4. Queries SMCs using APIs, so not intrusive on FCs and also has access to all FCs - hence better at detecting DDOS attacks across entire infra-structure.
 5. Uses Active flows so reduces noise or data that occurred in the past.
 
-## Basic premise:
+## Basic premise
 
 This is a two step tool.
 
-### Step1. Run the tool with a --inspect switch.
+### Step1. Run the tool with a --inspect switch
 
 In this mode the tool will continuously query for the total byte count of a
 particular protocol profile, and creating a mean value seen. This mean value is
@@ -38,7 +38,7 @@ The flows are aggregated by byte count and stored in a Pandas Series. Each new
 total is compared to the one below. If a percentage change above the configured
 threshold value is detected, then the tool enters the alerting protocol.
 
-### The alerting protocol:
+### The alerting protocol
 
 There are three levels of alerting:
 
