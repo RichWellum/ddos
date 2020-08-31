@@ -185,7 +185,6 @@ dos_attack:
     dos_flow_time: 360 # Look at 5m sliding window (enough time to gather from FCs)
     dos_flow_repeat_time: 60 # Query each 60s
     dos_threshold: 15 # % spike causes a table entry and warning
-    dos_spike: 5 # int consecutive dos_thresholds is an alert
     protocol: [] # Change protocols here (1 = ICMP) etc
     applications: { includes: [37, 44, 48, 27], excludes: [] } # Change Apps here
 ```
