@@ -19,6 +19,6 @@ dos_attack:
     dos_flow_repeat_time: 20 # Query each 60s
     dos_threshold: 10 # % spike causes a table entry and warning
     dos_spike: 3 # int consecutive dos_thresholds is an alert
-    dos_baseline: 8646665 # Baseline protocol value, see --inspect
+    dos_baseline: 10082302 # Baseline protocol value, see --inspect
     protocol: [1] # Change protocols here (1 = ICMP) etc
     applications: { includes: [], excludes: [] }

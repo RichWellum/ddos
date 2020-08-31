@@ -472,7 +472,7 @@ class StaDdos:
                         )
                     else:
                         cprint(
-                            f"{status_change(last_total_sum, self.dos_baseline)}, "
+                            f"{status_change(last_total_sum, self.dos_baseline)}\n"
                             f"Byte percentage change: {new_byte_perc}% < Byte percentage threshold "
                             f"{self.dos_threshold}%\n"
                             f"Alert level: '{self.alert_level}'",
@@ -520,7 +520,7 @@ class StaDdos:
                 #
                 elif self.alert_color == "red":
                     # We're in highest category of alert - can we move to
-                    # yellow by dropping below 5
+                    # yellow by dropping below 5?
                     if last_total_sum < self.dos_baseline:
                         self.alert_level -= 1
                     elif last_total_sum >= self.dos_baseline:
