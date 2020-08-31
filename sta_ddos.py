@@ -74,6 +74,21 @@ from termcolor import cprint
 urllib3.disable_warnings()
 
 
+def size(bytes_number):
+    """Convert bytes into something readable."""
+    tags = ["Bytes", "Kilobytes", "Megabytes", "Gigabytes", "Terabytes"]
+
+    tag_cnt = 0
+    double_bytes = bytes_number
+
+    while tag_cnt < len(tags) and bytes_number >= 1024:
+        double_bytes = bytes_number / 1024.0
+        tag_cnt += 1
+        bytes_number = bytes_number / 1024
+
+    return str(round(double_bytes, 2)) + " " + tags[tag_cnt]
+
+
 def print_banner(description, color, attributes=None):
     """Display a bannerized print."""
     print()
@@ -108,9 +123,9 @@ def parse_args():
 def status_change(new, baseline):
     """Report on a status change."""
     if new > baseline:
-        status = f"Byte count: {new} is higher than baseline: {baseline}"
+        status = f"Byte count: {size(new)} is higher than baseline: {size(baseline)}"
     elif new < baseline:
-        status = f"Byte count: {new} lower than baseline: {baseline}"
+        status = f"Byte count: {size(new)} lower than baseline: {size(baseline)}"
     else:
         status = "Byte count unchanged"
     return status
@@ -169,7 +184,10 @@ class StaDdos:
 
     def signal_handler(self, sig, frame):
         """Catch a CTRL-C for inspect results."""
-        cprint(f"\nFinal average byte count ==> {self.inspect_ave_bc}", "green")
+        cprint(
+            f"\nFinal mean byte count ==> {self.inspect_ave_bc}, {size(self.inspect_ave_bc)}",
+            "green",
+        )
         sys.exit(0)
 
     def run_queries(self):
@@ -231,7 +249,7 @@ class StaDdos:
                 f"Flow time queried: {self.dos_flow_time}s\n"
                 f"Repeat every: {self.dos_flow_repeat_time}s\n"
                 f"Percentage Warning Threshold: {self.dos_threshold}%\n"
-                f"Configured baseline threshold: {self.dos_baseline}\n"
+                f"Configured Baseline Threshold: {size(self.dos_baseline)}\n"
                 f"Protocol IDs: {self.protocol}\n"
                 f"Application IDs: {self.applications}"
             )
@@ -247,7 +265,7 @@ class StaDdos:
             )
 
         print_banner(
-            banner, "white", ["bold"],
+            banner, "magenta", ["bold"],
         )
 
         # Setup Pandas Series
@@ -413,9 +431,9 @@ class StaDdos:
                     if self.verbose:
                         print(data_totals_t)
                     cprint(f"Request {inspect_loop_num}: ", "magenta")
-                    cprint(f"New Total Bytes: {last_total_sum}", "yellow")
+                    cprint(f"New Total Bytes: {size(last_total_sum)}", "yellow")
                     cprint(
-                        f"Average Byte Count: {self.inspect_ave_bc}", "blue",
+                        f"Average Byte Count: {size(self.inspect_ave_bc)}", "blue",
                     )
                     time.sleep(self.dos_flow_repeat_time)
                     continue
@@ -437,7 +455,7 @@ class StaDdos:
                         new_byte_perc = round(get_percent_change(last_total_sum, self.dos_baseline))
                         if self.verbose:
                             print(
-                                f"DEBUG configured baseline: {last_total_sum}, {self.dos_baseline}, {new_byte_perc}"
+                                f"DEBUG configured baseline: {size(last_total_sum)}, {size(self.dos_baseline)}, {new_byte_perc}"
                             )
                     else:
                         # Calculate the percentage change between the latest and the
@@ -450,7 +468,6 @@ class StaDdos:
                         perc_change_df["Byte_change"] = perc_change_df["Byte_change"].fillna(0)
                         new_byte_perc = perc_change_df.tail(1)["Byte_change"]
                         new_byte_perc = new_byte_perc.iloc[0]
-                        print(f"DEBUG calculated dynamic baseline: {new_byte_perc}")
 
                         # dos baseline not configured so attempt to figure
                         # it out based on all the data we have
@@ -465,10 +482,11 @@ class StaDdos:
                         print_banner(
                             f"Status Yellow:\nProtocol Byte percentage change: {new_byte_perc}% >= "
                             f"Byte percentage threshold: {self.dos_threshold}%\n"
-                            f"New bytes: {last_total_sum}\n"
-                            f"Threshold baseline bytes: {self.dos_baseline}\n"
-                            f"Current mean bytes: {self.inspect_ave_bc}\n"
-                            f"Alert level: '{self.alert_level}'",
+                            f"New bytes: {size(last_total_sum)}\n"
+                            f"Threshold baseline bytes: {size(self.dos_baseline)}\n"
+                            f"Current mean bytes: {size(self.inspect_ave_bc)}\n"
+                            f"Alert level: '{self.alert_level}'\n"
+                            f"Status level: '{self.alert_color}'",
                             self.alert_color,
                         )
                     else:
@@ -476,8 +494,9 @@ class StaDdos:
                             f"{status_change(last_total_sum, self.dos_baseline)}\n"
                             f"Byte percentage change: {new_byte_perc}% < Byte percentage threshold "
                             f"{self.dos_threshold}%\n"
-                            f"Current mean bytes: {self.inspect_ave_bc}\n"
-                            f"Alert level: '{self.alert_level}'",
+                            f"Current mean bytes: {size(self.inspect_ave_bc)}\n"
+                            f"Alert level: '{self.alert_level}'\n"
+                            f"Status level: '{self.alert_color}'",
                             self.alert_color,
                         )
 
@@ -497,8 +516,8 @@ class StaDdos:
                         self.alert_level = 0  # Probably not needed
                         self.alert_color = "green"
                         print_banner(
-                            f"Threshold Warning over, last total byte count: {last_total_sum}, "
-                            f"threshold baseline bytes reset, Alert level: '{self.alert_level}'",
+                            f"Threshold Warning over\nLast total byte count: {size(last_total_sum)}\n,"
+                            f"Threshold baseline bytes reset\nAlert level: '{self.alert_level}'",
                             self.alert_color,
                         )
                     elif self.alert_level == 10:
@@ -506,16 +525,18 @@ class StaDdos:
                         self.alert_color = "red"
                         print_banner(
                             f"Status Red:\n"
-                            f"Current mean bytes: {self.inspect_ave_bc}\n"
-                            f"Alert level: '{self.alert_level}'",
+                            f"Current mean bytes: {size(self.inspect_ave_bc)}\n"
+                            f"Alert level: '{self.alert_level}'\n"
+                            f"Status level: '{self.alert_color}'",
                             self.alert_color,
                         )
                     else:
                         # Within the Yellow range and staying Yellow - just report
                         cprint(
                             f"{status_change(last_total_sum, self.dos_baseline)}\n"
-                            f"Current mean bytes: {self.inspect_ave_bc}\n"
-                            f"Alert level: '{self.alert_level}'",
+                            f"Current mean bytes: {size(self.inspect_ave_bc)}\n"
+                            f"Alert level: '{self.alert_level}'\n"
+                            f"Status level: '{self.alert_color}'",
                             self.alert_color,
                         )
 
@@ -536,17 +557,19 @@ class StaDdos:
                         self.alert_color = "yellow"
                         print_banner(
                             f"Threshold Alert over, Last total {last_total_sum}, "
-                            f"Threshold baseline bytes {self.dos_baseline}, "
-                            f"Current mean bytes: {self.inspect_ave_bc}\n"
-                            f"Alert level: '{self.alert_level}'",
+                            f"Threshold baseline bytes {size(self.dos_baseline)}, "
+                            f"Current mean bytes: {size(self.inspect_ave_bc)}\n"
+                            f"Alert level: '{self.alert_level}'\n"
+                            f"Status level: '{self.alert_color}'",
                             self.alert_color,
                         )
                     else:
                         # Within the Red range and staying Red - just report
                         cprint(
                             f"{status_change(last_total_sum, self.dos_baseline)}\n"
-                            f"Current mean bytes: {self.inspect_ave_bc}\n"
-                            f"Alert level: '{self.alert_level}'",
+                            f"Current mean bytes: {size(self.inspect_ave_bc)}\n"
+                            f"Alert level: '{self.alert_level}'\n"
+                            f"Status level: '{self.alert_color}'",
                             self.alert_color,
                         )
 
