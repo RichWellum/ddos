@@ -1,29 +1,44 @@
-# DDOS detection
+# Application and Protocol Rate of Change Detection
 
-`sta_ddos.py` is a tool to perform rate of change inspections on protocols -
-to warn on potential DDOS attacks. It is yaml driven and easy for the end user
-to make changes and apply.
+## Helicopter view
 
-Key objectives:
+`sta_ddos.py`:
+
+- is a Stealthwatch tool to perform rate of change inspections on
+protocols, applications and combinations of both if desired - to warn on
+potential DDOS or other cyber attacks.
+- is yaml configuration driven and easy for the end user to configure with no
+programing knowledge required.
+- uses public available API's.
+- reports status changes in three levels of concern: `green`, `yellow` and `red`.
+- uses a simple algorithm that looks for a rate of change
+- provides an `inspect` mode to help the user to determine what their baseline
+  byte counts are.
+
+### Key objectives
 
 1. Ability to detect DOS and DDOS attacks, on any application or applications that Stealthwatch recognizes.
 2. Human readable and editable configuration (yaml) - no programming skills needed to make application behavior changes.
 3. Ability to set thresholds and alert and warn. Eventually alerts and warns sent to SIEM or SecureX.
 4. Queries SMCs using APIs, so not intrusive on FCs and also has access to all FCs - hence better at detecting DDOS attacks across entire infra-structure.
-5. Uses Active flows so reduces noise or data that occurred in the past.
+5. Runs continuously - set it and watch.
+
+### Algorithm
+
+![alt text](images/new_algortihm.png "New Algorithm")
 
 ## Basic premise
 
 This is a two step tool.
 
-### Step1. Run the tool with a --inspect switch
+### Step1. Run the tool with a `--inspect` switch
 
 In this mode the tool will continuously query for the total byte count of a
 particular protocol profile, and creating a mean value seen. This mean value is
 then used in Step 2 to determine potential maliscious rates of change. The user
 can run this as long as needed, the longer the better is the assumption.
 
-### Step 2. Run the tool without --inspect mode
+### Step 2. Run the tool
 
 This tool will continually query an SMC for flows of a particular protocol and
 application profile configured by the user, over the time period now - five
@@ -118,17 +133,18 @@ The concept is simple:
 The user selects a window of time `dos_flow_time` to look at any
 combination of protocols `protocols` and applications `applications`. At a
 configurable repeat time `dos_flow_repeat_time` the same query is repeated. The
-data returned is reduced to byte counts per configured protocol and application
-and most importantly `non-active` flows are removed. We only care about live
-and active flows. This is not a historical flow inspection.
+data returned is reduced to byte counts per configured protocol and
+application. We only care about live and active flows. This is not a historical
+flow inspection.
 
 Now that we have only **active byte** counts for the protocols and applications we
 care about, the percentage change between the current data and the last data is
 calculated. If this percentage change is higher than `dos_threshold` then a
-warning is triggered. And if more than `dos_spike` warnings are seen in the
-last five queries, an alert is triggered.
+warning is triggered.
 
-The alerts and warnings are saved in an output log files.
+In either mode, if the user breaks execution with `CTRL-C`, then the mean of
+all the bytes from all queries is returned and can be used to re-populate the
+`dos_baseline` value in the config.
 
 ## Setup
 
@@ -196,16 +212,20 @@ Note that is aggregating the total bytes of all these applications.
 
 ### Run tool
 
+#### Inspect Mode
+
+```bash
+./sta_ddos.py config.yaml -i
+```
+
+#### Detect and Alert Mode
+
 ```bash
 ./sta_ddos.py config.yaml
 ```
 
-### Run tool in verbose mode for more info
+#### Detect and alert mode with verboseness
 
 ```bash
-./sta_ddos.py config.yaml -v
+./sta_ddos.py config.yamln -v
 ```
-
-## New Algorithm
-
-![alt text](images/new_algortihm.png "New Algorithm")

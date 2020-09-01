@@ -52,8 +52,8 @@ readings below the baseline threshold level.
 
 todo:
 
-1. Change alert levels to start at 0
-2. Add inspect mode that figures out a baseline for a protocol profile
+1. De-complicate main fn and modularize
+2. Handle multiple profiles
 """
 import argparse
 import datetime
