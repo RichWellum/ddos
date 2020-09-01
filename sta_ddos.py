@@ -516,7 +516,7 @@ class StaDdos:
                         self.alert_level = 0  # Probably not needed
                         self.alert_color = "green"
                         print_banner(
-                            f"Threshold Warning over\nLast total byte count: {size(last_total_sum)}\n,"
+                            f"Threshold Warning over\nLast total byte count: {size(last_total_sum)}\n"
                             f"Threshold baseline bytes reset\nAlert level: '{self.alert_level}'",
                             self.alert_color,
                         )
@@ -556,8 +556,8 @@ class StaDdos:
                         # Red alert over - reset to yellow
                         self.alert_color = "yellow"
                         print_banner(
-                            f"Threshold Alert over, Last total {last_total_sum}, "
-                            f"Threshold baseline bytes {size(self.dos_baseline)}, "
+                            f"Threshold Alert over, Last total {last_total_sum}\n"
+                            f"Threshold baseline bytes {size(self.dos_baseline)}\n"
                             f"Current mean bytes: {size(self.inspect_ave_bc)}\n"
                             f"Alert level: '{self.alert_level}'\n"
                             f"Status level: '{self.alert_color}'",
