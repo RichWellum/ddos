@@ -6,8 +6,8 @@ Product:
     demo: false
 SMC:
     username: admin
-    password: lan1cope
-    host: 10.208.114.100
+    password: cisco123
+    host: 10.208.113.150
     tenant: 102
 #
 # DDOS attack vector
@@ -16,8 +16,8 @@ dos_attack:
     verbose: false # Set me to true to see lots of output
     enabled: true
     dos_flow_time: 360 # Look at 5m sliding window (enough time to gather from FCs)
-    dos_flow_repeat_time: 60 # Query each 60s
-    dos_threshold: 10 # % spike causes a table entry and warning
-    dos_spike: 3 # int consecutive dos_thresholds is an alert
+    dos_flow_repeat_time: 20 # Query each 60s
+    dos_threshold: 25 # % spike causes a table entry and warning
+    dos_baseline: 20992332 # Baseline protocol value, see --inspect
     protocol: [1] # Change protocols here (1 = ICMP) etc
     applications: { includes: [], excludes: [] }
