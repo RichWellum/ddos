@@ -182,6 +182,26 @@ class StaDdos:
         # Run all the queries
         self.run_queries()
 
+    def get_app_details(self):
+        """Load Stealthwatch Application IDs and return details"""
+        # Load system application definitions
+        app_dict = []
+        app_name_dict = []
+        with open("system_application_definitions.json") as json_data:
+            data = json.load(json_data)
+            applications = data["application-list"]["application"]
+            for config_app in self.config["dos_attack"]["applications"]:
+                for objects in applications:
+                    if objects["_name"].lower() == config_app.lower():
+                        if self.verbose:
+                            cprint(
+                                f"Applications:\n  {objects['_name']}\n  {objects['_id']}\n {objects['_description']}",
+                                "magenta",
+                            )
+                        app_dict.append(objects["_id"])
+                        app_name_dict.append(objects["_name"])
+            return app_dict, app_name_dict
+
     def signal_handler(self, sig, frame):
         """Catch a CTRL-C for inspect results."""
         cprint(
@@ -229,8 +249,9 @@ class StaDdos:
         self.dos_flow_repeat_time = self.config["dos_attack"]["dos_flow_repeat_time"]
         self.dos_threshold = self.config["dos_attack"]["dos_threshold"]
         self.dos_baseline = self.config["dos_attack"]["dos_baseline"]
-        self.protocol = self.config["dos_attack"]["protocol"]
-        self.applications = self.config["dos_attack"]["applications"]
+        app_ids, app_names = self.get_app_details()
+        self.application_ids = {"includes": app_ids, "excludes": []}
+        self.application_names = app_names
 
         # Set global config values from config file
         self.username = self.config["SMC"]["username"]
@@ -250,8 +271,7 @@ class StaDdos:
                 f"Repeat every: {self.dos_flow_repeat_time}s\n"
                 f"Percentage Warning Threshold: {self.dos_threshold}%\n"
                 f"Configured Baseline Threshold: {size(self.dos_baseline)}\n"
-                f"Protocol IDs: {self.protocol}\n"
-                f"Application IDs: {self.applications}"
+                f"Application(s): {self.application_names}"
             )
         else:
             banner = (
@@ -260,8 +280,7 @@ class StaDdos:
                 f"Tenant: {self.tenant}\n"
                 f"Flow time queried: {self.dos_flow_time}s\n"
                 f"Repeat every: {self.dos_flow_repeat_time}s\n"
-                f"Protocol IDs: {self.protocol}\n"
-                f"Application IDs: {self.applications}"
+                f"Application(s): {self.application_names}"
             )
 
         print_banner(
@@ -310,14 +329,13 @@ class StaDdos:
                 "subject": {"orientation": "Either"},
                 "flow": {
                     "flowDirection": "BIDIRECTIONAL",
-                    "applications": self.applications,
-                    "protocol": self.protocol,
+                    "applications": self.application_ids,
                     "includeInterfaceData": "true",
                 },
             }
             cprint(
-                f"\n{self.dos_flow_time}s/{self.dos_flow_repeat_time}s probe -- protocol({self.protocol}), "
-                f"applications({self.applications}) flow request to: {self.host}",
+                f"\n{self.dos_flow_time}s/{self.dos_flow_repeat_time}s probe -- "
+                f"applications({self.application_ids}) flow request to: {self.host}",
                 self.alert_color,
             )
             if self.verbose:
@@ -455,7 +473,7 @@ class StaDdos:
                         new_byte_perc = round(get_percent_change(last_total_sum, self.dos_baseline))
                         if self.verbose:
                             print(
-                                f"DEBUG configured baseline: {size(last_total_sum)}, {size(self.dos_baseline)}, {new_byte_perc}"
+                                f"Configured baseline: {size(last_total_sum)}, {size(self.dos_baseline)}, {new_byte_perc}%"
                             )
                     else:
                         # Calculate the percentage change between the latest and the

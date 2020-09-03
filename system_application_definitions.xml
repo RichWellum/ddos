@@ -1,0 +1,3294 @@
+<?xml version='1.0' encoding='utf-8'?>
+<application-list last-id='103145' version='72100'>
+  <application id='3002' name='Lync' description='Lync is an application from Microsoft that lets you connect with others through instant messaging (IM), video calls, and online meetings.'>
+    <criteria>
+      <classification id='303' />
+    </criteria>
+    <criteria>
+      <classification id='25' />
+    </criteria>
+  </application>
+  <application id='3001' name='WebDAV' description='Web Distributed Authoring and Versioning (WebDAV) is an extension of the Hypertext Transfer Protocol (HTTP) that facilitates collaboration between users in editing and managing documents and files stored on World Wide Web servers.'>
+    <criteria>
+      <classification id='302' />
+    </criteria>
+  </application>
+  <application id='2000' name='Adobe Connect' description='A web conferencing platform for web meetings, eLearning, and webinars.'>
+    <criteria>
+      <classification id='265' />
+    </criteria>
+  </application>
+  <application id='1001' name='Spotify' description='Spotify is a digital music service that gives you access to millions of songs.'>
+    <criteria>
+      <classification id='259' />
+    </criteria>
+  </application>
+  <application id='1000' name='Teredo' description='Teredo is a transition technology that gives full IPv6 connectivity for IPv6-capable hosts which are on the IPv4 Internet but which have no direct native connection to an IPv6 network.'>
+    <criteria>
+      <classification id='258' />
+    </criteria>
+  </application>
+  <application id='129' name='WebEx' description='WebEx provides on-demand collaboration, online meeting, web conferencing and videoconferencing.'>
+    <criteria>
+      <classification id='202' />
+    </criteria>
+  </application>
+  <application id='165' name='Blackberry' description='The BlackBerry is a line of wireless handheld devices and services. A BlackBerry can shoot video, take photos, play music, and perform online functions such as web-browsing and emailing. They can also send and receive push email and instant messages while maintaining a high level of security through on-device message encryption, and are designed to function as personal digital assistants.'>
+    <criteria>
+      <classification id='167' />
+    </criteria>
+  </application>
+  <application id='124' name='Twitter' description='Twitter is an online social networking service and microblogging service that enables its users to send and read text-based messages of up to 140 characters, known as &quot;tweets&quot;.'>
+    <criteria>
+      <classification id='197' />
+    </criteria>
+  </application>
+  <application id='126' name='MySpace' description='MySpace is a social networking service with a strong music emphasis.'>
+    <criteria>
+      <classification id='201' />
+    </criteria>
+  </application>
+  <application id='116' name='Facebook' description='Facebook is an online social networking service.'>
+    <criteria>
+      <classification id='196' />
+    </criteria>
+  </application>
+  <application id='136' name='LinkedIn' description='LinkedIn is a social networking website for people in professional occupations.'>
+    <criteria>
+      <classification id='216' />
+    </criteria>
+  </application>
+  <application id='115' name='Salesforce' description='Salesforce is an information system used in CRM marketing and management that helps automate some sales and sales force management functions.'>
+    <criteria>
+      <classification id='219' />
+    </criteria>
+  </application>
+  <application id='162' name='Hulu' description='Hulu is a website and over-the-top (OTT) subscription service offering ad-supported on-demand streaming video of TV shows, movies, webisodes and other new media, trailers, clips, and behind-the-scenes footage from NBC, Fox, ABC, TBS, and many other networks and studios.'>
+    <criteria>
+      <classification id='236' />
+    </criteria>
+  </application>
+  <application id='127' name='Orkut' description='Orkut is a social networking website that is owned and operated by Google. The service is designed to help users meet new and old friends and maintain existing relationships. Although Orkut is less popular in the United States than competitors Facebook and Google+, it is one of the most visited websites in India and Brazil.'>
+    <criteria>
+      <classification id='203' />
+    </criteria>
+  </application>
+  <application id='125' name='Flickr' description='Flickr is an image hosting and video hosting website, and web services suite that was created by Ludicorp in 2004 and acquired by Yahoo in 2005. In addition to being a popular website for users to share and embed personal photographs, and effectively an online community, the service is widely used by photo researchers and by bloggers to host images that they embed in blogs and social media.'>
+    <criteria>
+      <classification id='200' />
+    </criteria>
+  </application>
+  <application id='147' name='Intranet' description='An intranet is a computer network that uses Internet Protocol technology to share information, operational systems, or computing services within an organization.'>
+    <criteria>
+      <classification id='237' />
+    </criteria>
+  </application>
+  <application id='149' name='job search' description='Employment websites.'>
+    <criteria>
+      <classification id='242' />
+    </criteria>
+    <criteria>
+      <classification id='241' />
+    </criteria>
+  </application>
+  <application id='137' name='Windows Update' description='Windows Update is a service provided by Microsoft that provides updates for the Microsoft Windows operating system and its installed components, including Internet Explorer.'>
+    <criteria>
+      <classification id='220' />
+    </criteria>
+    <criteria>
+      <classification id='252' />
+    </criteria>
+  </application>
+  <application id='141' name='Live' description='Windows Live Personalized Experience (also known as My.Live.com, previously Live.com) was a customizable portal launched by Microsoft in early November 2005. It was one of the first Windows Live services to launch.'>
+    <criteria>
+      <classification id='225' />
+    </criteria>
+  </application>
+  <application id='153' name='YouTube' description='YouTube is a video-sharing website on which users can upload, view and share videos. It uses Adobe Flash Video and HTML5 technology to display a wide variety of user-generated video content, including movie clips, TV clips, and music videos, as well as amateur content such as video blogging, short original videos, and educational videos.'>
+    <criteria>
+      <classification id='118' />
+    </criteria>
+  </application>
+  <application id='158' name='Dropbox' description='Dropbox is a file hosting service operated by Dropbox, Inc., that offers cloud storage, file synchronization, and client software. Dropbox allows users to create a special folder on each of their computers, which Dropbox then synchronizes so that it appears to be the same folder (with the same contents) regardless of which computer is used to view it. Files placed in this folder also are accessible through a website and mobile phone applications.'>
+    <criteria>
+      <classification id='232' />
+    </criteria>
+  </application>
+  <application id='164' name='file hosting' description='File hosting is an Internet hosting service specifically designed to host user files. It allows users to upload files that could then be accessed over the internet from a different computer, tablet, smart phone or other networked device, by the same user or possibly by other users, after a password or other authentication is provided.'>
+    <criteria>
+      <classification id='248' />
+    </criteria>
+    <criteria>
+      <classification id='585' />
+    </criteria>
+    <criteria>
+      <classification id='592' />
+    </criteria>
+    <criteria>
+      <classification id='591' />
+    </criteria>
+    <criteria>
+      <classification id='590' />
+    </criteria>
+    <criteria>
+      <classification id='770' />
+    </criteria>
+    <criteria>
+      <classification id='771' />
+    </criteria>
+    <criteria>
+      <classification id='772' />
+    </criteria>
+    <criteria>
+      <classification id='773' />
+    </criteria>
+    <criteria>
+      <classification id='774' />
+    </criteria>
+    <criteria>
+      <classification id='775' />
+    </criteria>
+    <criteria>
+      <classification id='776' />
+    </criteria>
+    <criteria>
+      <classification id='777' />
+    </criteria>
+  </application>
+  <application id='3000' name='Online Storage' description='Secure online file storage, file synchronization, versioning and backup services.'>
+    <criteria>
+      <classification id='301' />
+    </criteria>
+  </application>
+  <application id='143' name='news' description='Information on current events which is presented over the Internet.'>
+    <criteria>
+      <classification id='233' />
+    </criteria>
+    <criteria>
+      <classification id='231' />
+    </criteria>
+    <criteria>
+      <classification id='230' />
+    </criteria>
+    <criteria>
+      <classification id='228' />
+    </criteria>
+    <criteria>
+      <classification id='229' />
+    </criteria>
+  </application>
+  <application id='140' name='search' description='Search engines and websites designed to find information on the Internet.'>
+    <criteria>
+      <classification id='222' />
+    </criteria>
+    <criteria>
+      <classification id='224' />
+    </criteria>
+    <criteria>
+      <classification id='223' />
+    </criteria>
+    <criteria>
+      <classification id='227' />
+    </criteria>
+    <criteria>
+      <classification id='238' />
+    </criteria>
+    <criteria>
+      <classification id='754' />
+    </criteria>
+    <criteria>
+      <classification id='767' />
+    </criteria>
+    <criteria>
+      <classification id='780' />
+    </criteria>
+  </application>
+  <application id='138' name='Microsoft.com' description='Microsoft.com is the main site for product information, support, and news for Microsoft Corporation.'>
+    <criteria>
+      <classification id='221' />
+    </criteria>
+  </application>
+  <application id='112' name='STUN' description='STUN is a lightweight client-server network protocol. Its purpose is to allow an application running on a host to determine whether or not it is located behind a network device which is performing network address translation.'>
+    <criteria>
+      <classification id='182' />
+    </criteria>
+  </application>
+  <application id='58' name='ICMP' description='The Internet Control Message Protocol (ICMP) is one of the core protocols of the Internet Protocol Suite. It is used by the operating systems of networked computers to send error messages indicating, for example, that a requested service is not available or that a host or router could not be reached.'>
+    <criteria>
+      <classification id='27' />
+    </criteria>
+    <criteria>
+      <classification id='169' />
+    </criteria>
+    <criteria>
+      <classification id='900' />
+    </criteria>
+  </application>
+  <application id='56' name='FTP' description='File Transfer Protocol (FTP) is a standard network protocol used to transfer files from one host to another host over a TCP-based network, such as the Internet.'>
+    <criteria>
+      <classification id='28' />
+    </criteria>
+    <criteria>
+      <classification id='88' />
+    </criteria>
+    <criteria>
+      <classification id='117' />
+    </criteria>
+  </application>
+  <application id='53' name='SSH' description='Secure Shell (SSH) is a cryptographic network protocol for secure data communication, remote command-line login, remote command execution, and other secure network services between two networked computers.'>
+    <criteria>
+      <classification id='44' />
+    </criteria>
+  </application>
+  <application id='52' name='syslog' description='Syslog is a standard for computer data logging. It separates the software that generates messages from the system that stores them and the software that reports and analyzes them. Syslog can be used for computer system management and security auditing as well as generalized informational, analysis, and debugging messages. It is supported by a wide variety of devices (like printers and routers) and receivers across multiple platforms. Because of this, syslog can be used to integrate log data from many different types of systems into a central repository.'>
+    <criteria>
+      <classification id='53' />
+    </criteria>
+  </application>
+  <application id='48' name='DHCP' description='The Dynamic Host Configuration Protocol (DHCP) is a network protocol used to configure devices that are connected to a network so they can communicate on that network using the Internet Protocol (IP). The protocol is implemented in a client-server model, in which DHCP clients request configuration data, such as an IP address, a default route, and one or more DNS server addresses from a DHCP server.'>
+    <criteria>
+      <classification id='25' />
+    </criteria>
+  </application>
+  <application id='159' name='Citrix' description='Citrix Systems, Inc. is an American multinational software company founded in 1989, that provides server and desktop virtualization, networking, software-as-a-service (SaaS), and cloud computing technologies, including Xen open source products.'>
+    <criteria>
+      <classification id='31' />
+    </criteria>
+  </application>
+  <application id='103' name='SQL' description='SQL is a special-purpose programming language designed for managing data held in a relational database management system (RDBMS).'>
+    <criteria>
+      <classification id='158' />
+    </criteria>
+    <criteria>
+      <classification id='157' />
+    </criteria>
+    <criteria>
+      <classification id='159' />
+    </criteria>
+    <criteria>
+      <classification id='160' />
+    </criteria>
+    <criteria>
+      <classification id='415' />
+    </criteria>
+    <criteria>
+      <classification id='417' />
+    </criteria>
+  </application>
+  <application id='47' name='remote desktop' description='Remote desktop is a software or operating system feature that allows a personal computer&apos;s desktop environment to be run remotely on one system (usually a PC, but the concept applies equally to a server), while being displayed on a separate client device.'>
+    <criteria>
+      <classification id='70' />
+    </criteria>
+    <criteria>
+      <classification id='85' />
+    </criteria>
+    <criteria>
+      <classification id='126' />
+    </criteria>
+    <criteria>
+      <classification id='127' />
+    </criteria>
+    <criteria>
+      <classification id='56' />
+    </criteria>
+    <criteria>
+      <classification id='243' />
+    </criteria>
+    <criteria>
+      <classification id='251' />
+    </criteria>
+    <criteria>
+      <classification id='255' />
+    </criteria>
+    <criteria>
+      <classification id='462' />
+    </criteria>
+    <criteria>
+      <classification id='463' />
+    </criteria>
+    <criteria>
+      <classification id='464' />
+    </criteria>
+    <criteria>
+      <classification id='465' />
+    </criteria>
+    <criteria>
+      <classification id='467' />
+    </criteria>
+    <criteria>
+      <classification id='469' />
+    </criteria>
+    <criteria>
+      <classification id='470' />
+    </criteria>
+    <criteria>
+      <classification id='472' />
+    </criteria>
+    <criteria>
+      <classification id='473' />
+    </criteria>
+    <criteria>
+      <classification id='474' />
+    </criteria>
+    <criteria>
+      <classification id='475' />
+    </criteria>
+    <criteria>
+      <classification id='476' />
+    </criteria>
+    <criteria>
+      <classification id='477' />
+    </criteria>
+    <criteria>
+      <classification id='480' />
+    </criteria>
+    <criteria>
+      <classification id='662' />
+    </criteria>
+  </application>
+  <application id='45' name='SNMP' description='Simple Network Management Protocol (SNMP) is an &quot;Internet-standard protocol for managing devices on IP networks&quot;. Devices that typically support SNMP include routers, switches, servers, workstations, printers, modem racks, and more. It is used mostly in network management systems to monitor network-attached devices for conditions that warrant administrative attention.'>
+    <criteria>
+      <classification id='40' />
+    </criteria>
+    <criteria>
+      <classification id='730' />
+    </criteria>
+  </application>
+  <application id='44' name='DNS' description='The Domain Name System (DNS) is a hierarchical distributed naming system for computers, services, or any resource connected to the Internet or a private network. It associates various information with domain names assigned to each of the participating entities. Most prominently, it translates easily memorized domain names to the numerical IP addresses needed for the purpose of locating computer services and devices worldwide. By providing a worldwide, distributed keyword-based redirection service, the Domain Name System is an essential component of the functionality of the Internet.'>
+    <criteria>
+      <classification id='26' />
+    </criteria>
+    <criteria>
+      <classification id='149' />
+    </criteria>
+  </application>
+  <application id='74' name='SCTP' description='Stream Control Transmission Protocol (SCTP) is a transport layer protocol (protocol number 132), serving in a similar role to the popular protocols Transmission Control Protocol (TCP) and User Datagram Protocol (UDP). It provides some of the same service features of both: it is message-oriented like UDP and ensures reliable, in-sequence transport of messages with congestion control like TCP.'>
+    <criteria>
+      <classification id='90' />
+    </criteria>
+  </application>
+  <application id='77' name='Health Level Seven' description='Founded in 1987, Health Level Seven International (HL7) is a not-for-profit, ANSI-accredited standards developing organization dedicated to providing a comprehensive framework and related standards for the exchange, integration, sharing, and retrieval of electronic health information that supports clinical practice and the management, delivery and evaluation of health services.'>
+    <criteria>
+      <classification id='105' />
+    </criteria>
+  </application>
+  <application id='79' name='Usenet NetNews' description='Usenet is a set of protocols for generating, storing and retrieving news &quot;articles&quot; (which resemble Internet mail messages) and for exchanging them among a readership which is potentially widely distributed.'>
+    <criteria>
+      <classification id='106' />
+    </criteria>
+    <criteria>
+      <classification id='187' />
+    </criteria>
+  </application>
+  <application id='91' name='Clearcase' description='The Rational ClearCase family consists of several software tools for supporting software configuration management (SCM) of source code and other software development assets. It is developed by the Rational Software division of IBM. ClearCase forms the base for configuration management for many large and medium sized businesses and can handle projects with hundreds or thousands of developers.'>
+    <criteria>
+      <classification id='136' />
+    </criteria>
+  </application>
+  <application id='97' name='NetBIOS' description='NetBIOS is an acronym for Network Basic Input/Output System. It provides services related to the session layer of the OSI model allowing applications on separate computers to communicate over a local area network. As strictly an API, NetBIOS is not a networking protocol. Older operating systems[clarification needed] ran NetBIOS over IEEE 802.2 and IPX/SPX using the NetBIOS Frames (NBF) and NetBIOS over IPX/SPX (NBX) protocols, respectively. In modern networks, NetBIOS normally runs over TCP/IP via the NetBIOS over TCP/IP (NBT) protocol. This results in each computer in the network having both an IP address and a NetBIOS name corresponding to a (possibly different) host name.'>
+    <criteria>
+      <classification id='48' />
+    </criteria>
+  </application>
+  <application id='90' name='Gopher' description='The Gopher protocol is a TCP/IP application layer protocol designed for distributing, searching, and retrieving documents over the Internet. Strongly oriented towards a menu-document design, the Gopher protocol presented an alternative to the World Wide Web in its early stages, but ultimately HTTP became the dominant protocol. The Gopher ecosystem is often regarded as the effective predecessor of the World Wide Web.'>
+    <criteria>
+      <classification id='135' />
+    </criteria>
+  </application>
+  <application id='92' name='SSDP' description='The Simple Service Discovery Protocol (SSDP) is a network protocol based on the Internet Protocol Suite for advertisement and discovery of network services and presence information. It accomplishes this without assistance of server-based configuration mechanisms, such as the Dynamic Host Configuration Protocol (DHCP) or the Domain Name System (DNS), and without special static configuration of a network host.'>
+    <criteria>
+      <classification id='141' />
+    </criteria>
+  </application>
+  <application id='86' name='IGMP' description='The Internet Group Management Protocol (IGMP) is a communications protocol used by hosts and adjacent routers on IP networks to establish multicast group memberships. IGMP is an integral part of IP multicast. IGMP can be used for one-to-many networking applications such as online streaming video and gaming, and allows more efficient use of resources when supporting these types of applications. IGMP is used on IPv4 networks.'>
+    <criteria>
+      <classification id='130' />
+    </criteria>
+  </application>
+  <application id='195' name='Finger' description='The Name/Finger protocol is an interface to the name and finger programs that provide status reports on a particular computer system or a particular person at network sites. Due to security and privacy concerns, the vast majority of sites on the internet no longer offer the service.'>
+    <criteria>
+      <classification id='81' />
+    </criteria>
+  </application>
+  <application id='194' name='RSVP' description='The Resource Reservation Protocol (RSVP) is a Transport Layer protocol designed to reserve resources across a network for an integrated services Internet. RSVP can be used by either hosts or routers to request or deliver specific levels of quality of service (QoS) for application data streams or flows. RSVP defines how applications place reservations and how they can relinquish the reserved resources once the need for them has ended.'>
+    <criteria>
+      <classification id='68' />
+    </criteria>
+  </application>
+  <application id='84' name='PPPoE' description='The Point-to-Point Protocol over Ethernet (PPPoE) is a network protocol for encapsulating PPP frames inside Ethernet frames.'>
+    <criteria>
+      <classification id='124' />
+    </criteria>
+  </application>
+  <application id='85' name='IPX' description='Internetwork Packet Exchange (IPX) is the OSI-model Network layer protocol in the IPX/SPX protocol stack. The IPX/SPXM protocol stack is supported by Novell&apos;s NetWare network operating system. Because of Netware&apos;s popularity through the late 1980s into the mid-1990s, IPX became a popular internetworking protocol.'>
+    <criteria>
+      <classification id='129' />
+    </criteria>
+  </application>
+  <application id='160' name='Telepresence' description='TelePresence is a product developed by Cisco Systems which provides high-definition 1080p video, spatial audio, and a setup designed to link two physically separated rooms so they resemble a single conference room regardless of location.'>
+    <criteria>
+      <classification id='245' />
+    </criteria>
+  </application>
+  <application id='200' name='ActiveX' description='ActiveX is a software framework created by Microsoft that adapts its earlier Component Object Model (COM) and Object Linking and Embedding (OLE) technologies for content downloaded from a network, particularly in the context of the World Wide Web. It was introduced in 1996 and is commonly used in its Windows operating system.'>
+    <criteria>
+      <classification id='257' />
+    </criteria>
+  </application>
+  <application id='198' name='RPC' description='A remote procedure call (RPC) is an inter-process communication that allows a computer program to cause a subroutine or procedure to execute in another address space (commonly on another computer on a shared network) without the programmer explicitly coding the details for this remote interaction. That is, the programmer writes essentially the same code whether the subroutine is local to the executing program, or remote. When the software in question uses object-oriented principles, RPC is called remote invocation or remote method invocation.'>
+    <criteria>
+      <classification id='137' />
+    </criteria>
+    <criteria>
+      <classification id='192' />
+    </criteria>
+  </application>
+  <application id='76' name='gaming' description='Activities normally associated with recreational pleasure and enjoyment.'>
+    <criteria>
+      <classification id='94' />
+    </criteria>
+    <criteria>
+      <classification id='96' />
+    </criteria>
+    <criteria>
+      <classification id='101' />
+    </criteria>
+    <criteria>
+      <classification id='97' />
+    </criteria>
+    <criteria>
+      <classification id='95' />
+    </criteria>
+    <criteria>
+      <classification id='102' />
+    </criteria>
+    <criteria>
+      <classification id='98' />
+    </criteria>
+    <criteria>
+      <classification id='103' />
+    </criteria>
+    <criteria>
+      <classification id='104' />
+    </criteria>
+    <criteria>
+      <classification id='107' />
+    </criteria>
+    <criteria>
+      <classification id='140' />
+    </criteria>
+    <criteria>
+      <classification id='152' />
+    </criteria>
+    <criteria>
+      <classification id='165' />
+    </criteria>
+    <criteria>
+      <classification id='206' />
+    </criteria>
+    <criteria>
+      <classification id='434' />
+    </criteria>
+    <criteria>
+      <classification id='487' />
+    </criteria>
+    <criteria>
+      <classification id='748' />
+    </criteria>
+    <criteria>
+      <classification id='102' />
+    </criteria>
+    <criteria>
+      <classification id='766' />
+    </criteria>
+    <criteria>
+      <classification id='765' />
+    </criteria>
+    <criteria>
+      <classification id='794' />
+    </criteria>
+    <criteria>
+      <classification id='795' />
+    </criteria>
+    <criteria>
+      <classification id='796' />
+    </criteria>
+    <criteria>
+      <classification id='797' />
+    </criteria>
+    <criteria>
+      <classification id='798' />
+    </criteria>
+    <criteria>
+      <classification id='799' />
+    </criteria>
+    <criteria>
+      <classification id='800' />
+    </criteria>
+    <criteria>
+      <classification id='803' />
+    </criteria>
+    <criteria>
+      <classification id='801' />
+    </criteria>
+    <criteria>
+      <classification id='802' />
+    </criteria>
+    <criteria>
+      <classification id='904' />
+    </criteria>
+    <criteria>
+      <classification id='967' />
+    </criteria>
+    <criteria>
+      <classification id='1108' />
+    </criteria>
+    <criteria>
+      <classification id='1072' />
+    </criteria>
+    <criteria>
+      <classification id='1032' />
+    </criteria>
+    <criteria>
+      <classification id='1033' />
+    </criteria>
+    <criteria>
+      <classification id='987' />
+    </criteria>
+    <criteria>
+      <classification id='1101' />
+    </criteria>
+    <criteria>
+      <classification id='1096' />
+    </criteria>
+    <criteria>
+      <classification id='1092' />
+    </criteria>
+    <criteria>
+      <classification id='1095' />
+    </criteria>
+    <criteria>
+      <classification id='1035' />
+    </criteria>
+    <criteria>
+      <classification id='1052' />
+    </criteria>
+    <criteria>
+      <classification id='1054' />
+    </criteria>
+    <criteria>
+      <classification id='1055' />
+    </criteria>
+    <criteria>
+      <classification id='1063' />
+    </criteria>
+    <criteria>
+      <classification id='1004' />
+    </criteria>
+    <criteria>
+      <classification id='1019' />
+    </criteria>
+    <criteria>
+      <classification id='1036' />
+    </criteria>
+    <criteria>
+      <classification id='1005' />
+    </criteria>
+    <criteria>
+      <classification id='1023' />
+    </criteria>
+    <criteria>
+      <classification id='1028' />
+    </criteria>
+    <criteria>
+      <classification id='1024' />
+    </criteria>
+    <criteria>
+      <classification id='985' />
+    </criteria>
+    <criteria>
+      <classification id='936' />
+    </criteria>
+    <criteria>
+      <classification id='975' />
+    </criteria>
+    <criteria>
+      <classification id='989' />
+    </criteria>
+    <criteria>
+      <classification id='1040' />
+    </criteria>
+    <criteria>
+      <classification id='1061' />
+    </criteria>
+    <criteria>
+      <classification id='1047' />
+    </criteria>
+    <criteria>
+      <classification id='970' />
+    </criteria>
+    <criteria>
+      <classification id='1007' />
+    </criteria>
+    <criteria>
+      <classification id='1018' />
+    </criteria>
+    <criteria>
+      <classification id='1027' />
+    </criteria>
+    <criteria>
+      <classification id='1074' />
+    </criteria>
+    <criteria>
+      <classification id='1060' />
+    </criteria>
+  </application>
+  <application id='80' name='VoIP' description='Voice over IP (voice over Internet Protocol, VoIP) is a methodology and group of technologies for the delivery of voice communications and multimedia sessions over Internet Protocol (IP) networks, such as the Internet.'>
+    <criteria>
+      <classification id='82' />
+    </criteria>
+    <criteria>
+      <classification id='110' />
+    </criteria>
+    <criteria>
+      <classification id='111' />
+    </criteria>
+    <criteria>
+      <classification id='123' />
+    </criteria>
+    <criteria>
+      <classification id='128' />
+    </criteria>
+    <criteria>
+      <classification id='67' />
+    </criteria>
+    <criteria>
+      <classification id='150' />
+    </criteria>
+    <criteria>
+      <classification id='151' />
+    </criteria>
+    <criteria>
+      <classification id='153' />
+    </criteria>
+    <criteria>
+      <classification id='154' />
+    </criteria>
+    <criteria>
+      <classification id='207' />
+    </criteria>
+    <criteria>
+      <classification id='244' />
+    </criteria>
+    <criteria>
+      <classification id='266' />
+    </criteria>
+    <criteria>
+      <classification id='488' />
+    </criteria>
+    <criteria>
+      <classification id='579' />
+    </criteria>
+    <criteria>
+      <classification id='674' />
+    </criteria>
+    <criteria>
+      <classification id='736' />
+    </criteria>
+    <criteria>
+      <classification id='739' />
+    </criteria>
+    <criteria>
+      <classification id='783' />
+    </criteria>
+    <criteria>
+      <classification id='925' />
+    </criteria>
+    <criteria>
+      <classification id='943' />
+    </criteria>
+    <criteria>
+      <classification id='1002' />
+    </criteria>
+    <criteria>
+      <classification id='910' />
+    </criteria>
+    <criteria>
+      <classification id='923' />
+    </criteria>
+    <criteria>
+      <classification id='958' />
+    </criteria>
+    <criteria>
+      <classification id='999' />
+    </criteria>
+    <criteria>
+      <classification id='1041' />
+    </criteria>
+    <criteria>
+      <classification id='1045' />
+    </criteria>
+    <criteria>
+      <classification id='1048' />
+    </criteria>
+  </application>
+  <application id='103019' name='Photo Video' description='Photo-Video Applications. '>
+    <criteria>
+      <classification id='578' />
+    </criteria>
+  </application>
+  <application id='73' name='streaming audio/video' description='Multimedia content that is constantly received by and presented to an end-user while being delivered by a provider.'>
+    <criteria>
+      <classification id='74' />
+    </criteria>
+    <criteria>
+      <classification id='75' />
+    </criteria>
+    <criteria>
+      <classification id='86' />
+    </criteria>
+    <criteria>
+      <classification id='119' />
+    </criteria>
+    <criteria>
+      <classification id='143' />
+    </criteria>
+    <criteria>
+      <classification id='147' />
+    </criteria>
+    <criteria>
+      <classification id='148' />
+    </criteria>
+    <criteria>
+      <classification id='155' />
+    </criteria>
+    <criteria>
+      <classification id='76' />
+    </criteria>
+    <criteria>
+      <classification id='168' />
+    </criteria>
+    <criteria>
+      <classification id='170' />
+    </criteria>
+    <criteria>
+      <classification id='180' />
+    </criteria>
+    <criteria>
+      <classification id='191' />
+    </criteria>
+    <criteria>
+      <classification id='199' />
+    </criteria>
+    <criteria>
+      <classification id='208' />
+    </criteria>
+    <criteria>
+      <classification id='234' />
+    </criteria>
+    <criteria>
+      <classification id='176' />
+    </criteria>
+    <criteria>
+      <classification id='51' />
+    </criteria>
+    <criteria>
+      <classification id='52' />
+    </criteria>
+    <criteria>
+      <classification id='400' />
+    </criteria>
+    <criteria>
+      <classification id='401' />
+    </criteria>
+    <criteria>
+      <classification id='402' />
+    </criteria>
+    <criteria>
+      <classification id='407' />
+    </criteria>
+    <criteria>
+      <classification id='441' />
+    </criteria>
+    <criteria>
+      <classification id='443' />
+    </criteria>
+    <criteria>
+      <classification id='444' />
+    </criteria>
+    <criteria>
+      <classification id='445' />
+    </criteria>
+    <criteria>
+      <classification id='446' />
+    </criteria>
+    <criteria>
+      <classification id='447' />
+    </criteria>
+    <criteria>
+      <classification id='449' />
+    </criteria>
+    <criteria>
+      <classification id='450' />
+    </criteria>
+    <criteria>
+      <classification id='451' />
+    </criteria>
+    <criteria>
+      <classification id='452' />
+    </criteria>
+    <criteria>
+      <classification id='455' />
+    </criteria>
+    <criteria>
+      <classification id='456' />
+    </criteria>
+    <criteria>
+      <classification id='457' />
+    </criteria>
+    <criteria>
+      <classification id='459' />
+    </criteria>
+    <criteria>
+      <classification id='461' />
+    </criteria>
+    <criteria>
+      <classification id='486' />
+    </criteria>
+    <criteria>
+      <classification id='556' />
+    </criteria>
+    <criteria>
+      <classification id='708' />
+    </criteria>
+    <criteria>
+      <classification id='709' />
+    </criteria>
+    <criteria>
+      <classification id='596' />
+    </criteria>
+    <criteria>
+      <classification id='738' />
+    </criteria>
+    <criteria>
+      <classification id='747' />
+    </criteria>
+    <criteria>
+      <classification id='757' />
+    </criteria>
+    <criteria>
+      <classification id='759' />
+    </criteria>
+    <criteria>
+      <classification id='700' />
+    </criteria>
+    <criteria>
+      <classification id='842' />
+    </criteria>
+    <criteria>
+      <classification id='843' />
+    </criteria>
+    <criteria>
+      <classification id='844' />
+    </criteria>
+    <criteria>
+      <classification id='845' />
+    </criteria>
+    <criteria>
+      <classification id='846' />
+    </criteria>
+    <criteria>
+      <classification id='847' />
+    </criteria>
+    <criteria>
+      <classification id='848' />
+    </criteria>
+    <criteria>
+      <classification id='849' />
+    </criteria>
+    <criteria>
+      <classification id='850' />
+    </criteria>
+    <criteria>
+      <classification id='851' />
+    </criteria>
+    <criteria>
+      <classification id='852' />
+    </criteria>
+    <criteria>
+      <classification id='235' />
+    </criteria>
+    <criteria>
+      <classification id='853' />
+    </criteria>
+    <criteria>
+      <classification id='854' />
+    </criteria>
+    <criteria>
+      <classification id='700' />
+    </criteria>
+    <criteria>
+      <classification id='855' />
+    </criteria>
+    <criteria>
+      <classification id='856' />
+    </criteria>
+    <criteria>
+      <classification id='857' />
+    </criteria>
+    <criteria>
+      <classification id='858' />
+    </criteria>
+    <criteria>
+      <classification id='859' />
+    </criteria>
+    <criteria>
+      <classification id='860' />
+    </criteria>
+    <criteria>
+      <classification id='1031' />
+    </criteria>
+    <criteria>
+      <classification id='1090' />
+    </criteria>
+    <criteria>
+      <classification id='908' />
+    </criteria>
+    <criteria>
+      <classification id='920' />
+    </criteria>
+    <criteria>
+      <classification id='937' />
+    </criteria>
+    <criteria>
+      <classification id='1084' />
+    </criteria>
+    <criteria>
+      <classification id='1109' />
+    </criteria>
+    <criteria>
+      <classification id='1102' />
+    </criteria>
+    <criteria>
+      <classification id='1098' />
+    </criteria>
+    <criteria>
+      <classification id='1094' />
+    </criteria>
+    <criteria>
+      <classification id='1113' />
+    </criteria>
+    <criteria>
+      <classification id='1100' />
+    </criteria>
+    <criteria>
+      <classification id='1043' />
+    </criteria>
+    <criteria>
+      <classification id='1029' />
+    </criteria>
+    <criteria>
+      <classification id='1030' />
+    </criteria>
+    <criteria>
+      <classification id='1038' />
+    </criteria>
+    <criteria>
+      <classification id='1039' />
+    </criteria>
+    <criteria>
+      <classification id='954' />
+    </criteria>
+    <criteria>
+      <classification id='971' />
+    </criteria>
+    <criteria>
+      <classification id='1110' />
+    </criteria>
+    <criteria>
+      <classification id='994' />
+    </criteria>
+    <criteria>
+      <classification id='1082' />
+    </criteria>
+    <criteria>
+      <classification id='1104' />
+    </criteria>
+    <criteria>
+      <classification id='953' />
+    </criteria>
+    <criteria>
+      <classification id='952' />
+    </criteria>
+    <criteria>
+      <classification id='961' />
+    </criteria>
+    <criteria>
+      <classification id='974' />
+    </criteria>
+    <criteria>
+      <classification id='1034' />
+    </criteria>
+    <criteria>
+      <classification id='1037' />
+    </criteria>
+    <criteria>
+      <classification id='1050' />
+    </criteria>
+    <criteria>
+      <classification id='1025' />
+    </criteria>
+    <criteria>
+      <classification id='1051' />
+    </criteria>
+  </application>
+  <application id='111' name='tunnel' description='Tunneling is when one network protocol (the delivery protocol) encapsulates a different payload protocol. By using tunneling one can (for example) carry a payload over an incompatible delivery-network, or provide a secure path through an untrusted network.'>
+    <criteria>
+      <classification id='122' />
+    </criteria>
+    <criteria>
+      <classification id='179' />
+    </criteria>
+    <criteria>
+      <classification id='177' />
+    </criteria>
+    <criteria>
+      <classification id='246' />
+    </criteria>
+    <criteria>
+      <classification id='83' />
+    </criteria>
+    <criteria>
+      <classification id='403' />
+    </criteria>
+    <criteria>
+      <classification id='589' />
+    </criteria>
+    <criteria>
+      <classification id='827' />
+    </criteria>
+    <criteria>
+      <classification id='828' />
+    </criteria>
+    <criteria>
+      <classification id='829' />
+    </criteria>
+    <criteria>
+      <classification id='830' />
+    </criteria>
+    <criteria>
+      <classification id='831' />
+    </criteria>
+    <criteria>
+      <classification id='147' />
+    </criteria>
+    <criteria>
+      <classification id='832' />
+    </criteria>
+    <criteria>
+      <classification id='833' />
+    </criteria>
+    <criteria>
+      <classification id='901' />
+    </criteria>
+    <criteria>
+      <classification id='902' />
+    </criteria>
+    <criteria>
+      <classification id='903' />
+    </criteria>
+    <criteria>
+      <classification id='905' />
+    </criteria>
+    <criteria>
+      <classification id='906' />
+    </criteria>
+    <criteria>
+      <classification id='907' />
+    </criteria>
+    <criteria>
+      <classification id='909' />
+    </criteria>
+    <criteria>
+      <classification id='911' />
+    </criteria>
+    <criteria>
+      <classification id='912' />
+    </criteria>
+    <criteria>
+      <classification id='914' />
+    </criteria>
+    <criteria>
+      <classification id='915' />
+    </criteria>
+    <criteria>
+      <classification id='916' />
+    </criteria>
+    <criteria>
+      <classification id='917' />
+    </criteria>
+    <criteria>
+      <classification id='918' />
+    </criteria>
+    <criteria>
+      <classification id='919' />
+    </criteria>
+    <criteria>
+      <classification id='921' />
+    </criteria>
+    <criteria>
+      <classification id='922' />
+    </criteria>
+    <criteria>
+      <classification id='924' />
+    </criteria>
+    <criteria>
+      <classification id='926' />
+    </criteria>
+    <criteria>
+      <classification id='927' />
+    </criteria>
+    <criteria>
+      <classification id='928' />
+    </criteria>
+    <criteria>
+      <classification id='929' />
+    </criteria>
+    <criteria>
+      <classification id='930' />
+    </criteria>
+    <criteria>
+      <classification id='931' />
+    </criteria>
+    <criteria>
+      <classification id='932' />
+    </criteria>
+    <criteria>
+      <classification id='933' />
+    </criteria>
+    <criteria>
+      <classification id='934' />
+    </criteria>
+    <criteria>
+      <classification id='935' />
+    </criteria>
+    <criteria>
+      <classification id='938' />
+    </criteria>
+    <criteria>
+      <classification id='939' />
+    </criteria>
+    <criteria>
+      <classification id='940' />
+    </criteria>
+    <criteria>
+      <classification id='942' />
+    </criteria>
+    <criteria>
+      <classification id='944' />
+    </criteria>
+    <criteria>
+      <classification id='955' />
+    </criteria>
+    <criteria>
+      <classification id='956' />
+    </criteria>
+    <criteria>
+      <classification id='957' />
+    </criteria>
+    <criteria>
+      <classification id='959' />
+    </criteria>
+    <criteria>
+      <classification id='960' />
+    </criteria>
+    <criteria>
+      <classification id='962' />
+    </criteria>
+    <criteria>
+      <classification id='965' />
+    </criteria>
+    <criteria>
+      <classification id='966' />
+    </criteria>
+    <criteria>
+      <classification id='968' />
+    </criteria>
+    <criteria>
+      <classification id='972' />
+    </criteria>
+    <criteria>
+      <classification id='973' />
+    </criteria>
+    <criteria>
+      <classification id='976' />
+    </criteria>
+    <criteria>
+      <classification id='977' />
+    </criteria>
+    <criteria>
+      <classification id='978' />
+    </criteria>
+    <criteria>
+      <classification id='979' />
+    </criteria>
+    <criteria>
+      <classification id='980' />
+    </criteria>
+    <criteria>
+      <classification id='981' />
+    </criteria>
+    <criteria>
+      <classification id='982' />
+    </criteria>
+    <criteria>
+      <classification id='983' />
+    </criteria>
+    <criteria>
+      <classification id='984' />
+    </criteria>
+    <criteria>
+      <classification id='986' />
+    </criteria>
+    <criteria>
+      <classification id='988' />
+    </criteria>
+    <criteria>
+      <classification id='990' />
+    </criteria>
+    <criteria>
+      <classification id='991' />
+    </criteria>
+    <criteria>
+      <classification id='992' />
+    </criteria>
+    <criteria>
+      <classification id='995' />
+    </criteria>
+    <criteria>
+      <classification id='996' />
+    </criteria>
+    <criteria>
+      <classification id='998' />
+    </criteria>
+    <criteria>
+      <classification id='1000' />
+    </criteria>
+    <criteria>
+      <classification id='1008' />
+    </criteria>
+    <criteria>
+      <classification id='1011' />
+    </criteria>
+    <criteria>
+      <classification id='1012' />
+    </criteria>
+    <criteria>
+      <classification id='1014' />
+    </criteria>
+    <criteria>
+      <classification id='1015' />
+    </criteria>
+    <criteria>
+      <classification id='1016' />
+    </criteria>
+    <criteria>
+      <classification id='1017' />
+    </criteria>
+    <criteria>
+      <classification id='1020' />
+    </criteria>
+    <criteria>
+      <classification id='1021' />
+    </criteria>
+    <criteria>
+      <classification id='1091' />
+    </criteria>
+    <criteria>
+      <classification id='951' />
+    </criteria>
+    <criteria>
+      <classification id='1001' />
+    </criteria>
+    <criteria>
+      <classification id='1056' />
+    </criteria>
+    <criteria>
+      <classification id='1057' />
+    </criteria>
+    <criteria>
+      <classification id='1049' />
+    </criteria>
+    <criteria>
+      <classification id='1003' />
+    </criteria>
+    <criteria>
+      <classification id='963' />
+    </criteria>
+    <criteria>
+      <classification id='941' />
+    </criteria>
+    <criteria>
+      <classification id='1046' />
+    </criteria>
+    <criteria>
+      <classification id='913' />
+    </criteria>
+    <criteria>
+      <classification id='1006' />
+    </criteria>
+  </application>
+  <application id='72' name='VPN' description='A virtual private network (VPN) extends a private network across a public network, such as the Internet. It enables a computer to send and receive data across shared or public networks as if it were directly connected to the private network, while benefitting from the functionality, security and management policies of the private network.'>
+    <criteria>
+      <classification id='59' />
+    </criteria>
+    <criteria>
+      <classification id='84' />
+    </criteria>
+    <criteria>
+      <classification id='89' />
+    </criteria>
+    <criteria>
+      <classification id='142' />
+    </criteria>
+    <criteria>
+      <classification id='134' />
+    </criteria>
+    <criteria>
+      <classification id='41' />
+    </criteria>
+    <criteria>
+      <classification id='178' />
+    </criteria>
+    <criteria>
+      <classification id='264' />
+    </criteria>
+    <criteria>
+      <classification id='604' />
+    </criteria>
+    <criteria>
+      <classification id='725' />
+    </criteria>
+    <criteria>
+      <classification id='597' />
+    </criteria>
+  </application>
+  <application id='51' name='authentication' description='Access control technologies.'>
+    <criteria>
+      <classification id='72' />
+    </criteria>
+    <criteria>
+      <classification id='47' />
+    </criteria>
+    <criteria>
+      <classification id='43' />
+    </criteria>
+    <criteria>
+      <classification id='174' />
+    </criteria>
+    <criteria>
+      <classification id='185' />
+    </criteria>
+    <criteria>
+      <classification id='256' />
+    </criteria>
+    <criteria>
+      <classification id='408' />
+    </criteria>
+    <criteria>
+      <classification id='410' />
+    </criteria>
+    <criteria>
+      <classification id='411' />
+    </criteria>
+    <criteria>
+      <classification id='413' />
+    </criteria>
+    <criteria>
+      <classification id='582' />
+    </criteria>
+    <criteria>
+      <classification id='763' />
+    </criteria>
+    <criteria>
+      <classification id='1089' />
+    </criteria>
+  </application>
+  <application id='103021' name='Decryption Client' description='Decryption Client'>
+    <criteria>
+      <classification id='593' />
+    </criteria>
+  </application>
+  <application id='103020' name='SWIPE' description='IP Security Protocol. '>
+    <criteria>
+      <classification id='589' />
+    </criteria>
+  </application>
+  <application id='81' name='NFS' description='Network File System (NFS) is a distributed file system protocol originally developed by Sun Microsystems in 1984, allowing a user on a client computer to access files over a network in a manner similar to how local storage is accessed. NFS, like many other protocols, builds on the Open Network Computing Remote Procedure Call (ONC RPC) system. The Network File System is an open standard defined in RFCs, allowing anyone to implement the protocol.'>
+    <criteria>
+      <classification id='115' />
+    </criteria>
+    <criteria>
+      <classification id='116' />
+    </criteria>
+    <criteria>
+      <classification id='156' />
+    </criteria>
+    <criteria>
+      <classification id='57' />
+    </criteria>
+    <criteria>
+      <classification id='194' />
+    </criteria>
+  </application>
+  <application id='103018' name='File Sharing' description='File Sharing Applications. '>
+    <criteria>
+      <classification id='577' />
+    </criteria>
+    <criteria>
+      <classification id='605' />
+    </criteria>
+    <criteria>
+      <classification id='742' />
+    </criteria>
+    <criteria>
+      <classification id='779' />
+    </criteria>
+    <criteria>
+      <classification id='899' />
+    </criteria>
+  </application>
+  <application id='82' name='FIX' description='The Financial Information eXchange (FIX) protocol is an electronic communications protocol initiated in 1992 for international real-time exchange of information related to the securities transactions and markets.'>
+    <criteria>
+      <classification id='121' />
+    </criteria>
+  </application>
+  <application id='87' name='printer' description='A printer is a peripheral which produces a representation of an electronic document on physical media such as paper or transparency film.'>
+    <criteria>
+      <classification id='181' />
+    </criteria>
+  </application>
+  <application id='152' name='NTP' description='Network Time Protocol (NTP) is a networking protocol for clock synchronization between computer systems over packet-switched, variable-latency data networks.'>
+    <criteria>
+      <classification id='54' />
+    </criteria>
+    <criteria>
+      <classification id='247' />
+    </criteria>
+    <criteria>
+      <classification id='65' />
+    </criteria>
+  </application>
+  <application id='46' name='routing' description='Routing is the process of selecting paths in a network along which to send network traffic. The routing process usually directs forwarding on the basis of routing tables which maintain a record of the routes to various network destinations.'>
+    <criteria>
+      <classification id='46' />
+    </criteria>
+    <criteria>
+      <classification id='69' />
+    </criteria>
+    <criteria>
+      <classification id='87' />
+    </criteria>
+    <criteria>
+      <classification id='114' />
+    </criteria>
+    <criteria>
+      <classification id='120' />
+    </criteria>
+    <criteria>
+      <classification id='300' />
+    </criteria>
+    <criteria>
+      <classification id='484' />
+    </criteria>
+    <criteria>
+      <classification id='485' />
+    </criteria>
+  </application>
+  <application id='166' name='SMS' description='Short Message Service (SMS) is a text messaging service component of phone, web, or mobile communication systems, using standardized communications protocols that allow the exchange of short text messages between fixed line or mobile phone devices.'>
+    <criteria>
+      <classification id='250' />
+    </criteria>
+  </application>
+  <application id='157' name='webmail' description='Webmail (or web-based email) is any email client implemented as a web application accessed via a web browser. '>
+    <criteria>
+      <classification id='213' />
+    </criteria>
+    <criteria>
+      <classification id='214' />
+    </criteria>
+    <criteria>
+      <classification id='226' />
+    </criteria>
+    <criteria>
+      <classification id='781' />
+    </criteria>
+    <criteria>
+      <classification id='948' />
+    </criteria>
+  </application>
+  <application id='69' name='corporate email' description='Electronic mail, most commonly referred to as email or e-mail, is a method of exchanging digital messages from an author to one or more recipients.'>
+    <criteria>
+      <classification id='35' />
+    </criteria>
+    <criteria>
+      <classification id='34' />
+    </criteria>
+    <criteria>
+      <classification id='63' />
+    </criteria>
+    <criteria>
+      <classification id='36' />
+    </criteria>
+    <criteria>
+      <classification id='218' />
+    </criteria>
+    <criteria>
+      <classification id='249' />
+    </criteria>
+    <criteria>
+      <classification id='762' />
+    </criteria>
+  </application>
+  <application id='71' name='instant messaging' description='Instant messaging (IM) is a type of online chat which offers real-time text transmission over the Internet.'>
+    <criteria>
+      <classification id='62' />
+    </criteria>
+    <criteria>
+      <classification id='60' />
+    </criteria>
+    <criteria>
+      <classification id='61' />
+    </criteria>
+    <criteria>
+      <classification id='42' />
+    </criteria>
+    <criteria>
+      <classification id='73' />
+    </criteria>
+    <criteria>
+      <classification id='78' />
+    </criteria>
+    <criteria>
+      <classification id='77' />
+    </criteria>
+    <criteria>
+      <classification id='139' />
+    </criteria>
+    <criteria>
+      <classification id='184' />
+    </criteria>
+    <criteria>
+      <classification id='186' />
+    </criteria>
+    <criteria>
+      <classification id='204' />
+    </criteria>
+    <criteria>
+      <classification id='217' />
+    </criteria>
+    <criteria>
+      <classification id='260' />
+    </criteria>
+    <criteria>
+      <classification id='436' />
+    </criteria>
+    <criteria>
+      <classification id='438' />
+    </criteria>
+    <criteria>
+      <classification id='581' />
+    </criteria>
+    <criteria>
+      <classification id='580' />
+    </criteria>
+    <criteria>
+      <classification id='681' />
+    </criteria>
+    <criteria>
+      <classification id='734' />
+    </criteria>
+    <criteria>
+      <classification id='804' />
+    </criteria>
+    <criteria>
+      <classification id='805' />
+    </criteria>
+    <criteria>
+      <classification id='806' />
+    </criteria>
+    <criteria>
+      <classification id='807' />
+    </criteria>
+    <criteria>
+      <classification id='808' />
+    </criteria>
+    <criteria>
+      <classification id='809' />
+    </criteria>
+    <criteria>
+      <classification id='810' />
+    </criteria>
+    <criteria>
+      <classification id='811' />
+    </criteria>
+    <criteria>
+      <classification id='812' />
+    </criteria>
+  </application>
+  <application id='104' name='mobile' description='Mobile devices may provide telephony as well as a wide variety of other services such as text messaging, MMS, email, Internet access, short-range wireless communications (infrared, Bluetooth), business applications, gaming, and photography. Mobile phones that offer these and more general computing capabilities are referred to as smartphones.'>
+    <criteria>
+      <classification id='163' />
+    </criteria>
+    <criteria>
+      <classification id='164' />
+    </criteria>
+    <criteria>
+      <classification id='166' />
+    </criteria>
+    <criteria>
+      <classification id='261' />
+    </criteria>
+    <criteria>
+      <classification id='262' />
+    </criteria>
+    <criteria>
+      <classification id='740' />
+    </criteria>
+    <criteria>
+      <classification id='782' />
+    </criteria>
+    <criteria>
+      <classification id='1062' />
+    </criteria>
+  </application>
+  <application id='108' name='SOCKS' description='Socket Secure (SOCKS) is an Internet protocol that routes network packets between a client and server through a proxy server.'>
+    <criteria>
+      <classification id='172' />
+    </criteria>
+  </application>
+  <application id='131' name='r-Commands' description='A set of commands that was developed for BSD UNIX to provide convenient remote access (access without passwords) to operation functions over a TCP/IP network. All of the &quot;r&quot; commands begin with the letter &quot;r&quot;.'>
+    <criteria>
+      <classification id='211' />
+    </criteria>
+  </application>
+  <application id='121' name='P2P stream' description='Applications that provide streamed multimedia content to end-users on a peer-to-peer (P2P) network.'>
+    <criteria>
+      <classification id='193' />
+    </criteria>
+    <criteria>
+      <classification id='205' />
+    </criteria>
+    <criteria>
+      <classification id='113' />
+    </criteria>
+    <criteria>
+      <classification id='138' />
+    </criteria>
+    <criteria>
+      <classification id='210' />
+    </criteria>
+  </application>
+  <application id='70' name='P2P file' description='Applications that provide file-sharing services to end-users on a peer-to-peer (P2P) network.'>
+    <criteria>
+      <classification id='30' />
+    </criteria>
+    <criteria>
+      <classification id='50' />
+    </criteria>
+    <criteria>
+      <classification id='32' />
+    </criteria>
+    <criteria>
+      <classification id='33' />
+    </criteria>
+    <criteria>
+      <classification id='79' />
+    </criteria>
+    <criteria>
+      <classification id='93' />
+    </criteria>
+    <criteria>
+      <classification id='92' />
+    </criteria>
+    <criteria>
+      <classification id='108' />
+    </criteria>
+    <criteria>
+      <classification id='109' />
+    </criteria>
+    <criteria>
+      <classification id='125' />
+    </criteria>
+    <criteria>
+      <classification id='131' />
+    </criteria>
+    <criteria>
+      <classification id='145' />
+    </criteria>
+    <criteria>
+      <classification id='161' />
+    </criteria>
+    <criteria>
+      <classification id='162' />
+    </criteria>
+    <criteria>
+      <classification id='171' />
+    </criteria>
+    <criteria>
+      <classification id='175' />
+    </criteria>
+    <criteria>
+      <classification id='198' />
+    </criteria>
+    <criteria>
+      <classification id='80' />
+    </criteria>
+    <criteria>
+      <classification id='682' />
+    </criteria>
+    <criteria>
+      <classification id='768' />
+    </criteria>
+    <criteria>
+      <classification id='784' />
+    </criteria>
+    <criteria>
+      <classification id='785' />
+    </criteria>
+  </application>
+  <application id='34' name='Skype' description='Skype allows users to communicate with peers by voice using a microphone, video by using a webcam, and instant messaging over the Internet. Unlike most other VoIP services, Skype is a hybrid peer-to-peer and client - server system.'>
+    <criteria>
+      <classification id='55' />
+    </criteria>
+  </application>
+  <application id='118' name='WHOIS' description='WHOIS is a query and response protocol that is widely used for querying databases that store the registered users or assignees of an Internet resource, such as a domain name, an IP address block, or an autonomous system, but is also used for a wider range of other information. The protocol stores and delivers database content in a human-readable format.'>
+    <criteria>
+      <classification id='189' />
+    </criteria>
+  </application>
+  <application id='99' name='Telnet' description='Telnet is a network protocol used on the Internet or local area networks to provide a bidirectional interactive text-oriented communication facility using a virtual terminal connection. User data is interspersed in-band with Telnet control information in an 8-bit byte oriented data connection over the Transmission Control Protocol (TCP).'>
+    <criteria>
+      <classification id='37' />
+    </criteria>
+    <criteria>
+      <classification id='188' />
+    </criteria>
+    <criteria>
+      <classification id='38' />
+    </criteria>
+  </application>
+  <application id='39' name='HTTP' description='The Hypertext Transfer Protocol (HTTP) is an application protocol for distributed, collaborative, hypermedia information systems. HTTP is the foundation of data communication for the World Wide Web.'>
+    <criteria>
+      <classification id='29' />
+    </criteria>
+  </application>
+  <application id='41' name='HTTPS' description='Hypertext Transfer Protocol Secure (HTTPS) is a communications protocol for secure communication over a computer network, with especially wide deployment on the Internet. Technically, it is not a protocol in and of itself; rather, it is the result of simply layering the Hypertext Transfer Protocol (HTTP) on top of the SSL/TLS protocol, thus adding the security capabilities of SSL/TLS to standard HTTP communications.'>
+    <criteria>
+      <classification id='39' />
+    </criteria>
+  </application>
+  <application id='38' name='NetFlow/sFlow' description='NetFlow is a network protocol developed by Cisco Systems for collecting IP traffic information. NetFlow has become an industry standard for traffic monitoring and is supported on various platforms. sFlow is a technology for monitoring network, wireless, and host devices. sFlow uses sampling to achieve scalability and is, for this reason, applicable to high speed networks (gigabit per second speeds and higher).'>
+    <criteria>
+      <classification id='91' />
+    </criteria>
+    <criteria>
+      <port protocol='udp' port-number='6343' />
+    </criteria>
+  </application>
+  <application id='103003' name='database' description='Applications associated with databases and database management systems (DBMSs).'>
+    <criteria>
+      <classification id='490' />
+    </criteria>
+    <criteria>
+      <classification id='586' />
+    </criteria>
+  </application>
+  <application id='103005' name='CRM' description='Customer relationship management (CRM) is a model for managing a company&apos;s interactions with current and future customers. CRM software allows the organizing of customer information, and also provides the means to track sales leads from the time they are obtained until the sales are closed.'>
+    <criteria>
+      <classification id='493' />
+    </criteria>
+    <criteria>
+      <classification id='1013' />
+    </criteria>
+  </application>
+  <application id='103006' name='gambling' description='Applications associated with the practice of playing games of chance or betting in the hope of winning money.'>
+    <criteria>
+      <classification id='494' />
+    </criteria>
+  </application>
+  <application id='103007' name='business systems' description='Business system applications help businesses meet customer demands for fast and reliable delivery of services.'>
+    <criteria>
+      <classification id='498' />
+    </criteria>
+    <criteria>
+      <classification id='499' />
+    </criteria>
+    <criteria>
+      <classification id='500' />
+    </criteria>
+    <criteria>
+      <classification id='501' />
+    </criteria>
+    <criteria>
+      <classification id='502' />
+    </criteria>
+    <criteria>
+      <classification id='503' />
+    </criteria>
+    <criteria>
+      <classification id='504' />
+    </criteria>
+    <criteria>
+      <classification id='505' />
+    </criteria>
+    <criteria>
+      <classification id='506' />
+    </criteria>
+    <criteria>
+      <classification id='508' />
+    </criteria>
+    <criteria>
+      <classification id='509' />
+    </criteria>
+    <criteria>
+      <classification id='510' />
+    </criteria>
+    <criteria>
+      <classification id='511' />
+    </criteria>
+    <criteria>
+      <classification id='542' />
+    </criteria>
+    <criteria>
+      <classification id='543' />
+    </criteria>
+    <criteria>
+      <classification id='544' />
+    </criteria>
+    <criteria>
+      <classification id='545' />
+    </criteria>
+    <criteria>
+      <classification id='546' />
+    </criteria>
+    <criteria>
+      <classification id='547' />
+    </criteria>
+    <criteria>
+      <classification id='548' />
+    </criteria>
+    <criteria>
+      <classification id='549' />
+    </criteria>
+    <criteria>
+      <classification id='550' />
+    </criteria>
+    <criteria>
+      <classification id='551' />
+    </criteria>
+    <criteria>
+      <classification id='552' />
+    </criteria>
+    <criteria>
+      <classification id='553' />
+    </criteria>
+    <criteria>
+      <classification id='568' />
+    </criteria>
+    <criteria>
+      <classification id='570' />
+    </criteria>
+    <criteria>
+      <classification id='588' />
+    </criteria>
+    <criteria>
+      <classification id='595' />
+    </criteria>
+    <criteria>
+      <classification id='594' />
+    </criteria>
+    <criteria>
+      <classification id='546' />
+    </criteria>
+    <criteria>
+      <classification id='749' />
+    </criteria>
+    <criteria>
+      <classification id='752' />
+    </criteria>
+    <criteria>
+      <classification id='758' />
+    </criteria>
+    <criteria>
+      <classification id='764' />
+    </criteria>
+    <criteria>
+      <classification id='507' />
+    </criteria>
+    <criteria>
+      <classification id='861' />
+    </criteria>
+    <criteria>
+      <classification id='862' />
+    </criteria>
+    <criteria>
+      <classification id='863' />
+    </criteria>
+    <criteria>
+      <classification id='864' />
+    </criteria>
+    <criteria>
+      <classification id='865' />
+    </criteria>
+    <criteria>
+      <classification id='866' />
+    </criteria>
+    <criteria>
+      <classification id='867' />
+    </criteria>
+    <criteria>
+      <classification id='868' />
+    </criteria>
+    <criteria>
+      <classification id='869' />
+    </criteria>
+    <criteria>
+      <classification id='870' />
+    </criteria>
+    <criteria>
+      <classification id='871' />
+    </criteria>
+    <criteria>
+      <classification id='873' />
+    </criteria>
+    <criteria>
+      <classification id='874' />
+    </criteria>
+    <criteria>
+      <classification id='875' />
+    </criteria>
+    <criteria>
+      <classification id='49' />
+    </criteria>
+    <criteria>
+      <classification id='876' />
+    </criteria>
+    <criteria>
+      <classification id='877' />
+    </criteria>
+    <criteria>
+      <classification id='878' />
+    </criteria>
+    <criteria>
+      <classification id='879' />
+    </criteria>
+    <criteria>
+      <classification id='880' />
+    </criteria>
+    <criteria>
+      <classification id='881' />
+    </criteria>
+    <criteria>
+      <classification id='882' />
+    </criteria>
+    <criteria>
+      <classification id='883' />
+    </criteria>
+    <criteria>
+      <classification id='884' />
+    </criteria>
+    <criteria>
+      <classification id='885' />
+    </criteria>
+    <criteria>
+      <classification id='886' />
+    </criteria>
+    <criteria>
+      <classification id='887' />
+    </criteria>
+    <criteria>
+      <classification id='888' />
+    </criteria>
+    <criteria>
+      <classification id='889' />
+    </criteria>
+    <criteria>
+      <classification id='890' />
+    </criteria>
+    <criteria>
+      <classification id='891' />
+    </criteria>
+    <criteria>
+      <classification id='892' />
+    </criteria>
+    <criteria>
+      <classification id='893' />
+    </criteria>
+    <criteria>
+      <classification id='894' />
+    </criteria>
+    <criteria>
+      <classification id='895' />
+    </criteria>
+    <criteria>
+      <classification id='896' />
+    </criteria>
+    <criteria>
+      <classification id='778' />
+    </criteria>
+    <criteria>
+      <classification id='897' />
+    </criteria>
+    <criteria>
+      <classification id='898' />
+    </criteria>
+    <criteria>
+      <classification id='872' />
+    </criteria>
+    <criteria>
+      <classification id='741' />
+    </criteria>
+    <criteria>
+      <classification id='964' />
+    </criteria>
+    <criteria>
+      <classification id='1093' />
+    </criteria>
+    <criteria>
+      <classification id='950' />
+    </criteria>
+    <criteria>
+      <classification id='946' />
+    </criteria>
+    <criteria>
+      <classification id='1077' />
+    </criteria>
+    <criteria>
+      <classification id='1107' />
+    </criteria>
+    <criteria>
+      <classification id='1103' />
+    </criteria>
+    <criteria>
+      <classification id='1099' />
+    </criteria>
+    <criteria>
+      <classification id='1042' />
+    </criteria>
+    <criteria>
+      <classification id='1058' />
+    </criteria>
+    <criteria>
+      <classification id='1081' />
+    </criteria>
+    <criteria>
+      <classification id='1044' />
+    </criteria>
+    <criteria>
+      <classification id='945' />
+    </criteria>
+  </application>
+  <application id='103008' name='networking' description='Networking software facilitates the linking of two or more computing devices together for the purpose of sharing data.'>
+    <criteria>
+      <classification id='512' />
+    </criteria>
+    <criteria>
+      <classification id='513' />
+    </criteria>
+    <criteria>
+      <classification id='514' />
+    </criteria>
+    <criteria>
+      <classification id='517' />
+    </criteria>
+    <criteria>
+      <classification id='518' />
+    </criteria>
+    <criteria>
+      <classification id='519' />
+    </criteria>
+    <criteria>
+      <classification id='539' />
+    </criteria>
+    <criteria>
+      <classification id='557' />
+    </criteria>
+    <criteria>
+      <classification id='583' />
+    </criteria>
+    <criteria>
+      <classification id='587' />
+    </criteria>
+    <criteria>
+      <classification id='576' />
+    </criteria>
+    <criteria>
+      <classification id='721' />
+    </criteria>
+    <criteria>
+      <classification id='723' />
+    </criteria>
+  </application>
+  <application id='103009' name='collaboration' description='Collaborative software or groupware is application software designed to help people involved in a common task achieve goals.'>
+    <criteria>
+      <classification id='520' />
+    </criteria>
+    <criteria>
+      <classification id='521' />
+    </criteria>
+    <criteria>
+      <classification id='522' />
+    </criteria>
+    <criteria>
+      <classification id='419' />
+    </criteria>
+    <criteria>
+      <classification id='523' />
+    </criteria>
+    <criteria>
+      <classification id='558' />
+    </criteria>
+    <criteria>
+      <classification id='559' />
+    </criteria>
+    <criteria>
+      <classification id='560' />
+    </criteria>
+    <criteria>
+      <classification id='561' />
+    </criteria>
+    <criteria>
+      <classification id='562' />
+    </criteria>
+    <criteria>
+      <classification id='563' />
+    </criteria>
+    <criteria>
+      <classification id='565' />
+    </criteria>
+    <criteria>
+      <classification id='567' />
+    </criteria>
+    <criteria>
+      <classification id='571' />
+    </criteria>
+    <criteria>
+      <classification id='584' />
+    </criteria>
+    <criteria>
+      <classification id='616' />
+    </criteria>
+    <criteria>
+      <classification id='745' />
+    </criteria>
+    <criteria>
+      <classification id='753' />
+    </criteria>
+  </application>
+  <application id='103010' name='internet utility' description='Applications that are generally of a utilitarian nature (i.e., practical, useful, functional, sensible).'>
+    <criteria>
+      <classification id='524' />
+    </criteria>
+    <criteria>
+      <classification id='525' />
+    </criteria>
+    <criteria>
+      <classification id='526' />
+    </criteria>
+    <criteria>
+      <classification id='527' />
+    </criteria>
+    <criteria>
+      <classification id='528' />
+    </criteria>
+    <criteria>
+      <classification id='530' />
+    </criteria>
+    <criteria>
+      <classification id='531' />
+    </criteria>
+    <criteria>
+      <classification id='534' />
+    </criteria>
+    <criteria>
+      <classification id='536' />
+    </criteria>
+    <criteria>
+      <classification id='537' />
+    </criteria>
+    <criteria>
+      <classification id='997' />
+    </criteria>
+  </application>
+  <application id='103011' name='eBay' description='eBay.com is an online auction and shopping website in which people and businesses buy and sell a broad variety of goods and services worldwide.'>
+    <criteria>
+      <classification id='529' />
+    </criteria>
+  </application>
+  <application id='103015' name='rsync' description='File transfer application for Unix systems. Sources of id: Palo Alto Networks, Packetshaper'>
+    <criteria>
+      <classification id='572' />
+    </criteria>
+  </application>
+  <application id='103016' name='AFS' description='distributed networked file system similar to NFS Sources of id: Palo Alto Networks, Packetshaper'>
+    <criteria>
+      <classification id='573' />
+    </criteria>
+  </application>
+  <application id='103017' name='WINS' description='Windows Internet naming Service Sources of id: Palo Alto Networks, Packetshaper'>
+    <criteria>
+      <classification id='574' />
+    </criteria>
+  </application>
+  <application id='103023' name='Rally' description='Rally&#8217;s cloud-based, Agile software management platform '>
+    <criteria>
+      <classification id='598' />
+    </criteria>
+  </application>
+  <application id='103024' name='Buzzsaw' description='Buzzsaw&#174; is data management software as a service (SaaS) that helps enable Building Information Modeling (BIM) workflows. It includes tools for documentation, modeling, and data management, and it is integrated with the Autodesk portfolio of design and data management solutions. Access Buzzsaw securely from your desktop, the web, or your mobile device. '>
+    <criteria>
+      <classification id='599' />
+    </criteria>
+  </application>
+  <application id='103025' name='Callidus' description='CallidusCloud is a cloud-based sales, marketing and learning solution'>
+    <criteria>
+      <classification id='600' />
+    </criteria>
+  </application>
+  <application id='103026' name='Clearslide' description='Live Pitch &amp; Screen Share. ClearSlide&#8217;s Live Pitch allows you to start a presentation in one click. A customized link from which you can present presentations,  HD video, live screen share. Viewer joins by typing viewer&#8217;s link into their browser. No download software or
+plugins to view presentations.'>
+    <criteria>
+      <classification id='601' />
+    </criteria>
+  </application>
+  <application id='103027' name='D2D Data Transfer' description='Disk to Disk data transfer such as backup operations'>
+    <criteria>
+      <classification id='602' />
+    </criteria>
+  </application>
+  <application id='103028' name='Double Take Availability' description='Vision Solutions&apos; Double-Take&#174; Availability: real-time high availability and disaster recovery solution to with options for physical, virtual or cloud servers. '>
+    <criteria>
+      <classification id='603' />
+    </criteria>
+  </application>
+  <application id='103029' name='exacqVision' description='Video Management System (VMS): Exacq Technologies is a manufacturer of video management system (VMS) software and servers used for video surveillance.'>
+    <criteria>
+      <classification id='606' />
+    </criteria>
+  </application>
+  <application id='103030' name='FCC Speed Test' description='he FCC Measuring Broadband America Program&apos;s mobile measurement effort is an initiative to gather anonymous data from the smartphones of thousands of volunteers in order to assess broadband performance nationwide. 
+Data related to the radio characteristics of the handset, information about the handset type and operating system version, the GPS coordinates available from the handset at the time each test is run, the date and time of the observation, and the results of active test are recorded on the handset. '>
+    <criteria>
+      <classification id='607' />
+    </criteria>
+  </application>
+  <application id='103031' name='filesanywhere' description='Online file sharing, data storage, backup service'>
+    <criteria>
+      <classification id='608' />
+    </criteria>
+  </application>
+  <application id='103032' name='Finch' description='Web page re-formatting tool Finch gives you just the text from any site you plug into its address box, stripping Flash, JavaScript, stylesheets, and even images from the layout.'>
+    <criteria>
+      <classification id='609' />
+    </criteria>
+  </application>
+  <application id='103033' name='Freedome' description='F-Secure Freedome: 
+Security and Privacy
+Change your virtual location 
+Prevent ads and sites from tracking and block apps
+'>
+    <criteria>
+      <classification id='610' />
+    </criteria>
+  </application>
+  <application id='103034' name='GifBoom' description='GifBoom is a free Social network application that enables its users to upload silent animated GIFs and to share them on GifBoom as well as Facebook, Twitter, and Tumblr or via E-mail or MMS.'>
+    <criteria>
+      <classification id='611' />
+    </criteria>
+  </application>
+  <application id='103035' name='GitHub' description='GitHub is a web-based Git repository hosting service, which offers all of the distributed revision control and source code management (SCM) functionality of Git as well as adding its own features.'>
+    <criteria>
+      <classification id='612' />
+    </criteria>
+    <criteria>
+      <classification id='613' />
+    </criteria>
+    <criteria>
+      <classification id='614' />
+    </criteria>
+  </application>
+  <application id='103036' name='goagent' description='GoAgent is a GNU GPL open-source cross-platform network access software. It uses Google App Engine servers to provide users with a free proxy service to gain access to blocked information. It is normally used with web browsers.'>
+    <criteria>
+      <classification id='615' />
+    </criteria>
+  </application>
+  <application id='103037' name='Hamicloud' description='Taiwan based cloud services'>
+    <criteria>
+      <classification id='617' />
+    </criteria>
+  </application>
+  <application id='103038' name='HP-iLO' description='Integrated Lights-Out, or iLO, is a proprietary embedded server management technology by Hewlett-Packard which provides out-of-band management facilities. The physical connection is an Ethernet port that can be found on most Proliant servers of the 300 and above series.'>
+    <criteria>
+      <classification id='618' />
+    </criteria>
+  </application>
+  <application id='103039' name='Huawei-dbank' description='Huawei Dbank is a cloud service application for storing and synchronizing files between computers.'>
+    <criteria>
+      <classification id='619' />
+    </criteria>
+  </application>
+  <application id='103040' name='HULFT' description='HULFT is middleware that performs various functions based on the TCP/IP protocol, including file transfer, between platforms connected to each other via a network.'>
+    <criteria>
+      <classification id='620' />
+    </criteria>
+  </application>
+  <application id='103041' name='IBM-RMC' description='RMC is a content management system that provides a common management structure and look and feel for all process content. All content managed in RMC can be published to HTML and deployed to Web servers for distributed usage.'>
+    <criteria>
+      <classification id='621' />
+    </criteria>
+  </application>
+  <application id='103042' name='IBM-solidDB' description='BM solidDB: In-Memory Database Optimized for Extreme
+Speed and Availability'>
+    <criteria>
+      <classification id='622' />
+    </criteria>
+  </application>
+  <application id='103043' name='Imgur' description='Imgur is an online image hosting service '>
+    <criteria>
+      <classification id='623' />
+    </criteria>
+    <criteria>
+      <classification id='624' />
+    </criteria>
+  </application>
+  <application id='103044' name='Insightly CRM' description='Cloud based customer relationship management (CRM) software for small businesses
+'>
+    <criteria>
+      <classification id='625' />
+    </criteria>
+  </application>
+  <application id='103045' name='Intersystems Cache' description='InterSystems Cach&#233;&#174; is an advanced database management system and rapid application development environment'>
+    <criteria>
+      <classification id='626' />
+    </criteria>
+  </application>
+  <application id='103046' name='iQiyi' description='iQIYI is an online video platform in China. IT is the second largest online video site in China by number of video hours played'>
+    <criteria>
+      <classification id='627' />
+    </criteria>
+  </application>
+  <application id='103047' name='ISO-8583' description='ISO 8583 Financial transaction card originated messages &#8212; Interchange message specifications is the ISO standard for systems that exchange electronic transactions made by cardholders using payment cards.'>
+    <criteria>
+      <classification id='628' />
+    </criteria>
+  </application>
+  <application id='103048' name='JDI Online Backup Storage' description='Online Backup solution'>
+    <criteria>
+      <classification id='629' />
+    </criteria>
+  </application>
+  <application id='103049' name='Jenkins' description='Jenkins provides continuous integration services for software development. It is a server-based system running in a servlet container such as Apache Tomcat.'>
+    <criteria>
+      <classification id='630' />
+    </criteria>
+  </application>
+  <application id='103050' name='Jobvite' description='Recruiting platform for the social web.'>
+    <criteria>
+      <classification id='631' />
+    </criteria>
+  </application>
+  <application id='103051' name='Juniper NSM' description='Network and Security Manager (NSM)  - management over the lifecycle of Juniper&#8217;s routing, switching and security infrastructure'>
+    <criteria>
+      <classification id='632' />
+    </criteria>
+  </application>
+  <application id='103052' name='Khan Academy' description='Khan Academy is an educational organization providing online education. All videos (hosted via YouTube) are available through Khan Academy&apos;s website, with progress tracking, practice exercises, and tools for teachers in public schools. Khan Academy also provides a web-based exercise system. The exercise software is available as open source under the MIT license.'>
+    <criteria>
+      <classification id='633' />
+    </criteria>
+  </application>
+  <application id='103053' name='Laiwang' description='Alibaba Group - Laiwang, a social networking service - instant messaging - file sharing'>
+    <criteria>
+      <classification id='634' />
+    </criteria>
+    <criteria>
+      <classification id='635' />
+    </criteria>
+  </application>
+  <application id='103054' name='Landesk' description='LANDESK Software provides systems management, security management, service management, asset management, and process management solutions '>
+    <criteria>
+      <classification id='636' />
+    </criteria>
+    <criteria>
+      <classification id='637' />
+    </criteria>
+  </application>
+  <application id='103055' name='Lifesize' description='Lifesize, a division of Logitech, is a video and audio telecommunications company in the United States which provides high definition videoconferencing endpoints and accessories, infrastructure products and a cloud-based video collaboration platform.'>
+    <criteria>
+      <classification id='638' />
+    </criteria>
+  </application>
+  <application id='103056' name='livenewschat' description='LiveNewsChat provides a web interface to view text, image and video content posted by third parties. LiveNewsChat cannot and does not screen the sites or its contents before including them in the results from which such automated searches are gathered.'>
+    <criteria>
+      <classification id='639' />
+    </criteria>
+  </application>
+  <application id='103057' name='localtunnel' description='Localtunnel lets you expose a local web server to the public Internet.'>
+    <criteria>
+      <classification id='640' />
+    </criteria>
+  </application>
+  <application id='103058' name='LSI Raid Management' description='LSI is an Avago Technologies company - Storage management software'>
+    <criteria>
+      <classification id='641' />
+    </criteria>
+  </application>
+  <application id='103059' name='Meetup' description='Meetup is an online social networking portal that facilitates offline group meetings'>
+    <criteria>
+      <classification id='642' />
+    </criteria>
+    <criteria>
+      <classification id='643' />
+    </criteria>
+    <criteria>
+      <classification id='644' />
+    </criteria>
+  </application>
+  <application id='103060' name='Mendeley' description='Mendeley is a desktop and web program for managing and sharing research papers, discovering research data and collaborating online. It combines Mendeley Desktop, a PDF and reference management application with Mendeley Web, an online social network for researchers.'>
+    <criteria>
+      <classification id='645' />
+    </criteria>
+    <criteria>
+      <classification id='646' />
+    </criteria>
+  </application>
+  <application id='103061' name='Mercurial' description='Mercurial is a free, distributed source control management tool.'>
+    <criteria>
+      <classification id='647' />
+    </criteria>
+    <criteria>
+      <classification id='648' />
+    </criteria>
+  </application>
+  <application id='103062' name='Minus' description='Social media for location based photo sharing and chat'>
+    <criteria>
+      <classification id='649' />
+    </criteria>
+  </application>
+  <application id='103063' name='MS Exchange Admin Center' description='The Exchange Admin Center (EAC) is the web-based management console in Microsoft Exchange Server '>
+    <criteria>
+      <classification id='650' />
+    </criteria>
+  </application>
+  <application id='103064' name='MS Hyper-V VM Connect' description='Virtual Machine Connection is a tool that you use to connect to a virtual machine so that you can install or interact with the guest operating system in a virtual machine.
+Virtual Machine Connection is installed automatically when you install the Hyper-V role'>
+    <criteria>
+      <classification id='651' />
+    </criteria>
+  </application>
+  <application id='103065' name='mymarket' description='mymarket.com is an e-procurement solutions provider.'>
+    <criteria>
+      <classification id='652' />
+    </criteria>
+  </application>
+  <application id='103066' name='NETS' description='Northern European Transaction Services - Nets is a Nordic provider of payments, cards and information services'>
+    <criteria>
+      <classification id='653' />
+    </criteria>
+  </application>
+  <application id='103067' name='Next Media video' description='Taiwan-based news service, computer-animated dramatizations of news events '>
+    <criteria>
+      <classification id='654' />
+    </criteria>
+  </application>
+  <application id='103068' name='Nomadesk' description='Nomadesk is a European SaaS company, focused on Enterprise File Sharing &amp; Synchronization (EFSS) technology.'>
+    <criteria>
+      <classification id='655' />
+    </criteria>
+  </application>
+  <application id='103069' name='OpenMeetings' description='OpenMeetings is software used for presenting, online training, web conferencing, collaborative whiteboard drawing and document editing, and user desktop sharing. The product is based on OpenLaszlo RIA framework and Red5 media server, which in turn are based on a bunch of open source components.'>
+    <criteria>
+      <classification id='656' />
+    </criteria>
+  </application>
+  <application id='103070' name='OpenText Enterprise Connect' description='OpenText Enterprise Information Management software solutions'>
+    <criteria>
+      <classification id='657' />
+    </criteria>
+  </application>
+  <application id='103071' name='Pinterest' description='Pinterest is a web and mobile application company that offers a visual discovery, collection, sharing, and storage tool.'>
+    <criteria>
+      <classification id='658' />
+    </criteria>
+    <criteria>
+      <classification id='659' />
+    </criteria>
+  </application>
+  <application id='103072' name='Plex' description='Plex is a centralized home media playback system with a powerful central server&#8211;the Plex Media Server&#8211;that streams its media to many Plex player Apps. '>
+    <criteria>
+      <classification id='660' />
+    </criteria>
+  </application>
+  <application id='103073' name='ProxyLocal' description='ProxyLocal could proxy your local web-server and make it publicly available over the internet.
+This software is split into client and server parts. Server part is running on proxylocal.com server. Client is written in ruby and distributed as gem, its source code is open and available on github.'>
+    <criteria>
+      <classification id='661' />
+    </criteria>
+  </application>
+  <application id='103074' name='Quantum Edge TMS' description='Cloud-based logistics software'>
+    <criteria>
+      <classification id='663' />
+    </criteria>
+  </application>
+  <application id='103075' name='QUIC' description='QUIC (Quick UDP Internet Connections) (Google) is an early-stage network protocol that runs a stream multiplexing protocol over a new flavor of Transport Layer Security (TLS) on top of UDP instead of TCP.'>
+    <criteria>
+      <classification id='664' />
+    </criteria>
+  </application>
+  <application id='103076' name='Reddit' description='Reddit, is an entertainment, social networking service and news website where registered community members can submit content, such as text posts or direct links.'>
+    <criteria>
+      <classification id='665' />
+    </criteria>
+    <criteria>
+      <classification id='666' />
+    </criteria>
+    <criteria>
+      <classification id='760' />
+    </criteria>
+  </application>
+  <application id='103077' name='RIPng' description='RIP next generation (RIPng) is an extension of RIP-2 for IPv4. Most RIP concepts are applicable in RIPng. RIPng for IPv6 made the following changes to RIP: l UDP port number: RIPng uses UDP port 521 for sending and receiving routing information.'>
+    <criteria>
+      <classification id='667' />
+    </criteria>
+  </application>
+  <application id='103078' name='SaltStack' description='SaltStack is a Python-based open source configuration management and remote execution application. Supporting the &quot;infrastructure-as-code&quot; approach to deployment and cloud management'>
+    <criteria>
+      <classification id='668' />
+    </criteria>
+  </application>
+  <application id='103079' name='Samsung Updates' description='Software updates for Samsung devices'>
+    <criteria>
+      <classification id='669' />
+    </criteria>
+  </application>
+  <application id='103080' name='Screencast' description='TechSmith&apos;s media hosting solution for sharing'>
+    <criteria>
+      <classification id='670' />
+    </criteria>
+  </application>
+  <application id='103081' name='ScreenConnect' description='ScreenConnect is a self-hosted remote desktop software application that has remote support, remote access, and remote meeting capabilities. ScreenConnect was developed by Elsinore Technologies'>
+    <criteria>
+      <classification id='671' />
+    </criteria>
+  </application>
+  <application id='103082' name='Silent Circle' description='Silent Circle is an encrypted communications firm providing multiplatform secure communication services for mobile devices, desktop and email. '>
+    <criteria>
+      <classification id='672' />
+    </criteria>
+  </application>
+  <application id='103083' name='SIP2 for ILS' description='The Standard Interchange Protocol is a proprietary standard for communication between library computer systems and self-service circulation terminals. Version 2.0 of the protocol, known as &quot;SIP2&quot;. SIP2 for ILS (Integrated Library Systems) for patron and guest wireless access.'>
+    <criteria>
+      <classification id='673' />
+    </criteria>
+  </application>
+  <application id='103084' name='SolveQuotes' description='SolveQuotes parses incoming messages, corporate emails, and attachments announcing inventories up for sale or lists of securities being liquidated. The program provides instantaneous updates on bids, offers, price talk, trades, covers, and more, resulting in unparalleled access to market pricing when buying, selling, or marking securities to market. SolveQuotes can be deployed on the client side so that proprietary information never leaves the firm&apos;s firewalls, and can be integrated with proprietary systems and analytics. '>
+    <criteria>
+      <classification id='675' />
+    </criteria>
+  </application>
+  <application id='103085' name='SoundCloud' description='SoundCloud is an online audio distribution platform that allows collaboration, promotion and distribution of audio recordings by users. 
+SoundCloud is an online audio distribution platform that enables its users to upload, record, promote and share their originally-created sounds. SoundCloud Uploading lets users control the action of uploading music with a distinctive URL. '>
+    <criteria>
+      <classification id='676' />
+    </criteria>
+    <criteria>
+      <classification id='677' />
+    </criteria>
+  </application>
+  <application id='103086' name='SourceForge' description='SourceForge is a web-based source code repository. It acts as a centralized location for software developers to control and manage free and open source software development. SourceForge.net provides a File Manager as a means for projects to make files available for download by their users. In addition to the web based File Manager, SourceForge provides an interactive-shell service for managing files. Sourceforge File Transfer captures different methods to manipulate/upload and download the files and folders accessible via File Manager and shell service.'>
+    <criteria>
+      <classification id='678' />
+    </criteria>
+    <criteria>
+      <classification id='679' />
+    </criteria>
+  </application>
+  <application id='103087' name='SPAMfighter' description='SPAMfighter is a Spam filter for Outlook, Windows Mail, Windows Live Mail, Outlook Express and Thunderbird email clients. It works to protect all the email accounts on your PC against phishing, identity theft, and other email fraud. '>
+    <criteria>
+      <classification id='680' />
+    </criteria>
+  </application>
+  <application id='103088' name='Speedtest' description='Speedtest is an application that can be used by the users to test their internet connectivity speed against hundreds of geographically dispersed servers around the world. At the end of each test, users are presented with their download (the speed of data from the server to their computer) and upload (the speed of sending data from the user&apos;s computer to the server) bandwidth speeds. '>
+    <criteria>
+      <classification id='683' />
+    </criteria>
+  </application>
+  <application id='103089' name='Srvdir' description='Srvdir makes any folder a secure public HTTP file server which serves the files from that folder.Users can share, dowload or upload file from anywhere via public IP provided. Srvdir can be useful for testing static responses to webhooks. '>
+    <criteria>
+      <classification id='684' />
+    </criteria>
+  </application>
+  <application id='103090' name='Streetchat' description='Streetchat, previously called Gaggle, is an anonymous &#8220;local message board&#8221; application that utilizes texts and photo messages of the people to communicate. It uses a geographical radius to match individuals, this app allows users in a certain radius to see the same photos or text posts. There is also an &#8220;upvote&#8221; and &#8220;downvote&#8221; system where users can vote on the quality of posts either up or down. It is popular among high school and college students for the ability to post without being identified. '>
+    <criteria>
+      <classification id='685' />
+    </criteria>
+  </application>
+  <application id='103091' name='Synology DSM' description='Synology&#8217;s DiskStation Manager (DSM), a Linux based software package that is the operating system for the DiskStation and RackStation products. The Synology DSM is the foundation of the DiskStation, which integrates the basic functions of file sharing, centralized backup, RAID storage, multimedia streaming, virtual storage, and using the DiskStation as a network video recorder. '>
+    <criteria>
+      <classification id='686' />
+    </criteria>
+  </application>
+  <application id='103092' name='Tableau' description='Tableau Software produces a family of interactive data visualization products focused on business intelligence. Users can connect to any type of structured data, analyze virtually and produce highly interactive graphs, dashboards, and reports. This app-id covers Tableau Desktop, Tableau Server, and Tableau Online, which is a hosted version of Tableau Server. '>
+    <criteria>
+      <classification id='687' />
+    </criteria>
+  </application>
+  <application id='103093' name='Telegram' description='Telegram is a new messaging app where users can exchange encrypted and self-destructing messages, photos, videos and documents (all file-types supported). It is a cross-platform messenger whose clients are open source.Telegram is officially available for Android and iOS (including tablets and no-wifi devices). '>
+    <criteria>
+      <classification id='688' />
+    </criteria>
+  </application>
+  <application id='103094' name='Tesla Car App' description='The Tesla Motors app puts Model S owners in direct communication with their cars anytime, anywhere. With this app, owners can perform various functions remotely e.g. check charging progress in real time and start or stop charge;lock or unlock from afar; etc. '>
+    <criteria>
+      <classification id='689' />
+    </criteria>
+  </application>
+  <application id='103095' name='Threema' description='Threema is an encrypted instant messaging application for iOS and Android. It can be used to send and receive asymmetrically end-to-end encrypted instant messages, multimedia files and voice messages. '>
+    <criteria>
+      <classification id='690' />
+    </criteria>
+  </application>
+  <application id='103097' name='Torch Browser' description='Torch Browser is a freeware Chromium-based web browser and Internet suite developed by Torch Media. The browser handles common Internet-related tasks such as displaying websites, sharing websites via social networks, downloading torrents, accelerating downloads and grabbing online media, all directly from the browser. '>
+    <criteria>
+      <classification id='692' />
+    </criteria>
+    <criteria>
+      <classification id='694' />
+    </criteria>
+    <criteria>
+      <classification id='693' />
+    </criteria>
+  </application>
+  <application id='103098' name='TrueShare' description='TrueShare is an online file system used to securely upload, share, store, backup, and distribute files. Services include online file storage, online file sharing, and remote file backup. TrueShare has the ability to handle large file sizes, and unlimited file types. It is designed to work with leading operating systems such as Mac, Windows, and Linux, as well as major web browsers. '>
+    <criteria>
+      <classification id='695' />
+    </criteria>
+  </application>
+  <application id='103099' name='Twitch' description='Twitch (also known as Twitch.tv) is a live streaming video platform.The site primarily focuses on video gaming, including playthroughs of video games by users, along with broadcasts of e-sports competitions. Content on the site can either be viewed live, or viewed on an on-demand basis. '>
+    <criteria>
+      <classification id='696' />
+    </criteria>
+  </application>
+  <application id='103100' name='Ultrahook' description='Webhooks are HTTP requests made over the web by services when certain events are triggered within the services. Many popular services (GitHub, Stripe, ActiveCampaign, Papertrail, etc) support updates via webhooks. However, since these webhook requests are made over the public web, it&apos;s difficult receive them when testing from behind a firewall. Ultrahook provides a public endpoint to give to other services and tunnels requests to a private endpoint on your computer. '>
+    <criteria>
+      <classification id='697' />
+    </criteria>
+  </application>
+  <application id='103101' name='uniFLOW' description='uniFLOW is a software platform for print, scan, and device management. '>
+    <criteria>
+      <classification id='698' />
+    </criteria>
+  </application>
+  <application id='103102' name='Vagrant' description='Vagrant provides easy to configure, reproducible, and portable work environments built on top of industry-standard technology and controlled by a single consistent workflow to help maximize the productivity and flexibility of you and your team.Machines are provisioned on top of VirtualBox, VMware, AWS, or any other provider. Then, industry-standard provisioning tools such as shell scripts, Chef, or Puppet, can be used to automatically install and configure software on the machine. '>
+    <criteria>
+      <classification id='699' />
+    </criteria>
+  </application>
+  <application id='103104' name='Watch ABC' description='Watch ABC is the rebranded abc player, which allows viewers to access live streams from a local ABC affiliate from within the app, making ABC the first U.S. broadcast network to offer this ability. '>
+    <criteria>
+      <classification id='701' />
+    </criteria>
+  </application>
+  <application id='103105' name='Wickr' description='Wickr is a free app that offers self-destructing, encrypted messages. Text, photo, video and audio is encrypted into indecipherable code before it leaves the device. So, it&apos;s safely guarded as it travels via airwaves and wires to Wickr&apos;s computer servers and eventually to another person&apos;s device. Meanwhile, one can destroy messages by setting a timer. '>
+    <criteria>
+      <classification id='702' />
+    </criteria>
+  </application>
+  <application id='103106' name='Winbox' description='Winbox is a small program that allows users to control and monitor Mikrotik RouterOS using a fast and simple graphical user interface. '>
+    <criteria>
+      <classification id='703' />
+    </criteria>
+  </application>
+  <application id='103107' name='Wink' description='Wink is a popular photo sharing application that lets users share photos with friends who are in proximity. Wink lets users select application from any app - e.g. Instagram. '>
+    <criteria>
+      <classification id='704' />
+    </criteria>
+  </application>
+  <application id='103108' name='Wiredrive' description='Wiredrive is a cloud content management and collaboration solution for work-in-progress, asset management, and rich media presentation. Wiredrive has become the application of choice for creative professionals in the advertising, television and motion-picture industries who need to upload, manage and present their digital media. '>
+    <criteria>
+      <classification id='705' />
+    </criteria>
+  </application>
+  <application id='103109' name='X.400' description='X.400 is a suite of ITU-T Recommendations that define standards for Data Communication Networks for Message Handling Systems (MHS) &#8212; more commonly known as &quot;email&quot;. At one time X.400 was expected to be the predominant form of email, but this role has been taken by the SMTP-based Internet e-mail. Despite this, it has been widely used within organizations and was a core part of Microsoft Exchange Server until 2006; variants continue to be important in military and aviation contexts. '>
+    <criteria>
+      <classification id='706' />
+    </criteria>
+  </application>
+  <application id='103110' name='Yik Yak' description='Yik Yak acts like a local bulletin board for your area by showing the most recent posts from other users around you. It allows anyone to connect and share information with others without having to know them. '>
+    <criteria>
+      <classification id='707' />
+    </criteria>
+  </application>
+  <application id='103111' name='Yunpan' description='Yunpan is a cloud service provided by Baidu, Inc. It offers cloud storage service, client software, file management, resources sharing, and third Party Integration. After being created on one client terminal, files can be synchronized automatically on other internet-connected client terminals. It has rebranded as Baidu Cloud on Sep 3 2012. '>
+    <criteria>
+      <classification id='710' />
+    </criteria>
+  </application>
+  <application id='103112' name='ZAS Communicator' description='ZAS Communicator is a Serverless open source P2P system for secure voice communication, text chat and file transfer over Internet. The communication is protected by strong encryption from one end of the link to the other. '>
+    <criteria>
+      <classification id='711' />
+    </criteria>
+  </application>
+  <application id='103113' name='ZenMate' description='ZenMate is a VPN plugin for browsers that aims to give internet browsers secure, encrypted access to any website, from anywhere in the world. Users can avail of full and comprehensive encryption into the browser with the ease of use and lightweight installation of a browser plugin. '>
+    <criteria>
+      <classification id='712' />
+    </criteria>
+  </application>
+  <application id='103114' name='Adobe EchoSign' description='EchoSign is a web-based electronic signature and enterprise content management system with specific focus on the document management and verification life-cycle. Its major features centre in document signing, tracking and filing. It supports signing by email (e signature) or by fax. '>
+    <criteria>
+      <classification id='713' />
+    </criteria>
+  </application>
+  <application id='103115' name='Bitbucket' description='Bitbucket is a web-based hosting service for projects that use either the Mercurial or Git revision control systems for their source code repositories. This app-id controls uploading activities by bitbucket using https protocol. To enforce policies on bitbucket, respective repositories must be allowed i.e. if bitbucket is used with GIT, git-base must be allowed. Alternately if it is used with Mercurial, mercurial-base must be allowed. '>
+    <criteria>
+      <classification id='714' />
+    </criteria>
+    <criteria>
+      <classification id='715' />
+    </criteria>
+  </application>
+  <application id='103116' name='eFolder' description='eFolder Backup is a business-grade, cloud backup service designed for VARs and MSPs. The service enables anytime, anywhere data backup to the eFolder Storage Cloud for Windows, Mac, or Linux workstations, laptops, or servers. Through file versioning, eFolder&#8217;s encrypted cloud backup solution protects against file corruption and accidental save-overs. Monitoring and reporting for eFolder&#8217;s cloud backup solution is built in. '>
+    <criteria>
+      <classification id='716' />
+    </criteria>
+  </application>
+  <application id='103117' name='Google Classroom' description='Classroom was designed hand-in-hand with Google Apps for Education teachers to help them save time, keep classes organized, and improve communication with students. Students access Classroom assignments, announcements, and resources online. Assignment creation and distribution is accomplished through Google Drive, Google&apos;s file hosting service, while Gmail, Google&apos;s webmail, is used to provide classroom communication. Each class created with Google Classroom creates a separate folder in the respective Google Product where the student can submit work to be graded by a teacher. '>
+    <criteria>
+      <classification id='717' />
+    </criteria>
+  </application>
+  <application id='103118' name='SOTI MobiControl' description='SOTI MobiControl is Mobile Device Management (MDM) solution for enhancing enterprise mobility and enabling BYOD initiatives. MobiControl enables organizations to centrally manage, support, secure and track corporate-liable and employee-liable mobile devices, regardless of device type, mobile platform and location. '>
+    <criteria>
+      <classification id='718' />
+    </criteria>
+  </application>
+  <application id='103119' name='3com AMP3' description='Registered with IANA on port 629 TCP/UDP'>
+    <criteria>
+      <classification id='719' />
+    </criteria>
+  </application>
+  <application id='103120' name='3Com TSMUX' description='Registered with IANA on port 106 TCP/UDP'>
+    <criteria>
+      <classification id='720' />
+    </criteria>
+  </application>
+  <application id='103121' name='ACAP' description='The Application Configuration Access Protocol (ACAP) is a protocol for storing and synchronizing general configuration and preference data. It was originally developed so that IMAP clients can easily access address books, user options, and other data on a central server and be kept in sync across all clients.'>
+    <criteria>
+      <classification id='722' />
+    </criteria>
+  </application>
+  <application id='103122' name='AccessBuilder' description='AccessBuilder (Access Builder) is a family of dial-in remote access servers that give mobile computer users and remote office workers full access to workgroup, departmental, and enterprise network resources. Remote users dial into AccessBuilder via analog or digital connections to get direct, transparent links to Ethernet and Token Ring LANs-just as if they were connected locally. AccessBuilder products support a broad range of computing platforms, network operating systems, and protocols to fit a variety of network environments. They provide multi-protocol bridging and routing for wide area Client-to-LAN connections and remote LAN extensions to the central site.'>
+    <criteria>
+      <classification id='724' />
+    </criteria>
+  </application>
+  <application id='103123' name='Cloud9' description='Cloud9 provides an open source integrated development environment in the cloud. It supports more than 40 languages. Collaborate with their peers with collaborative coding features, and web development features .'>
+    <criteria>
+      <classification id='726' />
+    </criteria>
+  </application>
+  <application id='103124' name='Palo Alto Traps' description='Palo Alto Networks&#174; Traps provides Advanced Endpoint Protection that prevents sophisticated vulnerability exploits and unknown malware-driven attacks. Traps accomplishes this through a highly scalable, lightweight agent that uses an innovative new approach for defeating attacks without requiring any prior knowledge of the threat itself. By doing so, Traps provides organizations with a powerful tool for protecting endpoints from virtually every targeted attack '>
+    <criteria>
+      <classification id='727' />
+    </criteria>
+  </application>
+  <application id='103125' name='Zello' description='Zello is a direct messaging service that allows members to communicate freely either privately with individuals or over open channels that can support hundreds of thousands of users. Zello applications are push-to-talk (PTT) walkie-talkie for consumers and business and available for Android, iOS, Blackberry, Windows Phone, Windows PC, rugged mobile devices and two-way radios. It allows people to use cell phones and computers all around the world like walkie-talkies. '>
+    <criteria>
+      <classification id='728' />
+    </criteria>
+  </application>
+  <application id='103126' name='Medical Imaging' description='The American College of Radiology (ACR) and the National
+Electrical Manufacturers Association (NEMA)
+formed a joint committee in 1983 to develop a standard to:
+&#8212; Promote communication of digital image info
+rmation, regardless of device manufacturer
+&#8212; Facilitate the development and expansion of
+picture archiving and
+communication systems
+(PACS) that can also interface with
+other systems of hospital information
+&#8212; Allow the creation of diagnostic information
+data bases that can be interrogated by a wide
+variety of devices distributed geographically. '>
+    <criteria>
+      <classification id='729' />
+    </criteria>
+  </application>
+  <application id='103127' name='ALPES' description='ALPES is a client server protocol build on top of TCP. Its main goal is to secure
+the administration of a network of computers by transferring configuration text
+files between an information server and its clients and executing programs on
+them.'>
+    <criteria>
+      <classification id='731' />
+    </criteria>
+  </application>
+  <application id='103128' name='AMInet' description='AMInet Protocol is used for communication and control of Alcorn McBride Inc.
+products.'>
+    <criteria>
+      <classification id='733' />
+    </criteria>
+  </application>
+  <application id='103129' name='Apple TV Updates' description='AppleTV updates is a service that provides updates for the AppleTV operating system and its installed components.'>
+    <criteria>
+      <classification id='735' />
+    </criteria>
+  </application>
+  <application id='103130' name='Instagram' description='a social networking app that allows users to share pictures and videos either publicly, or privately to pre-approved followers.'>
+    <criteria>
+      <classification id='743' />
+    </criteria>
+  </application>
+  <application id='103132' name='Alibaba' description='an online online business-to-business trading platform for small businesses.'>
+    <criteria>
+      <classification id='746' />
+    </criteria>
+  </application>
+  <application id='103134' name='Digital Distribution store' description='a digital distribution platform or service which allows users to browse and download applications'>
+    <criteria>
+      <classification id='755' />
+    </criteria>
+    <criteria>
+      <classification id='756' />
+    </criteria>
+    <criteria></criteria>
+  </application>
+  <application id='103135' name='PayPal' description='PayPal operates a worldwide online payments system that supports online money transfers and serves as an electronic alternative to traditional paper methods like checks and money orders.'>
+    <criteria>
+      <classification id='761' />
+    </criteria>
+  </application>
+  <application id='103136' name='Cloud storage &amp; computing services' description='Cloud storage application or platform that allows customers to build and host applications and websites, store data, analyze data, file backup, file sharing, and Photo printing etc.'>
+    <criteria>
+      <classification id='751' />
+    </criteria>
+    <criteria>
+      <classification id='744' />
+    </criteria>
+    <criteria>
+      <classification id='769' />
+    </criteria>
+    <criteria>
+      <classification id='947' />
+    </criteria>
+  </application>
+  <application id='103138' name='Network Management' description='software that enables administrators to perform services such as fault analysis, performance management, provisioning of networks, maintaining the quality of service, and so on.'>
+    <criteria>
+      <classification id='786' />
+    </criteria>
+    <criteria>
+      <classification id='788' />
+    </criteria>
+    <criteria>
+      <classification id='787' />
+    </criteria>
+  </application>
+  <application id='103139' name='Industry' description='Software for automation and IoT'>
+    <criteria>
+      <classification id='789' />
+    </criteria>
+    <criteria>
+      <classification id='790' />
+    </criteria>
+    <criteria>
+      <classification id='793' />
+    </criteria>
+    <criteria>
+      <classification id='791' />
+    </criteria>
+    <criteria>
+      <classification id='792' />
+    </criteria>
+  </application>
+  <application id='103140' name='Social ' description='websites and applications that enable users to create and share content or to participate in social networking.'>
+    <criteria>
+      <classification id='691' />
+    </criteria>
+    <criteria>
+      <classification id='813' />
+    </criteria>
+    <criteria>
+      <classification id='814' />
+    </criteria>
+    <criteria>
+      <classification id='815' />
+    </criteria>
+    <criteria>
+      <classification id='816' />
+    </criteria>
+    <criteria>
+      <classification id='817' />
+    </criteria>
+    <criteria>
+      <classification id='818' />
+    </criteria>
+    <criteria>
+      <classification id='819' />
+    </criteria>
+    <criteria>
+      <classification id='820' />
+    </criteria>
+    <criteria>
+      <classification id='821' />
+    </criteria>
+    <criteria>
+      <classification id='822' />
+    </criteria>
+    <criteria>
+      <classification id='823' />
+    </criteria>
+    <criteria>
+      <classification id='824' />
+    </criteria>
+    <criteria>
+      <classification id='825' />
+    </criteria>
+    <criteria>
+      <classification id='826' />
+    </criteria>
+    <criteria>
+      <classification id='1097' />
+    </criteria>
+    <criteria>
+      <classification id='1114' />
+    </criteria>
+    <criteria>
+      <classification id='1022' />
+    </criteria>
+    <criteria>
+      <classification id='1106' />
+    </criteria>
+  </application>
+  <application id='103141' name='Web' description='Websites offering content and interactive media services'>
+    <criteria>
+      <classification id='834' />
+    </criteria>
+    <criteria>
+      <classification id='841' />
+    </criteria>
+    <criteria>
+      <classification id='835' />
+    </criteria>
+    <criteria>
+      <classification id='836' />
+    </criteria>
+    <criteria>
+      <classification id='837' />
+    </criteria>
+    <criteria>
+      <classification id='460' />
+    </criteria>
+    <criteria>
+      <classification id='838' />
+    </criteria>
+    <criteria>
+      <classification id='839' />
+    </criteria>
+    <criteria>
+      <classification id='840' />
+    </criteria>
+    <criteria>
+      <classification id='1105' />
+    </criteria>
+  </application>
+  <application id='173' name='Telnet (unclassified)' description='Applications using the ports/protocols normally associated with Telnet.'>
+    <criteria>
+      <port protocol='tcp' port-number='23' />
+    </criteria>
+  </application>
+  <application id='175' name='SSH/SCP (unclassified)' description='Applications using the ports/protocols normally associated with SSH and SCP.'>
+    <criteria>
+      <port protocol='tcp' port-number='22' />
+    </criteria>
+  </application>
+  <application id='174' name='FTP (unclassified)' description='Applications using the ports/protocols normally associated with FTP.'>
+    <criteria>
+      <port protocol='tcp' port-number='20-21' />
+    </criteria>
+  </application>
+  <application id='176' name='Syslog (unclassified)' description='Applications using the ports/protocols normally associated with Syslog.'>
+    <criteria>
+      <port protocol='udp' port-number='514' />
+    </criteria>
+    <criteria>
+      <port protocol='tcp' port-number='514' />
+    </criteria>
+  </application>
+  <application id='172' name='SMTP (unclassified)' description='Applications using the ports/protocols normally associated with SMTP.'>
+    <criteria>
+      <port protocol='tcp' port-number='25' />
+    </criteria>
+  </application>
+  <application id='168' name='HTTP (unclassified)' description='Applications using the ports/protocols normally associated with HTTP.'>
+    <criteria>
+      <port protocol='tcp' port-number='80' />
+    </criteria>
+  </application>
+  <application id='171' name='HTTPS (unclassified)' description='Applications using the ports/protocols normally associated with HTTPS.'>
+    <criteria>
+      <port protocol='tcp' port-number='443' />
+    </criteria>
+  </application>
+  <application id='189' name='Kerberos (unclassified)' description='Applications using the ports/protocols normally associated with Kerberos.'>
+    <criteria>
+      <port protocol='udp' port-number='88' />
+    </criteria>
+    <criteria>
+      <port protocol='tcp' port-number='88' />
+    </criteria>
+    <criteria></criteria>
+    <criteria>
+      <port protocol='zeh' port-number='100000' />
+    </criteria>
+    <criteria>
+      <port protocol='zeh' port-number='1000000' />
+    </criteria>
+  </application>
+  <application id='188' name='LDAP (unclassified)' description='Applications using the ports/protocols normally associated with LDAP.'>
+    <criteria>
+      <port protocol='udp' port-number='636' />
+    </criteria>
+    <criteria>
+      <port protocol='tcp' port-number='636' />
+    </criteria>
+    <criteria>
+      <port protocol='tcp' port-number='389' />
+    </criteria>
+    <criteria>
+      <port protocol='udp' port-number='389' />
+    </criteria>
+    <criteria>
+      <port protocol='tcp' port-number='379' />
+    </criteria>
+  </application>
+  <application id='187' name='MS-RPC (unclassified)' description='Applications using the ports/protocols normally associated with MS-RPC.'>
+    <criteria>
+      <port protocol='tcp' port-number='1025' />
+    </criteria>
+    <criteria>
+      <port protocol='tcp' port-number='1026' />
+    </criteria>
+    <criteria>
+      <port protocol='udp' port-number='135' />
+    </criteria>
+    <criteria>
+      <port protocol='tcp' port-number='135' />
+    </criteria>
+  </application>
+  <application id='186' name='NetBIOS (unclassified)' description='Applications using the ports/protocols normally associated with NetBIOS.'>
+    <criteria>
+      <port protocol='udp' port-number='137-139' />
+    </criteria>
+    <criteria>
+      <port protocol='tcp' port-number='137-139' />
+    </criteria>
+  </application>
+  <application id='185' name='NTP (unclassified)' description='Applications using the ports/protocols normally associated with NTP.'>
+    <criteria>
+      <port protocol='udp' port-number='123' />
+    </criteria>
+  </application>
+  <application id='184' name='SMB (unclassified)' description='Applications using the ports/protocols normally associated with SMB.'>
+    <criteria>
+      <port protocol='tcp' port-number='445' />
+    </criteria>
+    <criteria>
+      <port protocol='udp' port-number='445' />
+    </criteria>
+  </application>
+  <application id='183' name='SNMP (unclassified)' description='Applications using the ports/protocols normally associated with SNMP.'>
+    <criteria>
+      <port protocol='udp' port-number='161' />
+    </criteria>
+    <criteria>
+      <port protocol='tcp' port-number='161' />
+    </criteria>
+  </application>
+  <application id='182' name='SNMP-Trap (unclassified)' description='Applications using the ports/protocols normally associated with SNMP-Trap.'>
+    <criteria>
+      <port protocol='tcp' port-number='162' />
+    </criteria>
+    <criteria>
+      <port protocol='udp' port-number='162' />
+    </criteria>
+  </application>
+  <application id='181' name='SQL-server (unclassified)' description='Applications using the ports/protocols normally associated with SQL-server.'>
+    <criteria>
+      <port protocol='tcp' port-number='1433' />
+    </criteria>
+    <criteria>
+      <port protocol='udp' port-number='1434' />
+    </criteria>
+  </application>
+  <application id='180' name='Symantec-AV (unclassified)' description='Applications using the ports/protocols normally associated with Symantec-AV.'>
+    <criteria>
+      <port protocol='tcp' port-number='38293' />
+    </criteria>
+    <criteria>
+      <port protocol='udp' port-number='38293' />
+    </criteria>
+    <criteria>
+      <port protocol='tcp' port-number='2967' />
+    </criteria>
+    <criteria>
+      <port protocol='udp' port-number='2967' />
+    </criteria>
+  </application>
+  <application id='179' name='TACACS (unclassified)' description='Applications using the ports/protocols normally associated with TACACS.'>
+    <criteria>
+      <port protocol='tcp' port-number='49' />
+    </criteria>
+    <criteria>
+      <port protocol='udp' port-number='49' />
+    </criteria>
+    <criteria>
+      <port protocol='udp' port-number='65' />
+    </criteria>
+    <criteria>
+      <port protocol='tcp' port-number='65' />
+    </criteria>
+  </application>
+  <application id='190' name='DNS (unclassified)' description='Applications using the ports/protocols normally associated with DNS.'>
+    <criteria>
+      <port protocol='udp' port-number='53' />
+    </criteria>
+  </application>
+  <application id='177' name='TFTP (unclassified)' description='Applications using the ports/protocols normally associated with TFTP.'>
+    <criteria>
+      <port protocol='udp' port-number='69' />
+    </criteria>
+  </application>
+  <application id='170' name='Undefined UDP' description='Applications using the ports/protocols normally associated with UDP.'>
+    <criteria>
+      <port protocol='udp' port-number='1-65535' />
+    </criteria>
+    <criteria>
+      <classification id='406' />
+    </criteria>
+  </application>
+  <application id='169' name='Undefined TCP' description='Applications using the ports/protocols normally associated with TCP.'>
+    <criteria>
+      <port protocol='tcp' port-number='1-65535' />
+    </criteria>
+    <criteria>
+      <classification id='405' />
+    </criteria>
+  </application>
+  <application id='113' name='unclassified' description='The application cannot be classified.'>
+    <criteria>
+      <classification id='183' />
+    </criteria>
+  </application>
+  <application id='33' name='unknown' description='The application cannot be identified.'>
+    <criteria>
+      <classification id='71' />
+    </criteria>
+  </application>
+  <application id='103142' name='Office365' description=''>
+    <criteria>
+      <classification id='741' />
+    </criteria>
+  </application>
+  <application id='103143' name='TikTok' description='TikTok'>
+    <criteria>
+      <classification id='1114' />
+    </criteria>
+  </application>
+  <application id='103144' name='Zero VPN' description='Zero VPN' />
+  <application id='103145' name='Internet Advertising' description=''>
+    <criteria>
+      <classification id='1078' />
+    </criteria>
+    <criteria>
+      <classification id='1069' />
+    </criteria>
+    <criteria>
+      <classification id='1065' />
+    </criteria>
+    <criteria>
+      <classification id='1066' />
+    </criteria>
+    <criteria>
+      <classification id='1071' />
+    </criteria>
+    <criteria>
+      <classification id='1070' />
+    </criteria>
+    <criteria>
+      <classification id='1075' />
+    </criteria>
+    <criteria>
+      <classification id='1079' />
+    </criteria>
+    <criteria>
+      <classification id='1080' />
+    </criteria>
+    <criteria>
+      <classification id='1073' />
+    </criteria>
+    <criteria>
+      <classification id='1112' />
+    </criteria>
+    <criteria>
+      <classification id='1111' />
+    </criteria>
+    <criteria>
+      <classification id='1087' />
+    </criteria>
+    <criteria>
+      <classification id='1088' />
+    </criteria>
+    <criteria>
+      <classification id='1086' />
+    </criteria>
+    <criteria>
+      <classification id='1085' />
+    </criteria>
+    <criteria>
+      <classification id='1076' />
+    </criteria>
+    <criteria>
+      <classification id='1064' />
+    </criteria>
+    <criteria>
+      <classification id='1009' />
+    </criteria>
+    <criteria>
+      <classification id='1010' />
+    </criteria>
+    <criteria>
+      <classification id='1053' />
+    </criteria>
+    <criteria>
+      <classification id='969' />
+    </criteria>
+    <criteria>
+      <classification id='993' />
+    </criteria>
+    <criteria>
+      <classification id='1059' />
+    </criteria>
+    <criteria>
+      <classification id='1067' />
+    </criteria>
+    <criteria>
+      <classification id='1068' />
+    </criteria>
+    <criteria>
+      <classification id='1083' />
+    </criteria>
+    <criteria>
+      <classification id='1026' />
+    </criteria>
+  </application>
+</application-list>
