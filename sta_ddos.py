@@ -506,7 +506,7 @@ class StaDdos:
                             f"Byte percentage threshold: {self.dos_threshold}%\n"
                             f"New bytes: {size(last_total_sum)}\n"
                             f"Threshold baseline bytes: {size(self.dos_baseline)}\n"
-                            f"Current mean bytes: {size(self.inspect_ave_bc)}\n",
+                            f"Current mean bytes: {size(self.inspect_ave_bc)}",
                             self.alert_color,
                         )
                     else:
@@ -516,7 +516,7 @@ class StaDdos:
                             f"{status_change(last_total_sum, self.dos_baseline)}\n"
                             f"Byte percentage change: {new_byte_perc}% < Byte percentage threshold "
                             f"{self.dos_threshold}%\n"
-                            f"Current mean bytes: {size(self.inspect_ave_bc)}\n",
+                            f"Current mean bytes: {size(self.inspect_ave_bc)}",
                             self.alert_color,
                         )
 
@@ -546,7 +546,7 @@ class StaDdos:
                         print_banner(
                             f"Status level: '{self.alert_color}'\n"
                             f"Alert level: '{self.alert_level}'\n"
-                            f"Current mean bytes: {size(self.inspect_ave_bc)}\n",
+                            f"Current mean bytes: {size(self.inspect_ave_bc)}",
                             self.alert_color,
                         )
                     else:
@@ -555,7 +555,7 @@ class StaDdos:
                             f"Status level: '{self.alert_color}'\n"
                             f"Alert level: '{self.alert_level}'\n"
                             f"{status_change(last_total_sum, self.dos_baseline)}\n"
-                            f"Current mean bytes: {size(self.inspect_ave_bc)}\n",
+                            f"Current mean bytes: {size(self.inspect_ave_bc)}",
                             self.alert_color,
                         )
 
@@ -579,7 +579,7 @@ class StaDdos:
                             f"Status level: '{self.alert_color}'\n"
                             f"Alert level: '{self.alert_level}'\n"
                             f"Threshold baseline bytes {size(self.dos_baseline)}\n"
-                            f"Current mean bytes: {size(self.inspect_ave_bc)}\n",
+                            f"Current mean bytes: {size(self.inspect_ave_bc)}",
                             self.alert_color,
                         )
                     else:
@@ -588,7 +588,7 @@ class StaDdos:
                             f"Status level: '{self.alert_color}'\n"
                             f"Alert level: '{self.alert_level}'\n"
                             f"{status_change(last_total_sum, self.dos_baseline)}\n"
-                            f"Current mean bytes: {size(self.inspect_ave_bc)}\n",
+                            f"Current mean bytes: {size(self.inspect_ave_bc)}",
                             self.alert_color,
                         )
 
