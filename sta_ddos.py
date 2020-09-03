@@ -286,6 +286,7 @@ class StaDdos:
         print_banner(
             banner, "magenta", ["bold"],
         )
+        print()
 
         # Setup Pandas Series
         data_totals = pd.DataFrame(columns=["id"])
@@ -333,9 +334,10 @@ class StaDdos:
                     "includeInterfaceData": "true",
                 },
             }
-            cprint(
-                f"\n{self.dos_flow_time}s/{self.dos_flow_repeat_time}s probe -- "
-                f"applications({self.application_ids}) flow request to: {self.host}",
+
+            print_banner(
+                f"Probe {self.host} for {self.dos_flow_time}s of "
+                f"Applications: {self.application_names}...",
                 self.alert_color,
             )
             if self.verbose:
@@ -498,23 +500,23 @@ class StaDdos:
                         self.alert_level = 5  # Highest level of Yellow
 
                         print_banner(
-                            f"Status Yellow:\nProtocol Byte percentage change: {new_byte_perc}% >= "
+                            f"Status level: '{self.alert_color}'\n"
+                            f"Alert level: '{self.alert_level}'\n"
+                            f"Protocol Byte percentage change: {new_byte_perc}% >= "
                             f"Byte percentage threshold: {self.dos_threshold}%\n"
                             f"New bytes: {size(last_total_sum)}\n"
                             f"Threshold baseline bytes: {size(self.dos_baseline)}\n"
-                            f"Current mean bytes: {size(self.inspect_ave_bc)}\n"
-                            f"Alert level: '{self.alert_level}'\n"
-                            f"Status level: '{self.alert_color}'",
+                            f"Current mean bytes: {size(self.inspect_ave_bc)}\n",
                             self.alert_color,
                         )
                     else:
                         cprint(
+                            f"Status level: '{self.alert_color}'\n"
+                            f"Alert level: '{self.alert_level}'\n"
                             f"{status_change(last_total_sum, self.dos_baseline)}\n"
                             f"Byte percentage change: {new_byte_perc}% < Byte percentage threshold "
                             f"{self.dos_threshold}%\n"
-                            f"Current mean bytes: {size(self.inspect_ave_bc)}\n"
-                            f"Alert level: '{self.alert_level}'\n"
-                            f"Status level: '{self.alert_color}'",
+                            f"Current mean bytes: {size(self.inspect_ave_bc)}\n",
                             self.alert_color,
                         )
 
@@ -542,19 +544,18 @@ class StaDdos:
                         # Up to Red status
                         self.alert_color = "red"
                         print_banner(
-                            f"Status Red:\n"
-                            f"Current mean bytes: {size(self.inspect_ave_bc)}\n"
+                            f"Status level: '{self.alert_color}'\n"
                             f"Alert level: '{self.alert_level}'\n"
-                            f"Status level: '{self.alert_color}'",
+                            f"Current mean bytes: {size(self.inspect_ave_bc)}\n",
                             self.alert_color,
                         )
                     else:
                         # Within the Yellow range and staying Yellow - just report
                         cprint(
-                            f"{status_change(last_total_sum, self.dos_baseline)}\n"
-                            f"Current mean bytes: {size(self.inspect_ave_bc)}\n"
+                            f"Status level: '{self.alert_color}'\n"
                             f"Alert level: '{self.alert_level}'\n"
-                            f"Status level: '{self.alert_color}'",
+                            f"{status_change(last_total_sum, self.dos_baseline)}\n"
+                            f"Current mean bytes: {size(self.inspect_ave_bc)}\n",
                             self.alert_color,
                         )
 
@@ -575,19 +576,19 @@ class StaDdos:
                         self.alert_color = "yellow"
                         print_banner(
                             f"Threshold Alert over, Last total {last_total_sum}\n"
-                            f"Threshold baseline bytes {size(self.dos_baseline)}\n"
-                            f"Current mean bytes: {size(self.inspect_ave_bc)}\n"
+                            f"Status level: '{self.alert_color}'\n"
                             f"Alert level: '{self.alert_level}'\n"
-                            f"Status level: '{self.alert_color}'",
+                            f"Threshold baseline bytes {size(self.dos_baseline)}\n"
+                            f"Current mean bytes: {size(self.inspect_ave_bc)}\n",
                             self.alert_color,
                         )
                     else:
                         # Within the Red range and staying Red - just report
                         cprint(
-                            f"{status_change(last_total_sum, self.dos_baseline)}\n"
-                            f"Current mean bytes: {size(self.inspect_ave_bc)}\n"
+                            f"Status level: '{self.alert_color}'\n"
                             f"Alert level: '{self.alert_level}'\n"
-                            f"Status level: '{self.alert_color}'",
+                            f"{status_change(last_total_sum, self.dos_baseline)}\n"
+                            f"Current mean bytes: {size(self.inspect_ave_bc)}\n",
                             self.alert_color,
                         )
 
