@@ -16,7 +16,7 @@ dos_attack:
     verbose: false # Set me to true to see lots of output
     enabled: true
     dos_flow_time: 360 # Look at 5m sliding window (enough time to gather from FCs)
-    dos_flow_repeat_time: 30 # Query each 60s
+    dos_flow_repeat_time: 360 # Query each 60s
     dos_threshold: 10 # % spike causes a table entry and warning
-    dos_baseline: 1059943500 # Baseline protocol value, see --inspect
+    dos_baseline: 24099961542 # Baseline protocol value, see --inspect
     applications: {'telnet', 'ssh', 'netbios', 'icmp'}
