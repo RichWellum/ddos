@@ -18,5 +18,5 @@ dos_attack:
     dos_flow_time: 360 # Look at 5m sliding window (enough time to gather from FCs)
     dos_flow_repeat_time: 30 # Query each 60s
     dos_threshold: 22 # % spike causes a table entry and warning
-    dos_baseline: 10149729 # Baseline protocol value, see --inspect
+    dos_baseline: 12709252 # Baseline protocol value, see --inspect
     applications: {'icmp'}
