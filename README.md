@@ -229,3 +229,17 @@ Note that is aggregating the total bytes of all these applications.
 ```bash
 ./sta_ddos.py config.yamln -v
 ```
+
+## Docker (TBD)
+
+This script is Docker friendly, and can be deployed as a container.
+
+To build the container, run the script once to populate the ***config.json*** file, or manually populate the configuration variables.
+
+Once the ***config.json*** file is populated, run the following command to build the container:
+
+- ```docker build -t maxmind-asn-importer .```
+
+You can then run the container as a daemon with the following command:
+
+- ```docker run -d --name maxmind-asn-importer maxmind-asn-importer```
